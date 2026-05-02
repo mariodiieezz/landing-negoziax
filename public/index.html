@@ -3,233 +3,486 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Negoziax - Automatiza tu negocio</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='24' fill='%2360a5fa'/><rect x='40' y='30' width='56' height='72' rx='6' fill='%23fff' opacity='.4'/><rect x='32' y='24' width='56' height='72' rx='6' fill='%23fff' opacity='.95'/><rect x='44' y='40' width='30' height='5' rx='2' fill='%2360a5fa'/><rect x='44' y='52' width='24' height='5' rx='2' fill='%2360a5fa' opacity='.5'/><rect x='44' y='64' width='28' height='5' rx='2' fill='%2360a5fa' opacity='.5'/><rect x='44' y='76' width='16' height='5' rx='2' fill='%2360a5fa' opacity='.5'/></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<title>Negoziax — Automatización para pymes</title>
+<meta name="description" content="Automatizo las tareas repetitivas de tu negocio: presupuestos, seguimientos y emails. Sin tecnicismos, sin complicaciones.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232563eb'/><line x1='8' y1='8' x2='8' y2='24' stroke='white' stroke-width='4' stroke-linecap='round'/><line x1='8' y1='8' x2='24' y2='24' stroke='white' stroke-width='4' stroke-linecap='round'/><line x1='24' y1='8' x2='24' y2='24' stroke='white' stroke-width='4' stroke-linecap='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
 :root{
---blue-50:#eff6ff;--blue-100:#dbeafe;--blue-200:#bfdbfe;--blue-300:#93c5fd;
---blue-400:#60a5fa;--blue-500:#3b82f6;--blue-600:#2563eb;--blue-700:#1d4ed8;
---slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-300:#cbd5e1;
---slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;
---slate-800:#1e293b;--slate-900:#0f172a;
+  --blue:#2563eb;
+  --blue-light:#eff6ff;
+  --blue-mid:#dbeafe;
+  --text:#111827;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --bg:#ffffff;
+  --bg-alt:#f9fafb;
+  --dark:#111827;
 }
+
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--slate-800);background:var(--slate-50);overflow-x:hidden}
-h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:600;letter-spacing:-0.02em}
+
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+
+h1,h2,h3,h4{
+  font-family:'Outfit',system-ui,sans-serif;
+  font-weight:700;
+  letter-spacing:-0.025em;
+  line-height:1.2;
+}
 
 /* NAV */
-nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 2rem;transition:all .3s}
-nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.4rem;color:var(--slate-900);text-decoration:none}
-.logo span{color:var(--blue-500)}
-.nav-cta{background:var(--blue-500);color:#fff;padding:.6rem 1.4rem;border-radius:8px;text-decoration:none;font-size:.875rem;font-weight:500;transition:all .2s}
-.nav-cta:hover{background:var(--blue-600);transform:translateY(-1px)}
+nav{
+  position:fixed;top:0;width:100%;z-index:100;
+  padding:1rem 2rem;
+  transition:background .3s,border-color .3s;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-color:var(--border);
+}
+.nav-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo{
+  font-family:'Outfit',sans-serif;font-weight:700;font-size:1.35rem;
+  color:var(--text);text-decoration:none;letter-spacing:-0.02em;
+}
+.logo span{color:var(--blue)}
+.nav-btn{
+  background:var(--blue);color:#fff;
+  padding:.5rem 1.25rem;border-radius:7px;
+  text-decoration:none;font-size:.875rem;font-weight:500;
+  transition:opacity .2s,transform .2s;
+}
+.nav-btn:hover{opacity:.88;transform:translateY(-1px)}
+
+/* LAYOUT */
+.container{max-width:960px;margin:0 auto;padding:0 1.5rem}
+.section{padding:6rem 1.5rem}
+.section--alt{background:var(--bg-alt)}
+
+/* TYPOGRAPHY HELPERS */
+.eyebrow{
+  display:inline-block;
+  font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:1rem;
+}
+.section-heading{
+  font-size:clamp(1.6rem,3.5vw,2.2rem);
+  color:var(--text);margin-bottom:1rem;max-width:600px;
+}
+.section-sub{
+  font-size:1.05rem;color:var(--muted);
+  max-width:520px;line-height:1.7;margin-bottom:3rem;
+}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,var(--blue-100) 0%,transparent 70%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-30%;left:-15%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--blue-50) 0%,transparent 70%);pointer-events:none}
-.hero-content{max-width:720px;text-align:center;position:relative;z-index:1}
-.hero-tag{display:inline-block;background:var(--blue-100);color:var(--blue-700);font-size:.8rem;font-weight:500;padding:.4rem 1rem;border-radius:50px;margin-bottom:1.5rem;letter-spacing:.02em;animation:fadeUp .6s ease}
-.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.12;color:var(--slate-900);margin-bottom:1.2rem;animation:fadeUp .6s ease .1s both}
-.hero h1 em{font-style:normal;color:var(--blue-500)}
-.hero p{font-size:1.15rem;color:var(--slate-500);line-height:1.65;max-width:540px;margin:0 auto 2.5rem;animation:fadeUp .6s ease .2s both}
-.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s ease .3s both}
-.btn-primary{background:var(--blue-500);color:#fff;padding:.85rem 2rem;border-radius:10px;text-decoration:none;font-weight:500;font-size:1rem;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
-.btn-primary:hover{background:var(--blue-600);transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,.25)}
-.btn-secondary{background:#fff;color:var(--slate-700);padding:.85rem 2rem;border-radius:10px;text-decoration:none;font-weight:500;font-size:1rem;border:1.5px solid var(--slate-200);transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
-.btn-secondary:hover{border-color:var(--blue-300);color:var(--blue-600);transform:translateY(-2px)}
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:7rem 1.5rem 5rem;
+  text-align:center;
+  background:radial-gradient(ellipse 70% 55% at 50% 0%,var(--blue-light) 0%,#fff 65%);
+}
+.hero .container{width:100%}
+.hero-inner{max-width:680px;margin:0 auto}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--text);margin-bottom:1.25rem}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-sub{
+  font-size:1.15rem;color:var(--muted);line-height:1.7;
+  max-width:520px;margin:0 auto 2.5rem;
+}
+.hero-ctas{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap}
 
-/* PROBLEMA */
-.section{padding:5rem 2rem}
-.section-inner{max-width:1000px;margin:0 auto}
-.section-tag{display:inline-block;color:var(--blue-600);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.8rem}
-.section h2{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:1rem;color:var(--slate-900)}
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.8rem 1.75rem;border-radius:8px;
+  font-weight:500;font-size:.95rem;
+  text-decoration:none;transition:all .2s;white-space:nowrap;
+}
+.btn--primary{background:var(--blue);color:#fff}
+.btn--primary:hover{
+  opacity:.88;transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(37,99,235,.22);
+}
+.btn--ghost{color:var(--text);border:1px solid var(--border);background:#fff}
+.btn--ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.btn--wa{background:#22c55e;color:#fff}
+.btn--wa:hover{background:#16a34a;transform:translateY(-2px)}
+.btn--outline-light{color:#e5e7eb;border:1px solid #374151;background:transparent}
+.btn--outline-light:hover{border-color:#6b7280;transform:translateY(-2px)}
 
-.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem}
-.pain-card{background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
-.pain-card:hover{border-color:var(--blue-300);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
-.pain-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.3rem}
-.pain-icon.time{background:var(--blue-100);color:var(--blue-600)}
-.pain-icon.money{background:#fef3c7;color:#d97706}
-.pain-icon.error{background:#fee2e2;color:#dc2626}
-.pain-card h3{font-size:1.1rem;margin-bottom:.6rem;color:var(--slate-900)}
-.pain-card p{font-size:.92rem;color:var(--slate-500);line-height:1.6}
+/* PAIN CARDS */
+.pain-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.25rem;margin-top:3rem;
+}
+.pain-card{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:12px;padding:1.75rem;
+  transition:border-color .25s,transform .25s;
+}
+.pain-card:hover{border-color:var(--blue-mid);transform:translateY(-3px)}
+.pain-card-icon{color:var(--blue);margin-bottom:1rem}
+.pain-card h3{font-size:1.05rem;margin-bottom:.5rem}
+.pain-card p{font-size:.9rem;color:var(--muted);line-height:1.65}
 
-/* SOLUCION */
-.solution{background:#fff}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:2.5rem;counter-reset:step}
-.step{position:relative;padding:1.5rem 0}
-.step::before{counter-increment:step;content:counter(step);font-family:'Outfit',sans-serif;font-size:3rem;font-weight:700;color:var(--blue-100);line-height:1;margin-bottom:.5rem;display:block}
-.step h3{font-size:1.05rem;color:var(--slate-900);margin-bottom:.5rem}
-.step p{font-size:.9rem;color:var(--slate-500);line-height:1.6}
+/* STEPS */
+.steps{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:2.5rem;margin-top:3rem;
+}
+.step-num{
+  font-family:'Outfit',sans-serif;font-size:3.5rem;font-weight:700;
+  color:var(--blue-mid);line-height:1;margin-bottom:.75rem;
+}
+.step h3{font-size:1.05rem;margin-bottom:.5rem}
+.step p{font-size:.9rem;color:var(--muted);line-height:1.65}
 
-/* BENEFICIOS */
-.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-top:2.5rem}
-.benefit{background:var(--blue-50);border-radius:12px;padding:1.5rem;text-align:center;transition:all .3s}
-.benefit:hover{background:var(--blue-100);transform:translateY(-2px)}
-.benefit-num{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--blue-500);margin-bottom:.3rem}
-.benefit span{font-size:.9rem;color:var(--slate-600)}
+/* METRICS */
+.metrics{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1.25rem;margin-top:3rem;
+}
+.metric{
+  text-align:center;padding:2rem 1rem;
+  background:var(--bg);border:1px solid var(--border);border-radius:12px;
+}
+.metric-num{
+  font-family:'Outfit',sans-serif;font-size:2.25rem;font-weight:700;
+  color:var(--blue);margin-bottom:.4rem;
+}
+.metric p{font-size:.875rem;color:var(--muted);line-height:1.5}
+
+/* FAQ */
+.faq-list{margin-top:3rem;border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-btn{
+  width:100%;background:none;border:none;
+  padding:1.35rem 0;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  cursor:pointer;
+  font-family:'Outfit',sans-serif;font-size:1rem;font-weight:600;
+  color:var(--text);text-align:left;
+  transition:color .2s;
+}
+.faq-btn:hover{color:var(--blue)}
+.faq-icon{flex-shrink:0;color:var(--muted);transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(180deg)}
+.faq-body{overflow:hidden;max-height:0;transition:max-height .35s ease}
+.faq-body p{
+  font-size:.925rem;color:var(--muted);line-height:1.7;
+  padding-bottom:1.35rem;max-width:640px;
+}
 
 /* CTA */
-.cta{background:var(--slate-900);color:#fff;text-align:center;border-radius:20px;max-width:900px;margin:0 auto;padding:4rem 2rem}
-.cta h2{color:#fff;margin-bottom:.8rem}
-.cta p{color:var(--slate-400);margin-bottom:2rem;font-size:1.05rem}
-.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-wa{background:#25d366;color:#fff;padding:.85rem 2rem;border-radius:10px;text-decoration:none;font-weight:500;font-size:1rem;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
-.btn-wa:hover{background:#20bd5a;transform:translateY(-2px)}
-.btn-email{background:transparent;color:#fff;padding:.85rem 2rem;border-radius:10px;text-decoration:none;font-weight:500;font-size:1rem;border:1.5px solid var(--slate-600);transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
-.btn-email:hover{border-color:var(--blue-400);color:var(--blue-400);transform:translateY(-2px)}
+.cta-section{background:var(--bg-alt)}
+.cta-box{
+  background:var(--dark);border-radius:16px;
+  padding:4rem 2rem;text-align:center;
+  max-width:780px;margin:0 auto;
+}
+.cta-box .eyebrow{color:#93c5fd}
+.cta-box h2{color:#fff;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.875rem}
+.cta-box p{color:#9ca3af;font-size:1rem;margin-bottom:2rem;line-height:1.7}
+.cta-btns{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap}
 
 /* FOOTER */
-footer{text-align:center;padding:3rem 2rem;color:var(--slate-400);font-size:.85rem}
+footer{
+  text-align:center;padding:2.5rem 1.5rem;
+  font-size:.85rem;color:#9ca3af;
+  border-top:1px solid var(--border);
+}
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(30px);transition:all .6s ease}
+/* WA FAB */
+.wa-fab{
+  position:fixed;bottom:1.75rem;right:1.75rem;
+  width:56px;height:56px;border-radius:50%;
+  background:#22c55e;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(34,197,94,.35);
+  z-index:200;transition:transform .2s,box-shadow .2s;
+  text-decoration:none;
+}
+.wa-fab:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(34,197,94,.45)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+.hero-inner>.reveal:nth-child(1){transition-delay:.05s}
+.hero-inner>.reveal:nth-child(2){transition-delay:.15s}
+.hero-inner>.reveal:nth-child(3){transition-delay:.25s}
+.hero-inner>.reveal:nth-child(4){transition-delay:.35s}
+
+.pain-grid .reveal:nth-child(2){transition-delay:.08s}
+.pain-grid .reveal:nth-child(3){transition-delay:.16s}
+
+.steps .reveal:nth-child(2){transition-delay:.1s}
+.steps .reveal:nth-child(3){transition-delay:.2s}
+
+.metrics .reveal:nth-child(2){transition-delay:.08s}
+.metrics .reveal:nth-child(3){transition-delay:.16s}
+.metrics .reveal:nth-child(4){transition-delay:.24s}
+
+/* RESPONSIVE */
 @media(max-width:640px){
-.hero{padding:5rem 1.5rem 3rem}
-.hero-buttons{flex-direction:column;align-items:center}
-.cta{margin:0 1rem;border-radius:16px}
-.cta-buttons{flex-direction:column;align-items:center}
+  .section{padding:4rem 1.5rem}
+  .hero{padding:6rem 1.5rem 4rem}
+  .hero-ctas,.cta-btns{flex-direction:column;align-items:center}
+  .btn{width:100%;justify-content:center}
+  .cta-box{padding:2.75rem 1.5rem}
 }
+
 </style>
 </head>
 <body>
 
 <nav id="nav">
-<div class="nav-inner">
-<a href="#" class="logo">negozi<span>ax</span></a>
-<a href="#contacto" class="nav-cta">Hablemos</a>
-</div>
+  <div class="nav-inner">
+    <a href="#" class="logo">negozi<span>ax</span></a>
+    <a href="#contacto" class="nav-btn">Hablemos</a>
+  </div>
 </nav>
 
 <section class="hero">
-<div class="hero-content">
-<div class="hero-tag">Automatizaci&oacute;n para pymes</div>
-<h1>Tu negocio pierde horas en tareas que <em>una m&aacute;quina hace en segundos</em></h1>
-<p>Presupuestos, seguimientos, respuestas a clientes. Si lo haces a mano, est&aacute;s regalando tu tiempo. Te lo automatizo para que t&uacute; te dediques a facturar.</p>
-<div class="hero-buttons">
-<a href="https://wa.me/34611059182?text=Hola%2C%20quiero%20saber%20c%C3%B3mo%20automatizar%20mi%20negocio" class="btn-primary">
-<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.33 0-4.48-.78-6.206-2.093l-.353-.29-3.659 1.226 1.226-3.659-.29-.353A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-WhatsApp
-</a>
-<a href="mailto:mariodiezagudo@gmail.com?subject=Quiero%20automatizar%20mi%20negocio" class="btn-secondary">
-<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
-Email
-</a>
-</div>
-</div>
+  <div class="container">
+    <div class="hero-inner">
+      <span class="eyebrow reveal">Automatización para pymes</span>
+      <h1 class="reveal">Tu negocio pierde horas en tareas que <em>una máquina hace en segundos</em></h1>
+      <p class="hero-sub reveal">Presupuestos, seguimientos, respuestas a clientes. Si lo haces a mano, estás regalando tu tiempo. Lo automatizo para que tú te dediques a facturar.</p>
+      <div class="hero-ctas reveal">
+        <a href="https://wa.me/34611059182?text=Hola%2C%20quiero%20saber%20c%C3%B3mo%20automatizar%20mi%20negocio" class="btn btn--primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.33 0-4.48-.78-6.206-2.093l-.353-.29-3.659 1.226 1.226-3.659-.29-.353A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          WhatsApp
+        </a>
+        <a href="mailto:mariodiezagudo@gmail.com?subject=Quiero%20automatizar%20mi%20negocio" class="btn btn--ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <span class="eyebrow reveal">El problema</span>
+    <h2 class="section-heading reveal">Cada día, tu negocio pierde tiempo y dinero en lo mismo</h2>
+    <div class="pain-grid">
+      <article class="pain-card reveal">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Horas en tareas repetitivas</h3>
+        <p>Copiar datos, rellenar plantillas, enviar emails uno a uno. Tiempo que no dedicas a conseguir clientes ni a hacer crecer tu negocio.</p>
+      </article>
+      <article class="pain-card reveal">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3>Dinero que se escapa</h3>
+        <p>Presupuestos que no se envían, seguimientos que se olvidan, clientes que se pierden porque nadie les respondió a tiempo.</p>
+      </article>
+      <article class="pain-card reveal">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+        </div>
+        <h3>Errores manuales</h3>
+        <p>Un precio mal copiado, un email sin adjunto, un presupuesto con el nombre equivocado. Cada error te hace quedar mal ante tu cliente.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<div class="section-inner">
-<div class="section-tag">El problema</div>
-<h2>Cada d&iacute;a, tu negocio pierde tiempo y dinero en lo mismo</h2>
-<div class="pain-grid">
-<div class="pain-card reveal">
-<div class="pain-icon time">
-<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-</div>
-<h3>Horas en tareas repetitivas</h3>
-<p>Copiar datos, rellenar plantillas, enviar emails uno a uno. Tiempo que no dedicas a conseguir clientes ni hacer crecer tu negocio.</p>
-</div>
-<div class="pain-card reveal">
-<div class="pain-icon money">
-<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-</div>
-<h3>Dinero que se escapa</h3>
-<p>Presupuestos que no se env&iacute;an, seguimientos que se olvidan, clientes que se pierden porque nadie les respondi&oacute; a tiempo.</p>
-</div>
-<div class="pain-card reveal">
-<div class="pain-icon error">
-<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
-</div>
-<h3>Errores manuales</h3>
-<p>Un precio mal copiado, un email sin adjunto, un presupuesto con el nombre equivocado. Cada error te hace quedar mal ante tu cliente.</p>
-</div>
-</div>
-</div>
+  <div class="container">
+    <span class="eyebrow reveal">Cómo funciona</span>
+    <h2 class="section-heading reveal">Automatizo lo que te roba tiempo</h2>
+    <p class="section-sub reveal">Sin tecnicismos, sin complicaciones. Trabajamos con las herramientas que ya tienes.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Hablamos</h3>
+        <p>Me cuentas qué tareas te comen el día a día. Sin técnicos, sin jerga.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Lo construyo</h3>
+        <p>Monto la automatización a medida de tu negocio. Tú no tocas nada técnico.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Funciona solo</h3>
+        <p>Desde el primer día tu negocio trabaja sin que estés encima. Y si algo cambia, lo ajustamos.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section solution">
-<div class="section-inner">
-<div class="section-tag">La soluci&oacute;n</div>
-<h2>Automatizo lo que te roba tiempo</h2>
-<div class="steps">
-<div class="step reveal">
-<h3>Hablamos</h3>
-<p>Me cuentas qu&eacute; tareas te comen el d&iacute;a a d&iacute;a. Sin t&eacute;cnicos, sin jerga.</p>
-</div>
-<div class="step reveal">
-<h3>Lo construyo</h3>
-<p>Monto la automatizaci&oacute;n a medida de tu negocio. T&uacute; no tocas nada t&eacute;cnico.</p>
-</div>
-<div class="step reveal">
-<h3>Funciona solo</h3>
-<p>Desde el primer d&iacute;a tu negocio trabaja sin que t&uacute; est&eacute;s encima. Y si algo cambia, lo ajustamos.</p>
-</div>
-</div>
-</div>
+<section class="section section--alt">
+  <div class="container">
+    <span class="eyebrow reveal">Resultados</span>
+    <h2 class="section-heading reveal">Lo que ganas con la automatización</h2>
+    <div class="metrics">
+      <div class="metric reveal">
+        <div class="metric-num">-80%</div>
+        <p>Menos tiempo en tareas manuales</p>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-num">0</div>
+        <p>Errores en presupuestos y emails</p>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-num">24/7</div>
+        <p>Tu sistema trabaja aunque tú no estés</p>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-num">+30%</div>
+        <p>Más clientes que cierran</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<div class="section-inner">
-<div class="section-tag">Resultados</div>
-<h2>Lo que ganas con la automatizaci&oacute;n</h2>
-<div class="benefits-grid">
-<div class="benefit reveal">
-<div class="benefit-num">-80%</div>
-<span>Menos tiempo en tareas manuales</span>
-</div>
-<div class="benefit reveal">
-<div class="benefit-num">0</div>
-<span>Errores en presupuestos y emails</span>
-</div>
-<div class="benefit reveal">
-<div class="benefit-num">24/7</div>
-<span>Tu sistema trabaja aunque t&uacute; no est&eacute;s</span>
-</div>
-<div class="benefit reveal">
-<div class="benefit-num">+30%</div>
-<span>M&aacute;s clientes que cierran</span>
-</div>
-</div>
-</div>
+  <div class="container">
+    <span class="eyebrow reveal">Preguntas frecuentes</span>
+    <h2 class="section-heading reveal">Lo que suele preguntar la gente</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          ¿Cuánto tiempo tarda en estar funcionando?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" role="region">
+          <p>La mayoría de automatizaciones están en marcha en 3 a 7 días. Para proyectos más complejos puede ser algo más, pero siempre te digo el plazo real antes de empezar.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          ¿Tengo que cambiar las herramientas que uso ahora?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" role="region">
+          <p>No. Trabajo con lo que ya tienes: tu correo, tu CRM, tu Excel, tu WhatsApp Business. No tienes que aprender ninguna herramienta nueva ni cambiar tus procesos.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          ¿Qué tipo de negocios se benefician más?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" role="region">
+          <p>Cualquier negocio que mande presupuestos, gestione clientes o tenga procesos que se repiten: talleres, asesorías, clínicas, agencias, estudios de arquitectura, autónomos...</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          ¿Qué pasa si necesito cambiar algo después?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" role="region">
+          <p>Incluyo ajustes durante el primer mes sin coste adicional. Si más adelante tu negocio cambia y necesitas modificar algo, lo hablamos y te doy una solución rápida.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          ¿Cuánto cuesta?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" role="region">
+          <p>Depende de lo que quieras automatizar. Empieza con una conversación gratuita, sin compromiso, y te doy un precio claro antes de que decidas nada.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section" id="contacto">
-<div class="cta">
-<div class="section-tag" style="color:var(--blue-400)">Empezar</div>
-<h2>Cu&eacute;ntame qu&eacute; te quita tiempo y te digo c&oacute;mo lo resolvemos</h2>
-<p>Sin compromiso, sin letra peque&ntilde;a. Solo una conversaci&oacute;n para ver si te puedo ayudar.</p>
-<div class="cta-buttons">
-<a href="https://wa.me/34611059182?text=Hola%2C%20quiero%20saber%20c%C3%B3mo%20automatizar%20mi%20negocio" class="btn-wa">
-<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.33 0-4.48-.78-6.206-2.093l-.353-.29-3.659 1.226 1.226-3.659-.29-.353A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-Escr&iacute;beme por WhatsApp
-</a>
-<a href="mailto:mariodiezagudo@gmail.com?subject=Quiero%20automatizar%20mi%20negocio" class="btn-email">
-<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
-Enviar email
-</a>
-</div>
-</div>
+<section class="section cta-section" id="contacto">
+  <div class="container">
+    <div class="cta-box">
+      <span class="eyebrow reveal">Empezar</span>
+      <h2 class="reveal">Cuéntame qué te quita tiempo y te digo cómo lo resolvemos</h2>
+      <p class="reveal">Sin compromiso, sin letra pequeña. Solo una conversación para ver si te puedo ayudar.</p>
+      <div class="cta-btns reveal">
+        <a href="https://wa.me/34611059182?text=Hola%2C%20quiero%20saber%20c%C3%B3mo%20automatizar%20mi%20negocio" class="btn btn--wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.33 0-4.48-.78-6.206-2.093l-.353-.29-3.659 1.226 1.226-3.659-.29-.353A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          Escríbeme por WhatsApp
+        </a>
+        <a href="mailto:mariodiezagudo@gmail.com?subject=Quiero%20automatizar%20mi%20negocio" class="btn btn--outline-light">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
+          Enviar email
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
-<p>&copy; 2026 Negoziax. Automatizaci&oacute;n para negocios que no quieren perder el tiempo.</p>
+  <p>&copy; 2026 Negoziax &mdash; Automatización para negocios que no quieren perder el tiempo.</p>
 </footer>
 
+<a href="https://wa.me/34611059182?text=Hola%2C%20quiero%20saber%20c%C3%B3mo%20automatizar%20mi%20negocio"
+   class="wa-fab"
+   aria-label="Contactar por WhatsApp"
+   title="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.33 0-4.48-.78-6.206-2.093l-.353-.29-3.659 1.226 1.226-3.659-.29-.353A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+</a>
+
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+  const btn = item.querySelector('.faq-btn');
+  const body = item.querySelector('.faq-body');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    faqItems.forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      i.querySelector('.faq-body').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  });
+});
 </script>
+
 </body>
 </html>
