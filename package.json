@@ -1,0 +1,8 @@
+{
+  "name": "landing-negoziax",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve public -l 80"
+  }
+}
