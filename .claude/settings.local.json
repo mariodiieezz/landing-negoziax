@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(npx serve *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3000)",
+      "Bash(taskkill *)",
+      "Bash(python3 *)",
+      "Bash(py --version)",
+      "Bash(npm start *)",
+      "Bash(findstr :80)",
+      "Bash(findstr LISTENING)",
+      "Bash(tasklist *)"
+    ]
+  }
+}
