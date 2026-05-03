@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "start": "npx serve public -l 80"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }
