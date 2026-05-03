@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Negoziax</title>
 <meta name="description" content="Automatizamos las tareas repetitivas de tu negocio. Sin tecnicismos, sin complicaciones.">
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta property="og:title" content="Negoziax | Automatización con IA para tu negocio">
 <meta property="og:description" content="Montamos sistemas con IA que hacen el trabajo aburrido por ti. Cada proceso que automatizamos es tiempo que recuperas y dinero que dejas de perder.">
 <meta property="og:image" content="https://negoziax.com/logo.png">
 <meta property="og:url" content="https://negoziax.com">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500&display=swap" as="style">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -259,11 +262,9 @@ nav.scrolled{
 .hero::before{
   content:'';
   position:absolute;inset:0;
-  background-image:radial-gradient(circle at 1px 1px,var(--slate-300) 1px,transparent 0);
-  background-size:26px 26px;
-  opacity:.45;
-  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000 30%,transparent 80%);
-  mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000 30%,transparent 80%);
+  background-image:radial-gradient(circle,rgba(59,130,246,.06) 1px,transparent 1px);
+  background-size:24px 24px;
+  z-index:0;
   pointer-events:none;
 }
 .hero-inner{max-width:840px;margin:0 auto;position:relative;z-index:2}
@@ -307,17 +308,15 @@ nav.scrolled{
 }
 .pain-card{
   background:rgba(255,255,255,.7);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(15,23,42,.06);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.5);
   border-radius:22px;padding:2.5rem 2rem;
-  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s,border-color .4s;
+  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s;
 }
 .pain-card:hover{
   transform:translateY(-4px);
-  border-color:rgba(59,130,246,.25);
-  box-shadow:0 20px 50px -20px rgba(59,130,246,.25),
-             0 0 0 1px rgba(59,130,246,.1);
+  box-shadow:0 0 30px rgba(59,130,246,.08);
 }
 .pain-card-icon{
   width:48px;height:48px;border-radius:14px;
@@ -336,16 +335,15 @@ nav.scrolled{
 }
 .step{
   background:rgba(255,255,255,.7);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(15,23,42,.06);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.5);
   border-radius:22px;padding:2.5rem 2rem;
-  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s,border-color .4s;
+  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s;
 }
 .step:hover{
   transform:translateY(-4px);
-  border-color:rgba(59,130,246,.25);
-  box-shadow:0 20px 50px -20px rgba(59,130,246,.25);
+  box-shadow:0 0 30px rgba(59,130,246,.08);
 }
 .step-num{
   font-family:'Outfit',sans-serif;
@@ -366,16 +364,15 @@ nav.scrolled{
 .metric{
   text-align:center;padding:2.75rem 1rem;
   background:rgba(255,255,255,.7);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(15,23,42,.06);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.5);
   border-radius:22px;
-  transition:transform .4s,box-shadow .4s,border-color .4s;
+  transition:transform .4s,box-shadow .4s;
 }
 .metric:hover{
   transform:translateY(-4px);
-  border-color:rgba(59,130,246,.25);
-  box-shadow:0 20px 50px -20px rgba(59,130,246,.25);
+  box-shadow:0 0 30px rgba(59,130,246,.08);
 }
 .metric-num{
   font-family:'Outfit',sans-serif;
@@ -536,12 +533,11 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
 /* REVEAL */
 .reveal,.reveal-left,.reveal-right,.reveal-scale{
   opacity:0;
-  transition:opacity .8s cubic-bezier(.25,.1,.25,1),
-             transform .8s cubic-bezier(.25,.1,.25,1);
+  transition:opacity .6s ease,transform .6s ease;
 }
 .reveal{transform:translateY(24px)}
-.reveal-left{transform:translateX(-32px)}
-.reveal-right{transform:translateX(32px)}
+.reveal-left{transform:translateX(-30px)}
+.reveal-right{transform:translateX(30px)}
 .reveal-scale{transform:scale(.92)}
 .reveal.visible,.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible{
   opacity:1;transform:translate(0,0) scale(1);
@@ -565,7 +561,7 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
 .compare-list>:nth-child(5){transition-delay:.28s}
 
 /* RESPONSIVE */
-@media(max-width:900px){
+@media(max-width:768px){
   .nav-links{display:none}
   .nav-burger{display:inline-flex}
 }
@@ -586,6 +582,130 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
     opacity:1!important;transform:none!important;
   }
 }
+
+/* CALCULATOR */
+.calc-card{
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(15,23,42,.06);
+  border-radius:22px;
+  padding:2.5rem 2rem;
+  max-width:680px;
+  margin-top:3.5rem;
+}
+.calc-group{margin-bottom:2rem}
+.calc-lbl{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:.65rem;
+}
+.calc-lbl-text{font-size:.93rem;font-weight:500;color:var(--slate-700)}
+.calc-lbl-val{
+  font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:700;
+  color:var(--blue-500);min-width:2.5rem;text-align:right;
+}
+.calc-range{
+  width:100%;accent-color:#3b82f6;cursor:pointer;
+  appearance:none;-webkit-appearance:none;
+  height:6px;border-radius:4px;
+  background:var(--slate-200);outline:none;
+}
+.calc-range::-webkit-slider-thumb{
+  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+  background:#3b82f6;cursor:pointer;
+  box-shadow:0 0 0 3px rgba(59,130,246,.2);
+  transition:box-shadow .2s;
+}
+.calc-range::-webkit-slider-thumb:hover{box-shadow:0 0 0 5px rgba(59,130,246,.25)}
+.calc-result{
+  background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(96,165,250,.04));
+  border:1px solid rgba(59,130,246,.2);
+  border-radius:18px;
+  padding:2rem 1.5rem;
+  margin-top:2.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;text-align:center;
+}
+.calc-result-lbl{font-size:.85rem;color:var(--slate-500);margin-bottom:.35rem;line-height:1.4}
+.calc-result-num{
+  font-family:'Outfit',sans-serif;
+  font-size:2.6rem;font-weight:700;letter-spacing:-0.04em;
+  color:var(--blue-500);line-height:1;margin-bottom:.3rem;
+}
+.calc-result-unit{font-size:.85rem;color:var(--slate-600)}
+@media(max-width:520px){.calc-result{grid-template-columns:1fr}}
+
+/* DECORATIVE ORBS */
+.orb{position:absolute;border-radius:50%;pointer-events:none;will-change:transform;z-index:0}
+
+/* WAVE DIVIDERS */
+.wave-div{display:block;overflow:hidden;line-height:0;position:relative;z-index:1;margin:0;padding:0}
+.wave-div svg{display:block;width:100%;height:40px}
+
+/* GUARANTEE CARDS */
+.g-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.25rem;margin-top:3.5rem;
+}
+.g-card{
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:14px;
+  padding:2rem;
+  transition:box-shadow .4s cubic-bezier(.25,.1,.25,1),transform .4s;
+}
+.g-card:hover{
+  box-shadow:0 0 30px rgba(59,130,246,.08);
+  transform:translateY(-3px);
+}
+.g-card svg{display:block;margin-bottom:1.25rem;flex-shrink:0}
+.g-card h3{font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--slate-900);margin-bottom:.5rem}
+.g-card p{font-size:.93rem;color:var(--slate-600);line-height:1.7}
+
+/* MODAL */
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.8);
+  z-index:10000;
+  display:flex;align-items:center;justify-content:center;
+  padding:1.5rem;
+  opacity:0;pointer-events:none;
+  transition:opacity .25s ease;
+}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal-box{
+  background:#fff;
+  max-width:700px;width:100%;
+  max-height:85vh;
+  border-radius:14px;
+  padding:2rem;
+  overflow-y:auto;
+  position:relative;
+  transform:translateY(16px);
+  transition:transform .25s ease;
+}
+.modal-overlay.open .modal-box{transform:translateY(0)}
+.modal-close{
+  position:sticky;top:0;float:right;
+  background:none;border:none;cursor:pointer;
+  font-size:1.6rem;line-height:1;
+  color:var(--slate-400);padding:.1rem .4rem;
+  transition:color .2s;
+}
+.modal-close:hover{color:var(--slate-900)}
+.modal-box h2{font-size:1.35rem;margin-bottom:1.25rem;color:var(--slate-900);letter-spacing:-0.02em}
+.modal-box h3{font-size:.95rem;font-weight:600;margin:1.25rem 0 .4rem;color:var(--slate-800)}
+.modal-box p{font-size:.9rem;color:var(--slate-600);line-height:1.7;margin-bottom:.5rem}
+.modal-box ul{padding-left:1.25rem;margin-bottom:.75rem}
+.modal-box li{font-size:.9rem;color:var(--slate-600);line-height:1.7;margin-bottom:.2rem}
+.modal-link{
+  background:none;border:none;cursor:pointer;
+  color:var(--slate-500);font-size:.8rem;font-family:inherit;
+  text-decoration:underline;text-underline-offset:3px;
+  transition:color .2s;padding:0;
+}
+.modal-link:hover{color:var(--blue-500)}
 
 </style>
 </head>
@@ -637,6 +757,7 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
   </div>
 </section>
 
+<div class="wave-div" style="background:#fff" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C400,40 800,40 1200,0 L1200,40 L0,40 Z" fill="#f8fafc"/></svg></div>
 <section class="section section--alt" id="problema">
   <div class="container">
     <span class="eyebrow reveal">El problema</span>
@@ -649,14 +770,14 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
         <h3>Horas en tareas repetitivas</h3>
         <p>Copiar datos, rellenar plantillas, enviar emails uno a uno. Tiempo que no dedicas a conseguir clientes ni a hacer crecer tu negocio.</p>
       </article>
-      <article class="pain-card reveal">
+      <article class="pain-card reveal-right">
         <div class="pain-card-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
         <h3>Dinero que se escapa</h3>
         <p>Trabajo que no se ejecuta, procesos que se olvidan, clientes que se pierden porque nadie gestionó su caso a tiempo.</p>
       </article>
-      <article class="pain-card reveal-right">
+      <article class="pain-card reveal-left">
         <div class="pain-card-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
         </div>
@@ -667,7 +788,9 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
   </div>
 </section>
 
+<div class="wave-div" style="background:#f8fafc" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C400,0 800,0 1200,40 L1200,0 L0,0 Z" fill="#fff"/></svg></div>
 <section class="section" id="solucion">
+  <div class="orb" style="width:520px;height:520px;top:-80px;right:-160px;background:radial-gradient(circle,rgba(59,130,246,.05),transparent 65%)" aria-hidden="true"></div>
   <div class="container">
     <span class="eyebrow reveal">Cómo funciona</span>
     <h2 class="section-heading reveal">Automatizamos lo que te roba tiempo</h2>
@@ -692,21 +815,23 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
   </div>
 </section>
 
+<div class="wave-div" style="background:#fff" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C400,40 800,40 1200,0 L1200,40 L0,40 Z" fill="#f8fafc"/></svg></div>
 <section class="section section--alt" id="resultados">
+  <div class="orb" style="width:600px;height:600px;bottom:-160px;left:-180px;background:radial-gradient(circle,rgba(59,130,246,.04),transparent 65%)" aria-hidden="true"></div>
   <div class="container">
     <span class="eyebrow reveal">Resultados</span>
     <h2 class="section-heading reveal">Lo que ganas con la automatización</h2>
     <div class="metrics">
       <div class="metric reveal-scale">
-        <div class="metric-num">10x</div>
+        <div class="metric-num" data-counter data-target="10" data-suffix="x">10x</div>
         <p>Más rápido que a mano</p>
       </div>
       <div class="metric reveal-scale">
-        <div class="metric-num">0</div>
+        <div class="metric-num" data-counter data-target="0">0</div>
         <p>Errores humanos</p>
       </div>
       <div class="metric reveal-scale">
-        <div class="metric-num">24/7</div>
+        <div class="metric-num" data-counter data-target="24" data-suffix="/7">24/7</div>
         <p>Siempre activo</p>
       </div>
       <div class="metric reveal-scale">
@@ -717,6 +842,7 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
   </div>
 </section>
 
+<div class="wave-div" style="background:#f8fafc" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C400,0 800,0 1200,40 L1200,0 L0,0 Z" fill="#fff"/></svg></div>
 <section class="section" id="casos">
   <div class="container">
     <span class="eyebrow reveal">Ejemplo real</span>
@@ -805,7 +931,51 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
   </div>
 </section>
 
+<section class="section" id="calculadora">
+  <div class="container">
+    <span class="eyebrow reveal">Calculadora</span>
+    <h2 class="section-heading reveal">¿Cuánto tiempo estás perdiendo?</h2>
+    <div class="calc-card reveal">
+      <div class="calc-group">
+        <div class="calc-lbl">
+          <span class="calc-lbl-text">Horas semanales en tareas repetitivas</span>
+          <span class="calc-lbl-val" id="calcValHoras">10</span>
+        </div>
+        <input class="calc-range" type="range" id="calcHoras" min="1" max="40" value="10">
+      </div>
+      <div class="calc-group">
+        <div class="calc-lbl">
+          <span class="calc-lbl-text">Presupuestos que haces al mes</span>
+          <span class="calc-lbl-val" id="calcValPresup">20</span>
+        </div>
+        <input class="calc-range" type="range" id="calcPresup" min="1" max="100" value="20">
+      </div>
+      <div class="calc-group">
+        <div class="calc-lbl">
+          <span class="calc-lbl-text">Minutos por presupuesto</span>
+          <span class="calc-lbl-val" id="calcValMin">30</span>
+        </div>
+        <input class="calc-range" type="range" id="calcMin" min="5" max="120" value="30">
+      </div>
+      <div class="calc-result">
+        <div>
+          <div class="calc-result-lbl">Con Negoziax ahorrarías</div>
+          <div class="calc-result-num" id="calcResHoras">41</div>
+          <div class="calc-result-unit">horas al mes</div>
+        </div>
+        <div>
+          <div class="calc-result-lbl">Eso son</div>
+          <div class="calc-result-num" id="calcResDias">5.1</div>
+          <div class="calc-result-unit">días laborales que recuperas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-div" style="background:#fff" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C400,40 800,40 1200,0 L1200,40 L0,40 Z" fill="#f8fafc"/></svg></div>
 <section class="section section--alt" id="faq">
+  <div class="orb" style="width:460px;height:460px;top:-60px;right:-100px;background:radial-gradient(circle,rgba(59,130,246,.035),transparent 65%)" aria-hidden="true"></div>
   <div class="container">
     <span class="eyebrow reveal">Preguntas frecuentes</span>
     <h2 class="section-heading reveal">Lo que suele preguntar la gente</h2>
@@ -859,6 +1029,31 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
   </div>
 </section>
 
+<div class="wave-div" style="background:#f8fafc" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C400,0 800,0 1200,40 L1200,0 L0,0 Z" fill="#fff"/></svg></div>
+<section class="section" id="garantias">
+  <div class="container">
+    <span class="eyebrow reveal">Garantías</span>
+    <h2 class="section-heading reveal">Sin letra pequeña</h2>
+    <div class="g-grid">
+      <article class="g-card reveal">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <h3>Sin permanencia</h3>
+        <p>Si no te convence, te vas. Así de simple.</p>
+      </article>
+      <article class="g-card reveal">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1" fill="#3b82f6" stroke="none"/></svg>
+        <h3>Precio cerrado</h3>
+        <p>Te damos un precio antes de empezar. Sin sorpresas.</p>
+      </article>
+      <article class="g-card reveal">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <h3>Ajustes sin coste</h3>
+        <p>Si algo no encaja, lo adaptamos gratis.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section" id="contacto">
   <div class="container">
     <div class="cta-box">
@@ -872,7 +1067,21 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
 <footer>
   <span class="brand brand--footer"><span class="b-1">negoz</span><span class="b-2">ia</span><span class="b-3">x</span></span>
   <p>&copy; 2026 Negoziax</p>
+  <p style="margin-top:.75rem;font-size:.8rem">
+    <a href="mailto:contacto@negoziax.com" style="color:var(--slate-500);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='var(--slate-500)'">contacto@negoziax.com</a>
+    &nbsp;·&nbsp;
+    <button class="modal-link" data-modal="legal">Aviso legal</button>
+    &nbsp;·&nbsp;
+    <button class="modal-link" data-modal="privacidad">Política de privacidad</button>
+  </p>
 </footer>
+
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
 
 <a href="https://wa.me/34611059182?text=Hola%2C%20me%20interesa%20conocer%20vuestros%20servicios%20de%20automatizaci%C3%B3n."
    class="wa-fab"
@@ -906,7 +1115,7 @@ function animateCounter(el) {
   const target = parseFloat(el.dataset.target);
   const prefix = el.dataset.prefix || '';
   const suffix = el.dataset.suffix || '';
-  const duration = 1600;
+  const duration = 1500;
   const startTime = performance.now();
   function tick(now) {
     const progress = Math.min((now - startTime) / duration, 1);
@@ -987,8 +1196,118 @@ burger.addEventListener('click', () => {
 navOverlay.addEventListener('click', closeMobile);
 navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
 
-// Lightweight parallax for decorative shapes
+// Legal modals
+(function(){
+  var contents = {
+    legal: '<h2>Aviso Legal</h2>'
+      + '<h3>1. Datos identificativos</h3>'
+      + '<p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa:</p>'
+      + '<ul>'
+      + '<li><strong>Titular:</strong> [NOMBRE_COMPLETO]</li>'
+      + '<li><strong>NIF:</strong> [NIF]</li>'
+      + '<li><strong>Domicilio:</strong> [DIRECCIÓN]</li>'
+      + '<li><strong>Nombre comercial:</strong> Negoziax</li>'
+      + '<li><strong>Email:</strong> contacto@negoziax.com</li>'
+      + '</ul>'
+      + '<h3>2. Objeto y ámbito de aplicación</h3>'
+      + '<p>El presente Aviso Legal regula el acceso y uso del sitio web negoziax.com, titularidad de [NOMBRE_COMPLETO], cuya actividad consiste en la prestación de servicios de automatización empresarial mediante inteligencia artificial.</p>'
+      + '<h3>3. Condiciones de uso</h3>'
+      + '<p>El acceso al sitio web es gratuito y no requiere registro previo. El usuario se compromete a hacer un uso diligente del sitio y de sus contenidos, respetando la legislación vigente, las buenas costumbres y el orden público.</p>'
+      + '<h3>4. Propiedad intelectual e industrial</h3>'
+      + '<p>Todos los contenidos del sitio web —incluyendo textos, imágenes, diseño gráfico, código fuente y logotipos— son propiedad de [NOMBRE_COMPLETO] o de terceros que han autorizado su uso. Queda expresamente prohibida su reproducción, distribución, comunicación pública o transformación sin autorización escrita del titular.</p>'
+      + '<h3>5. Exclusión de responsabilidad</h3>'
+      + '<p>El titular no garantiza la disponibilidad y continuidad del funcionamiento del sitio web ni la ausencia de errores en sus contenidos. Queda excluida cualquier responsabilidad por daños y perjuicios derivados del uso del sitio o de la imposibilidad de acceso al mismo.</p>'
+      + '<h3>6. Enlaces a terceros</h3>'
+      + '<p>El sitio web puede contener enlaces a páginas de terceros. El titular no controla dichos sitios ni se hace responsable de sus contenidos o políticas de privacidad.</p>'
+      + '<h3>7. Legislación aplicable y jurisdicción</h3>'
+      + '<p>Las presentes condiciones se rigen por la legislación española. Para la resolución de cualquier controversia, las partes se someten a los juzgados y tribunales del domicilio del titular, con renuncia expresa a cualquier otro fuero que pudiera corresponderles.</p>',
+
+    privacidad: '<h2>Política de Privacidad</h2>'
+      + '<h3>1. Responsable del tratamiento</h3>'
+      + '<ul>'
+      + '<li><strong>Identidad:</strong> [NOMBRE_COMPLETO]</li>'
+      + '<li><strong>Nombre comercial:</strong> Negoziax</li>'
+      + '<li><strong>Email:</strong> contacto@negoziax.com</li>'
+      + '</ul>'
+      + '<h3>2. Datos que tratamos</h3>'
+      + '<p>Únicamente tratamos los datos personales que tú nos facilitas de forma voluntaria cuando te pones en contacto con nosotros a través de WhatsApp o email: nombre, número de teléfono o dirección de correo electrónico, y la información que incluyas en tu mensaje.</p>'
+      + '<p>No recogemos datos mediante formularios automatizados ni a través de cookies de seguimiento.</p>'
+      + '<h3>3. Finalidad del tratamiento</h3>'
+      + '<p>Los datos facilitados se utilizan exclusivamente para gestionar tu consulta y, si así lo solicitas, para ofrecerte información sobre nuestros servicios de automatización.</p>'
+      + '<h3>4. Base jurídica</h3>'
+      + '<p>El tratamiento se basa en el consentimiento que prestas de forma libre e inequívoca al dirigirte a nosotros. Puedes retirar dicho consentimiento en cualquier momento sin que ello afecte a la licitud del tratamiento previo.</p>'
+      + '<h3>5. Conservación de los datos</h3>'
+      + '<p>Conservamos tus datos durante el tiempo necesario para atender tu consulta y, como máximo, durante el plazo establecido por las obligaciones legales aplicables.</p>'
+      + '<h3>6. Cesión a terceros</h3>'
+      + '<p>No cedemos tus datos personales a terceros, salvo obligación legal expresa. No realizamos transferencias internacionales de datos.</p>'
+      + '<h3>7. Tus derechos (ARCO+)</h3>'
+      + '<p>Puedes ejercer en cualquier momento los derechos de acceso, rectificación, cancelación, oposición, limitación del tratamiento y portabilidad de tus datos escribiendo a <strong>contacto@negoziax.com</strong>. Si consideras que el tratamiento no se ajusta a la normativa vigente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>'
+  };
+
+  var overlay = document.getElementById('modalOverlay');
+  var contentEl = document.getElementById('modalContent');
+  var closeBtn = document.getElementById('modalClose');
+
+  function openModal(type) {
+    contentEl.innerHTML = contents[type];
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.modal-link').forEach(function(btn) {
+    btn.addEventListener('click', function() { openModal(btn.dataset.modal); });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+})();
+
+// Savings calculator
+(function(){
+  const slH=document.getElementById('calcHoras');
+  const slP=document.getElementById('calcPresup');
+  const slM=document.getElementById('calcMin');
+  const vH=document.getElementById('calcValHoras');
+  const vP=document.getElementById('calcValPresup');
+  const vM=document.getElementById('calcValMin');
+  const rH=document.getElementById('calcResHoras');
+  const rD=document.getElementById('calcResDias');
+
+  function animVal(el, to, decimals) {
+    if (el._raf) cancelAnimationFrame(el._raf);
+    const from = parseFloat(el.textContent) || 0;
+    const start = performance.now();
+    function step(now) {
+      const p = Math.min((now - start) / 350, 1);
+      const e = 1 - Math.pow(1 - p, 3);
+      const v = from + (to - from) * e;
+      el.textContent = decimals ? v.toFixed(1) : Math.round(v);
+      if (p < 1) el._raf = requestAnimationFrame(step);
+    }
+    el._raf = requestAnimationFrame(step);
+  }
+
+  function calc() {
+    const h=+slH.value, p=+slP.value, m=+slM.value;
+    vH.textContent=h; vP.textContent=p; vM.textContent=m;
+    const horas = (h * 4 * 0.8) + (p * m * 0.9 / 60);
+    animVal(rH, horas, false);
+    animVal(rD, horas / 8, true);
+  }
+
+  slH.addEventListener('input', calc);
+  slP.addEventListener('input', calc);
+  slM.addEventListener('input', calc);
+  calc();
+})();
+
+// Lightweight parallax for decorative shapes and orbs
 const shapes = document.querySelectorAll('.shape, .hex-deco');
+const orbs = document.querySelectorAll('.orb');
 let lastY = 0, ticking = false;
 window.addEventListener('scroll', () => {
   lastY = window.scrollY;
@@ -997,6 +1316,9 @@ window.addEventListener('scroll', () => {
       shapes.forEach((s, i) => {
         const factor = 0.04 + (i % 3) * 0.025;
         s.style.transform = `translate3d(0, ${lastY * factor}px, 0)`;
+      });
+      orbs.forEach(o => {
+        o.style.transform = `translate3d(0, ${lastY * 0.05}px, 0)`;
       });
       ticking = false;
     });
