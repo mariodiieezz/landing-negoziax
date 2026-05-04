@@ -222,7 +222,7 @@ nav.scrolled{
 
 /* LAYOUT */
 .container{max-width:1100px;margin:0 auto;padding:0 1.75rem;position:relative;z-index:1}
-.section{padding:7rem 1.75rem;position:relative;z-index:1}
+.section{padding:7rem 1.75rem;position:relative;z-index:1;overflow:hidden;isolation:isolate}
 .section--alt{
   background:linear-gradient(180deg,var(--slate-50) 0%,var(--white) 100%);
   border-radius:0 0 56px 56px;
@@ -296,8 +296,9 @@ nav.scrolled{
 }
 .hero-sub{
   font-size:1.2rem;color:var(--slate-600);line-height:1.7;
-  max-width:600px;margin:0 auto 3rem;
+  margin:0 auto 3rem;
   font-weight:400;
+  white-space:nowrap;
 }
 
 
@@ -310,13 +311,14 @@ nav.scrolled{
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.5);
+  border:1.5px solid #e2e8f0;
   border-radius:22px;padding:2.5rem 2rem;
-  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s;
+  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s,border-color .25s;
 }
 .pain-card:hover{
   transform:translateY(-4px);
   box-shadow:0 0 30px rgba(59,130,246,.08);
+  border-color:#93c5fd;
 }
 .pain-card-icon{
   width:48px;height:48px;border-radius:14px;
@@ -337,13 +339,14 @@ nav.scrolled{
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.5);
+  border:1.5px solid #e2e8f0;
   border-radius:22px;padding:2.5rem 2rem;
-  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s;
+  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s,border-color .25s;
 }
 .step:hover{
   transform:translateY(-4px);
   box-shadow:0 0 30px rgba(59,130,246,.08);
+  border-color:#93c5fd;
 }
 .step-num{
   font-family:'Outfit',sans-serif;
@@ -366,13 +369,14 @@ nav.scrolled{
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.5);
+  border:1.5px solid #e2e8f0;
   border-radius:22px;
-  transition:transform .4s,box-shadow .4s;
+  transition:transform .4s,box-shadow .4s,border-color .25s;
 }
 .metric:hover{
   transform:translateY(-4px);
   box-shadow:0 0 30px rgba(59,130,246,.08);
+  border-color:#93c5fd;
 }
 .metric-num{
   font-family:'Outfit',sans-serif;
@@ -392,16 +396,22 @@ nav.scrolled{
   gap:0;
   border-radius:24px;
   overflow:hidden;
-  border:1px solid rgba(15,23,42,.06);
   position:relative;
   background:var(--white);
 }
-.compare-side{padding:2.75rem 2rem}
+.compare-side{
+  padding:2.75rem 2rem;
+  border:1.5px solid transparent;
+}
 .compare-side--before{
   background:linear-gradient(180deg,rgba(239,68,68,.05) 0%,rgba(239,68,68,.09) 100%);
+  border-color:#fecaca;
+  border-right-width:0;
 }
 .compare-side--after{
   background:linear-gradient(180deg,rgba(59,130,246,.05) 0%,rgba(16,185,129,.09) 100%);
+  border-color:#bbf7d0;
+  border-left-width:0;
 }
 .compare-head{
   display:flex;align-items:center;gap:.6rem;
@@ -432,12 +442,14 @@ nav.scrolled{
 
 @media(max-width:780px){
   .compare{grid-template-columns:1fr}
+  .compare-side--before{border-right-width:1.5px}
+  .compare-side--after{border-left-width:1.5px}
 }
 
 /* FAQ */
 .faq-list{margin-top:3rem;max-width:780px}
 .faq-item{
-  border:1px solid rgba(15,23,42,.07);
+  border:1.5px solid #e2e8f0;
   border-radius:18px;
   margin-bottom:.75rem;
   background:rgba(255,255,255,.6);
@@ -446,9 +458,9 @@ nav.scrolled{
   overflow:hidden;
   transition:border-color .25s,box-shadow .25s;
 }
-.faq-item:hover{border-color:rgba(59,130,246,.2)}
+.faq-item:hover{border-color:#93c5fd}
 .faq-item.open{
-  border-color:rgba(59,130,246,.3);
+  border-color:#93c5fd;
   box-shadow:0 12px 36px -16px rgba(59,130,246,.2);
 }
 .faq-btn{
@@ -564,6 +576,7 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
 @media(max-width:768px){
   .nav-links{display:none}
   .nav-burger{display:inline-flex}
+  .hero-sub{white-space:normal;max-width:600px}
 }
 @media(max-width:680px){
   .section{padding:5rem 1.25rem}
@@ -588,12 +601,14 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(15,23,42,.06);
+  border:1.5px solid #e2e8f0;
   border-radius:22px;
   padding:2.5rem 2rem;
   max-width:680px;
   margin-top:3.5rem;
+  transition:border-color .25s,box-shadow .25s;
 }
+.calc-card:hover{border-color:#93c5fd;box-shadow:0 0 30px rgba(59,130,246,.08)}
 .calc-group{margin-bottom:2rem}
 .calc-lbl{
   display:flex;justify-content:space-between;align-items:baseline;
@@ -619,12 +634,14 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
 .calc-range::-webkit-slider-thumb:hover{box-shadow:0 0 0 5px rgba(59,130,246,.25)}
 .calc-result{
   background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(96,165,250,.04));
-  border:1px solid rgba(59,130,246,.2);
+  border:1.5px solid #e2e8f0;
   border-radius:18px;
   padding:2rem 1.5rem;
   margin-top:2.5rem;
   display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;text-align:center;
+  transition:border-color .25s,box-shadow .25s;
 }
+.calc-result:hover{border-color:#93c5fd;box-shadow:0 0 30px rgba(59,130,246,.08)}
 .calc-result-lbl{font-size:.85rem;color:var(--slate-500);margin-bottom:.35rem;line-height:1.4}
 .calc-result-num{
   font-family:'Outfit',sans-serif;
@@ -633,13 +650,6 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
 }
 .calc-result-unit{font-size:.85rem;color:var(--slate-600)}
 @media(max-width:520px){.calc-result{grid-template-columns:1fr}}
-
-/* DECORATIVE ORBS */
-.orb{position:absolute;border-radius:50%;pointer-events:none;will-change:transform;z-index:0}
-
-/* WAVE DIVIDERS */
-.wave-div{display:block;overflow:hidden;line-height:0;position:relative;z-index:1;margin:0;padding:0}
-.wave-div svg{display:block;width:100%;height:40px}
 
 /* GUARANTEE CARDS */
 .g-grid{
@@ -650,14 +660,15 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.5);
+  border:1.5px solid #e2e8f0;
   border-radius:14px;
   padding:2rem;
-  transition:box-shadow .4s cubic-bezier(.25,.1,.25,1),transform .4s;
+  transition:box-shadow .4s cubic-bezier(.25,.1,.25,1),transform .4s,border-color .25s;
 }
 .g-card:hover{
   box-shadow:0 0 30px rgba(59,130,246,.08);
   transform:translateY(-3px);
+  border-color:#93c5fd;
 }
 .g-card svg{display:block;margin-bottom:1.25rem;flex-shrink:0}
 .g-card h3{font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--slate-900);margin-bottom:.5rem}
@@ -752,75 +763,70 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
 
 <section class="hero">
   <div class="hero-inner">
-    <h1 class="reveal">Montamos sistemas con <span style="color:#3b82f6;text-shadow:0 0 20px rgba(59,130,246,0.25)">IA</span> que hacen el trabajo aburrido por ti.</h1>
-    <p class="hero-sub reveal">Cada proceso que automatizamos es <span style="color:#3b82f6;font-weight:600">tiempo</span> que recuperas y <span style="color:#3b82f6;font-weight:600">dinero</span> que dejas de perder.</p>
+    <h1 class="reveal">Automatizamos procesos de negocios con <span style="color:#3b82f6;text-shadow:0 0 20px rgba(59,130,246,0.25)">IA</span></h1>
+    <p class="hero-sub reveal">Automatiza tareas clave y deja de perder <span style="color:#3b82f6;font-weight:600">tiempo</span>, <span style="color:#3b82f6;font-weight:600">dinero</span> y <span style="color:#3b82f6;font-weight:600">clientes</span>.</p>
   </div>
 </section>
 
-<div class="wave-div" style="background:#fff" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C400,40 800,40 1200,0 L1200,40 L0,40 Z" fill="#f8fafc"/></svg></div>
 <section class="section section--alt" id="problema">
   <div class="container">
-    <span class="eyebrow reveal">El problema</span>
-    <h2 class="section-heading reveal">Cada día, tu negocio pierde tiempo y dinero en lo mismo</h2>
+    <span class="eyebrow reveal">Problema</span>
+    <h2 class="section-heading reveal">Tu empresa sigue dependiendo de procesos manuales</h2>
     <div class="pain-grid">
       <article class="pain-card reveal-left">
         <div class="pain-card-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
-        <h3>Horas en tareas repetitivas</h3>
-        <p>Copiar datos, rellenar plantillas, enviar emails uno a uno. Tiempo que no dedicas a conseguir clientes ni a hacer crecer tu negocio.</p>
+        <h3>Tiempo desaprovechado</h3>
+        <p>Introducir datos a mano, responder siempre los mismos emails, generar informes, pasar información de una herramienta a otra.</p>
       </article>
       <article class="pain-card reveal-right">
         <div class="pain-card-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
-        <h3>Dinero que se escapa</h3>
-        <p>Trabajo que no se ejecuta, procesos que se olvidan, clientes que se pierden porque nadie gestionó su caso a tiempo.</p>
+        <h3>Dinero perdido</h3>
+        <p>Si tu equipo dedica 10 horas semanales a tareas repetitivas, estás pagando un sueldo por algo que una automatización haría en segundos.</p>
       </article>
       <article class="pain-card reveal-left">
         <div class="pain-card-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
         </div>
-        <h3>Errores manuales</h3>
-        <p>Un dato mal copiado, un archivo sin adjuntar, un documento con el nombre equivocado. Cada error te hace quedar mal ante tu cliente.</p>
+        <h3>Clientes insatisfechos</h3>
+        <p>Una respuesta tarde, un error, un mal seguimiento. Con eso suficiente para elegir la competencia.</p>
       </article>
     </div>
   </div>
 </section>
 
-<div class="wave-div" style="background:#f8fafc" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C400,0 800,0 1200,40 L1200,0 L0,0 Z" fill="#fff"/></svg></div>
 <section class="section" id="solucion">
-  <div class="orb" style="width:520px;height:520px;top:-80px;right:-160px;background:radial-gradient(circle,rgba(59,130,246,.05),transparent 65%)" aria-hidden="true"></div>
   <div class="container">
-    <span class="eyebrow reveal">Cómo funciona</span>
-    <h2 class="section-heading reveal">Automatizamos lo que te roba tiempo</h2>
-    <p class="section-sub reveal">Sin tecnicismos, sin complicaciones. Trabajamos con las herramientas que ya tienes.</p>
+    <span class="eyebrow reveal">FUNCIONAMIENTO</span>
+    <h2 class="section-heading reveal">Lo hacemos en tres pasos</h2>
+    <p class="section-sub reveal">Analizamos lo que te frena y lo que puede mejorar tu negocio, no solo a solucionar problemas. Lo automatizamos y lo dejamos funcionando.</p>
     <div class="steps">
       <div class="step reveal-left">
         <div class="step-num">01</div>
         <h3>Hablamos</h3>
-        <p>Nos cuentas qué tareas te comen el día a día. Sin técnicos, sin jerga.</p>
+        <p>Nos cuentas cómo funciona tu negocio y qué tareas te quitan más tiempo o te gustaría mejorar.</p>
       </div>
       <div class="step reveal-scale">
         <div class="step-num">02</div>
-        <h3>Lo construimos</h3>
-        <p>Montamos la automatización a medida de tu negocio. Tú no tocas nada técnico.</p>
+        <h3>Construimos</h3>
+        <p>Diseñamos la automatización adaptada a tu negocio y a las herramientas que ya usas. Cada detalle se ajusta a cómo trabaja tu empresa.</p>
       </div>
       <div class="step reveal-right">
         <div class="step-num">03</div>
-        <h3>Funciona solo</h3>
-        <p>Desde el primer día tu negocio trabaja sin que estés encima. Y si algo cambia, lo ajustamos.</p>
+        <h3>Listo</h3>
+        <p>La automatización funciona sola desde el primer día. Si algo cambia o necesita ajustes, se adapta sin problemas.</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="wave-div" style="background:#fff" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C400,40 800,40 1200,0 L1200,40 L0,40 Z" fill="#f8fafc"/></svg></div>
 <section class="section section--alt" id="resultados">
-  <div class="orb" style="width:600px;height:600px;bottom:-160px;left:-180px;background:radial-gradient(circle,rgba(59,130,246,.04),transparent 65%)" aria-hidden="true"></div>
   <div class="container">
     <span class="eyebrow reveal">Resultados</span>
-    <h2 class="section-heading reveal">Lo que ganas con la automatización</h2>
+    <h2 class="section-heading reveal">Los beneficios que obtendrás con nuestros servicios</h2>
     <div class="metrics">
       <div class="metric reveal-scale">
         <div class="metric-num" data-counter data-target="10" data-suffix="x">10x</div>
@@ -835,26 +841,22 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
         <p>Siempre activo</p>
       </div>
       <div class="metric reveal-scale">
-        <div class="metric-num" data-counter data-target="80" data-prefix="+" data-suffix="%">+80%</div>
-        <p>Clientes cierran</p>
+        <div class="metric-num" data-counter data-target="70" data-prefix="+" data-suffix="%">+70%</div>
+        <p>Dedicado al negocio</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="wave-div" style="background:#f8fafc" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C400,0 800,0 1200,40 L1200,0 L0,0 Z" fill="#fff"/></svg></div>
 <section class="section" id="casos">
   <div class="container">
-    <span class="eyebrow reveal">Ejemplo real</span>
-    <h2 class="section-heading reveal">Antes vs ahora: el día a día cambia</h2>
-    <p class="section-sub reveal">Lo mismo que antes te quitaba la mañana, ahora se hace solo y mejor.</p>
+    <span class="eyebrow reveal">Comparativa</span>
+    <h2 class="section-heading reveal">Antes vs Ahora</h2>
+    <p class="section-sub reveal">El día a día, lo mismo que antes te quitaba gran parte de tu jornada, ahora se hace solo y con mejores resultados.</p>
     <div class="compare-wrap reveal-scale">
       <div class="compare">
         <div class="compare-side compare-side--before">
-          <div class="compare-head compare-head--before">
-            <span class="dot"></span>
-            <span>Antes — sin automatización</span>
-          </div>
+          <p style="font-weight:700;font-size:1rem;color:#b91c1c;margin-bottom:.75rem">Antes</p>
           <ul class="compare-list">
             <li class="compare-item reveal-left">
               <span class="compare-icon compare-icon--bad">
@@ -864,7 +866,7 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
             </li>
             <li class="compare-item reveal-left">
               <span class="compare-icon compare-icon--bad">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="7"/><path d="M12 9v4l2 2M12 3v2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
               </span>
               Horas perdidas en cada tarea
             </li>
@@ -889,14 +891,11 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
           </ul>
         </div>
         <div class="compare-side compare-side--after">
-          <div class="compare-head compare-head--after">
-            <span class="dot"></span>
-            <span>Ahora — con Negoziax</span>
-          </div>
+          <p style="font-weight:700;font-size:1rem;color:#16a34a;margin-bottom:.75rem">Ahora</p>
           <ul class="compare-list">
             <li class="compare-item reveal-right">
               <span class="compare-icon compare-icon--good">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
               </span>
               Procesos automatizados con IA
             </li>
@@ -933,49 +932,51 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
 
 <section class="section" id="calculadora">
   <div class="container">
-    <span class="eyebrow reveal">Calculadora</span>
-    <h2 class="section-heading reveal">¿Cuánto tiempo estás perdiendo?</h2>
+    <span class="eyebrow reveal">Estimación</span>
+    <h2 class="section-heading reveal">¿Cuánto te cuesta seguir haciéndolo a mano?</h2>
     <div class="calc-card reveal">
       <div class="calc-group">
         <div class="calc-lbl">
           <span class="calc-lbl-text">Horas semanales en tareas repetitivas</span>
-          <span class="calc-lbl-val" id="calcValHoras">10</span>
+          <span class="calc-lbl-val" id="calcValHoras">10 horas</span>
         </div>
         <input class="calc-range" type="range" id="calcHoras" min="1" max="40" value="10">
       </div>
       <div class="calc-group">
         <div class="calc-lbl">
-          <span class="calc-lbl-text">Presupuestos que haces al mes</span>
-          <span class="calc-lbl-val" id="calcValPresup">20</span>
+          <span class="calc-lbl-text">Empleados dedicados a esas tareas</span>
+          <span class="calc-lbl-val" id="calcValEmpleados">2 empleados</span>
         </div>
-        <input class="calc-range" type="range" id="calcPresup" min="1" max="100" value="20">
+        <input class="calc-range" type="range" id="calcEmpleados" min="1" max="20" value="2">
       </div>
       <div class="calc-group">
         <div class="calc-lbl">
-          <span class="calc-lbl-text">Minutos por presupuesto</span>
-          <span class="calc-lbl-val" id="calcValMin">30</span>
+          <span class="calc-lbl-text">Coste por hora de tu equipo</span>
+          <span class="calc-lbl-val" id="calcValCoste">20 €/h</span>
         </div>
-        <input class="calc-range" type="range" id="calcMin" min="5" max="120" value="30">
+        <input class="calc-range" type="range" id="calcCoste" min="10" max="60" value="20">
       </div>
       <div class="calc-result">
         <div>
           <div class="calc-result-lbl">Con Negoziax ahorrarías</div>
-          <div class="calc-result-num" id="calcResHoras">41</div>
-          <div class="calc-result-unit">horas al mes</div>
+          <div style="display:flex;align-items:baseline;justify-content:center;gap:.4rem">
+            <div class="calc-result-num" id="calcResHoras">64</div>
+            <div class="calc-result-unit">horas/mes</div>
+          </div>
         </div>
         <div>
-          <div class="calc-result-lbl">Eso son</div>
-          <div class="calc-result-num" id="calcResDias">5.1</div>
-          <div class="calc-result-unit">días laborales que recuperas</div>
+          <div class="calc-result-lbl">Y también</div>
+          <div style="display:flex;align-items:baseline;justify-content:center;gap:.4rem">
+            <div class="calc-result-num" id="calcResDinero">1.280</div>
+            <div class="calc-result-unit">€/mes</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="wave-div" style="background:#fff" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C400,40 800,40 1200,0 L1200,40 L0,40 Z" fill="#f8fafc"/></svg></div>
 <section class="section section--alt" id="faq">
-  <div class="orb" style="width:460px;height:460px;top:-60px;right:-100px;background:radial-gradient(circle,rgba(59,130,246,.035),transparent 65%)" aria-hidden="true"></div>
   <div class="container">
     <span class="eyebrow reveal">Preguntas frecuentes</span>
     <h2 class="section-heading reveal">Lo que suele preguntar la gente</h2>
@@ -1029,7 +1030,6 @@ footer .brand--footer{display:block;margin-bottom:.6rem}
   </div>
 </section>
 
-<div class="wave-div" style="background:#f8fafc" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C400,0 800,0 1200,40 L1200,0 L0,0 Z" fill="#fff"/></svg></div>
 <section class="section" id="garantias">
   <div class="container">
     <span class="eyebrow reveal">Garantías</span>
@@ -1269,45 +1269,45 @@ navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMo
 // Savings calculator
 (function(){
   const slH=document.getElementById('calcHoras');
-  const slP=document.getElementById('calcPresup');
-  const slM=document.getElementById('calcMin');
+  const slE=document.getElementById('calcEmpleados');
+  const slC=document.getElementById('calcCoste');
   const vH=document.getElementById('calcValHoras');
-  const vP=document.getElementById('calcValPresup');
-  const vM=document.getElementById('calcValMin');
+  const vE=document.getElementById('calcValEmpleados');
+  const vC=document.getElementById('calcValCoste');
   const rH=document.getElementById('calcResHoras');
-  const rD=document.getElementById('calcResDias');
+  const rD=document.getElementById('calcResDinero');
 
-  function animVal(el, to, decimals) {
+  function animVal(el, to, formatted) {
     if (el._raf) cancelAnimationFrame(el._raf);
-    const from = parseFloat(el.textContent) || 0;
+    const from = parseFloat(el.textContent.replace(/\./g,'')) || 0;
     const start = performance.now();
     function step(now) {
       const p = Math.min((now - start) / 350, 1);
       const e = 1 - Math.pow(1 - p, 3);
-      const v = from + (to - from) * e;
-      el.textContent = decimals ? v.toFixed(1) : Math.round(v);
+      const v = Math.round(from + (to - from) * e);
+      el.textContent = formatted ? v.toLocaleString('es-ES') : v;
       if (p < 1) el._raf = requestAnimationFrame(step);
     }
     el._raf = requestAnimationFrame(step);
   }
 
   function calc() {
-    const h=+slH.value, p=+slP.value, m=+slM.value;
-    vH.textContent=h; vP.textContent=p; vM.textContent=m;
-    const horas = (h * 4 * 0.8) + (p * m * 0.9 / 60);
-    animVal(rH, horas, false);
-    animVal(rD, horas / 8, true);
+    const h=+slH.value, e=+slE.value, c=+slC.value;
+    vH.textContent=h+' horas'; vE.textContent=e+' empleados'; vC.textContent=c+' €/h';
+    const horas_mes = h * e * 4 * 0.8;
+    const dinero = horas_mes * c;
+    animVal(rH, horas_mes, false);
+    animVal(rD, dinero, true);
   }
 
   slH.addEventListener('input', calc);
-  slP.addEventListener('input', calc);
-  slM.addEventListener('input', calc);
+  slE.addEventListener('input', calc);
+  slC.addEventListener('input', calc);
   calc();
 })();
 
 // Lightweight parallax for decorative shapes and orbs
 const shapes = document.querySelectorAll('.shape, .hex-deco');
-const orbs = document.querySelectorAll('.orb');
 let lastY = 0, ticking = false;
 window.addEventListener('scroll', () => {
   lastY = window.scrollY;
@@ -1316,9 +1316,6 @@ window.addEventListener('scroll', () => {
       shapes.forEach((s, i) => {
         const factor = 0.04 + (i % 3) * 0.025;
         s.style.transform = `translate3d(0, ${lastY * factor}px, 0)`;
-      });
-      orbs.forEach(o => {
-        o.style.transform = `translate3d(0, ${lastY * 0.05}px, 0)`;
       });
       ticking = false;
     });

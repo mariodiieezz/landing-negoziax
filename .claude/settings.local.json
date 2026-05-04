@@ -20,7 +20,8 @@
       "Bash(Start-Sleep -Seconds 3)",
       "Bash(Get-Content \"C:\\\\Users\\\\MARIOD~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-mario-d-ez-proyectos-landing-negoziax\\\\e86fb548-0862-4725-a080-d0b9b9e4d790\\\\tasks\\\\b0yco15fx.output\" -Tail 20)",
       "PowerShell(Get-NetTCPConnection *)",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\MARIOD~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-mario-d-ez-proyectos-landing-negoziax\\\\cbd4da04-581a-47de-a97d-2592d09a39ca\\\\tasks\\\\bj1wrpbx0.output\")"
     ]
   }
 }
