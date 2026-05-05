@@ -227,6 +227,7 @@ nav.scrolled{
   background:linear-gradient(180deg,var(--slate-50) 0%,var(--white) 100%);
   border-radius:0 0 56px 56px;
 }
+#solucion,#calculadora{padding:3.15rem 1.75rem}
 
 /* TYPOGRAPHY HELPERS */
 .eyebrow{
@@ -565,15 +566,16 @@ footer{
 /* WA FAB */
 .wa-fab{
   position:fixed;bottom:1.75rem;right:1.75rem;
-  width:60px;height:60px;border-radius:50%;
+  width:auto;height:60px;border-radius:30px;
   background:var(--green-600);color:#fff;
   display:flex;align-items:center;justify-content:center;
+  gap:.5rem;padding:0 1.25rem;
   box-shadow:0 10px 30px -8px rgba(22,163,74,.45),0 4px 12px rgba(0,0,0,.12);
   z-index:200;transition:transform .25s cubic-bezier(.25,.1,.25,1),box-shadow .25s;
-  text-decoration:none;
+  text-decoration:none;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;
 }
 .wa-fab:hover{
-  transform:scale(1.08);
+  transform:scale(1.05);
   box-shadow:0 14px 38px -8px rgba(22,163,74,.55),0 6px 16px rgba(0,0,0,.15);
 }
 
@@ -588,6 +590,17 @@ footer{
 .reveal-scale{transform:scale(.92)}
 .reveal.visible,.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible{
   opacity:1;transform:translate(0,0) scale(1);
+}
+
+/* SECTION ANIMATIONS */
+.section-animate{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.section-animate.visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .hero-inner>.reveal:nth-child(1){transition-delay:.06s}
@@ -830,7 +843,7 @@ footer{
   </div>
 </section>
 
-<section class="section section--alt" id="problema">
+<section class="section section--alt section-animate" id="problema">
   <div class="container">
     <span class="eyebrow reveal">Problema</span>
     <h2 class="section-heading reveal">Tu empresa sigue dependiendo de procesos manuales</h2>
@@ -860,7 +873,7 @@ footer{
   </div>
 </section>
 
-<section class="section" id="solucion">
+<section class="section section-animate" id="solucion">
   <div class="container">
     <span class="eyebrow reveal">FUNCIONAMIENTO</span>
     <h2 class="section-heading reveal">Lo hacemos en tres pasos</h2>
@@ -885,7 +898,7 @@ footer{
   </div>
 </section>
 
-<section class="section section--alt" id="resultados">
+<section class="section section--alt section-animate" id="resultados">
   <div class="container">
     <span class="eyebrow reveal">Resultados</span>
     <h2 class="section-heading reveal">Los beneficios que obtendrás con nuestros servicios</h2>
@@ -910,7 +923,7 @@ footer{
   </div>
 </section>
 
-<section class="section" id="casos">
+<section class="section section-animate" id="casos">
   <div class="container">
     <span class="eyebrow reveal">Comparativa</span>
     <h2 class="section-heading reveal">Antes vs Ahora</h2>
@@ -992,7 +1005,7 @@ footer{
   </div>
 </section>
 
-<section class="section" id="calculadora">
+<section class="section section-animate" id="calculadora">
   <div class="container">
     <span class="eyebrow reveal">Estimación</span>
     <h2 class="section-heading reveal">¿Cuánto te cuesta seguir haciéndolo a mano?</h2>
@@ -1038,7 +1051,7 @@ footer{
   </div>
 </section>
 
-<section class="section" id="sobre-mi">
+<section class="section section-animate" id="sobre-mi">
   <div class="container">
     <span class="eyebrow reveal">Sobre mí</span>
     <h2 class="section-heading reveal">Sobre mí</h2>
@@ -1048,13 +1061,14 @@ footer{
         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e2e8f0'/%3E%3C/svg%3E" alt="Foto">
       </div>
       <div class="about-text">
+        <h3 style="font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;color:var(--slate-900);margin-bottom:1rem">Mario Díez</h3>
         <p>A los 18 años me metí en el mundo de la IA sin saber muy bien hasta dónde llegaría. Con 19 entré en la carrera de Ciencia de Datos e IA, pero me di cuenta de que el enfoque académico no era lo mío: demasiada programación, pocas herramientas aplicables al mundo real. Así que lo dejé, y aprendí a mi manera. Con 20 años ya estoy construyendo sistemas de automatización para empresas.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="faq">
+<section class="section section--alt section-animate" id="faq">
   <div class="container">
     <span class="eyebrow reveal">FAQ</span>
     <h2 class="section-heading reveal">Lo que suele preguntar la gente</h2>
@@ -1154,6 +1168,18 @@ const revealObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.12 });
 revealEls.forEach(el => revealObserver.observe(el));
+
+// Section scroll animations
+const sectionEls = document.querySelectorAll('.section-animate');
+const sectionAnimateObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      sectionAnimateObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+sectionEls.forEach(el => sectionAnimateObserver.observe(el));
 
 // Counter animation for metrics
 const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
