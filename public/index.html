@@ -256,14 +256,45 @@ nav.scrolled{
   padding:9rem 1.75rem 6rem;
   text-align:center;
   position:relative;
-  background:var(--white);
+  background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(239,246,255,0.5) 100%);
   overflow:hidden;
 }
 .hero::before{
   content:'';
   position:absolute;inset:0;
-  background-image:radial-gradient(circle,rgba(59,130,246,.06) 1px,transparent 1px);
-  background-size:24px 24px;
+  background-image:radial-gradient(circle,rgba(59,130,246,.04) 1px,transparent 1px);
+  background-size:32px 32px;
+  z-index:0;
+  pointer-events:none;
+}
+.hero-blob-1{
+  position:absolute;
+  width:500px;height:500px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(96,165,250,.08),transparent 70%);
+  top:-15%;right:-10%;
+  filter:blur(60px);
+  z-index:0;
+  pointer-events:none;
+}
+.hero-blob-2{
+  position:absolute;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(59,130,246,.06),transparent 70%);
+  bottom:-10%;left:-8%;
+  filter:blur(50px);
+  z-index:0;
+  pointer-events:none;
+}
+.hero-blob-3{
+  position:absolute;
+  width:300px;height:300px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(147,197,253,.05),transparent 70%);
+  top:40%;left:50%;
+  transform:translate(-50%,-50%);
+  filter:blur(40px);
   z-index:0;
   pointer-events:none;
 }
@@ -722,6 +753,34 @@ footer{
 }
 .modal-link:hover{color:var(--blue-500)}
 
+/* ABOUT ME */
+.about-wrap{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:2.5rem;
+  margin-top:3.5rem;
+  align-items:start;
+}
+.about-photo{
+  width:200px;height:200px;
+  border-radius:18px;
+  background:var(--slate-200);
+  overflow:hidden;
+  flex-shrink:0;
+}
+.about-photo img{
+  width:100%;height:100%;
+  object-fit:cover;
+}
+.about-text p{
+  font-size:1rem;color:var(--slate-600);
+  line-height:1.8;
+}
+@media(max-width:680px){
+  .about-wrap{grid-template-columns:1fr;gap:1.5rem}
+  .about-photo{width:160px;height:160px;margin:0 auto}
+}
+
 </style>
 </head>
 <body>
@@ -762,6 +821,9 @@ footer{
 </aside>
 
 <section class="hero">
+  <div class="hero-blob-1" aria-hidden="true"></div>
+  <div class="hero-blob-2" aria-hidden="true"></div>
+  <div class="hero-blob-3" aria-hidden="true"></div>
   <div class="hero-inner">
     <h1 class="reveal">Automatizamos procesos de negocios con <span style="color:#3b82f6;text-shadow:0 0 20px rgba(59,130,246,0.25)">IA</span></h1>
     <p class="hero-sub reveal">Automatiza tareas clave y deja de perder <span style="color:#3b82f6;font-weight:600">tiempo</span>, <span style="color:#3b82f6;font-weight:600">dinero</span> y <span style="color:#3b82f6;font-weight:600">clientes</span>.</p>
@@ -842,7 +904,7 @@ footer{
       </div>
       <div class="metric reveal-scale">
         <div class="metric-num" data-counter data-target="70" data-prefix="+" data-suffix="%">+70%</div>
-        <p>Dedicado al negocio</p>
+        <p>Tiempo recuperado</p>
       </div>
     </div>
   </div>
@@ -958,7 +1020,7 @@ footer{
       </div>
       <div class="calc-result">
         <div>
-          <div class="calc-result-lbl">Con Negoziax ahorrarías</div>
+          <div class="calc-result-lbl">Estás dejando ir</div>
           <div style="display:flex;align-items:baseline;justify-content:center;gap:.4rem">
             <div class="calc-result-num" id="calcResHoras">64</div>
             <div class="calc-result-unit">horas/mes</div>
@@ -976,9 +1038,25 @@ footer{
   </div>
 </section>
 
+<section class="section" id="sobre-mi">
+  <div class="container">
+    <span class="eyebrow reveal">Sobre mí</span>
+    <h2 class="section-heading reveal">Sobre mí</h2>
+    <div class="about-wrap reveal">
+      <div class="about-photo">
+        <!-- Reemplazar src con foto real -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e2e8f0'/%3E%3C/svg%3E" alt="Foto">
+      </div>
+      <div class="about-text">
+        <p>A los 18 años me metí en el mundo de la IA sin saber muy bien hasta dónde llegaría. Con 19 entré en la carrera de Ciencia de Datos e IA, pero me di cuenta de que el enfoque académico no era lo mío: demasiada programación, pocas herramientas aplicables al mundo real. Así que lo dejé, y aprendí a mi manera. Con 20 años ya estoy construyendo sistemas de automatización para empresas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--alt" id="faq">
   <div class="container">
-    <span class="eyebrow reveal">Preguntas frecuentes</span>
+    <span class="eyebrow reveal">FAQ</span>
     <h2 class="section-heading reveal">Lo que suele preguntar la gente</h2>
     <div class="faq-list reveal">
       <div class="faq-item">
@@ -992,20 +1070,20 @@ footer{
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">
-          ¿Tengo que cambiar las herramientas que uso ahora?
+          ¿Tengo que cambiar cómo trabajo ahora?
           <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-body" role="region">
-          <p>No. Trabajamos con lo que ya tienes: tu correo, tu CRM, tu Excel, tu WhatsApp Business. No tienes que aprender ninguna herramienta nueva ni cambiar tus procesos.</p>
+          <p>En la mayoría de casos trabajamos con lo que ya tienes. Si en algún momento necesitas incorporar algo nuevo, te lo explicamos paso a paso. El objetivo es que todo sea sencillo para ti.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">
-          ¿Qué tipo de negocios se benefician más?
+          ¿Esto sirve para mi tipo de negocio?
           <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-body" role="region">
-          <p>Cualquier negocio que tenga procesos repetitivos o trabajo manual que se repite: talleres, asesorías, clínicas, agencias, estudios de arquitectura, autónomos...</p>
+          <p>No hay un perfil concreto. Hay negocios de todo tipo que han ganado tiempo y reducido costes.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -1014,16 +1092,7 @@ footer{
           <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-body" role="region">
-          <p>Lo ajustamos sin coste. El sistema se adapta a tu negocio, no al revés.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
-          ¿Cuánto cuesta?
-          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-body" role="region">
-          <p>Depende de lo que quieras automatizar. Empieza con una conversación gratuita, sin compromiso, y te damos un precio claro antes de que decidas nada.</p>
+          <p>Cualquier cambio o modificación se puede hacer en cualquier momento.</p>
         </div>
       </div>
     </div>
@@ -1060,7 +1129,7 @@ footer{
   </div>
 </div>
 
-<a href="https://wa.me/34611059182?text=Hola%2C%20me%20interesa%20conocer%20vuestros%20servicios%20de%20automatizaci%C3%B3n."
+<a href="https://wa.me/34611059182?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20vuestros%20servicios."
    class="wa-fab"
    aria-label="Contactar por WhatsApp"
    title="WhatsApp">
