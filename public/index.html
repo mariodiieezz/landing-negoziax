@@ -231,13 +231,13 @@ nav.scrolled{
 .brand--footer{font-size:1.5rem}
 
 /* LAYOUT */
-.container{max-width:1100px;margin:0 auto;padding:0 1.75rem;position:relative;z-index:1}
-.section{padding:7rem 1.75rem;position:relative;z-index:1;overflow:hidden;isolation:isolate}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+.section{padding:6rem 2rem;position:relative;z-index:1;overflow:hidden;isolation:isolate}
 .section--alt{
   background:linear-gradient(180deg,var(--slate-50) 0%,var(--white) 100%);
   border-radius:0 0 56px 56px;
 }
-#solucion,#calculadora{padding:3.15rem 1.75rem}
+#solucion,#calculadora{padding:3rem 2rem}
 
 /* TYPOGRAPHY HELPERS */
 .eyebrow{
@@ -347,7 +347,7 @@ nav.scrolled{
 /* GLASS CARDS */
 .pain-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.25rem;margin-top:3.5rem;
+  gap:1.5rem;margin-top:3rem;
 }
 .pain-card{
   background:rgba(255,255,255,.7);
@@ -375,7 +375,7 @@ nav.scrolled{
 /* STEPS */
 .steps{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:1.25rem;margin-top:3.5rem;
+  gap:1.5rem;margin-top:3rem;
 }
 .step{
   background:rgba(255,255,255,.7);
@@ -408,8 +408,8 @@ nav.scrolled{
   margin-bottom:2rem;letter-spacing:-0.01em;
 }
 .tools-grid{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;
-  max-width:900px;margin:0 auto;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;
+  max-width:800px;margin:0 auto;
 }
 .tool-item{
   display:flex;flex-direction:column;align-items:center;gap:.5rem;
@@ -435,7 +435,7 @@ nav.scrolled{
 /* METRICS */
 .metrics{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:1.25rem;margin-top:3.5rem;
+  gap:1.5rem;margin-top:3rem;
 }
 .metric{
   text-align:center;padding:2.75rem 1rem;
@@ -691,6 +691,15 @@ footer{
 .compare-list>:nth-child(4){transition-delay:.21s}
 .compare-list>:nth-child(5){transition-delay:.28s}
 
+/* WIDE SCREENS - constrain layout */
+@media(min-width:1400px){
+  .container{max-width:1140px}
+  .hero-inner{max-width:780px}
+  .pain-grid{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .metrics{grid-template-columns:repeat(4,1fr)}
+}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .nav-links{display:none}
@@ -724,7 +733,7 @@ footer{
   border-radius:22px;
   padding:2.5rem 2rem;
   max-width:680px;
-  margin-top:3.5rem;
+  margin-top:3rem;
   transition:border-color .25s,box-shadow .25s;
 }
 .calc-card:hover{border-color:#93c5fd;box-shadow:0 0 30px rgba(59,130,246,.08)}
@@ -773,7 +782,7 @@ footer{
 /* GUARANTEE CARDS */
 .g-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1.25rem;margin-top:3.5rem;
+  gap:1.5rem;margin-top:3rem;
 }
 .g-card{
   background:rgba(255,255,255,.7);
@@ -841,8 +850,8 @@ footer{
 .about-wrap{
   display:grid;
   grid-template-columns:200px 1fr;
-  gap:2.5rem;
-  margin-top:3.5rem;
+  gap:2rem;
+  margin-top:3rem;
   align-items:start;
 }
 .about-photo{
@@ -1221,24 +1230,15 @@ footer{
 </section>
 
 <footer>
-  <span class="brand brand--footer"><span class="b-1">negoz</span><span class="b-2">ia</span><span class="b-3">x</span></span>
-  <div class="footer-meta">
-    <span>&copy; 2026 Negoziax</span>
-    <span>·</span>
-    <a href="mailto:contacto@negoziax.com" style="color:var(--slate-400);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='var(--slate-400)'">contacto@negoziax.com</a>
-    <span>·</span>
-    <button class="modal-link" data-modal="legal">Aviso legal</button>
-    <span>·</span>
-    <button class="modal-link" data-modal="privacidad">Política de privacidad</button>
+  <div class="container">
+    <span class="brand brand--footer"><span class="b-1">negoz</span><span class="b-2">ia</span><span class="b-3">x</span></span>
+    <div class="footer-meta">
+      <span>&copy; 2026 Negoziax</span>
+      <span>·</span>
+      <a href="mailto:contacto@negoziax.com" style="color:var(--slate-400);text-decoration:underline;text-underline-offset:3px;transition:color .2s" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='var(--slate-400)'">contacto@negoziax.com</a>
+    </div>
   </div>
 </footer>
-
-<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-box" id="modalBox">
-    <button class="modal-close" id="modalClose" aria-label="Cerrar">&times;</button>
-    <div id="modalContent"></div>
-  </div>
-</div>
 
 <a href="https://wa.me/34611059182?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20vuestros%20servicios."
    class="wa-fab"
@@ -1396,76 +1396,6 @@ burger.addEventListener('click', () => {
 });
 navOverlay.addEventListener('click', closeMobile);
 navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
-
-// Legal modals
-(function(){
-  var contents = {
-    legal: '<h2>Aviso Legal</h2>'
-      + '<h3>1. Datos identificativos</h3>'
-      + '<p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa:</p>'
-      + '<ul>'
-      + '<li><strong>Titular:</strong> [NOMBRE_COMPLETO]</li>'
-      + '<li><strong>NIF:</strong> [NIF]</li>'
-      + '<li><strong>Domicilio:</strong> [DIRECCIÓN]</li>'
-      + '<li><strong>Nombre comercial:</strong> Negoziax</li>'
-      + '<li><strong>Email:</strong> contacto@negoziax.com</li>'
-      + '</ul>'
-      + '<h3>2. Objeto y ámbito de aplicación</h3>'
-      + '<p>El presente Aviso Legal regula el acceso y uso del sitio web negoziax.com, titularidad de [NOMBRE_COMPLETO], cuya actividad consiste en la prestación de servicios de automatización empresarial mediante inteligencia artificial.</p>'
-      + '<h3>3. Condiciones de uso</h3>'
-      + '<p>El acceso al sitio web es gratuito y no requiere registro previo. El usuario se compromete a hacer un uso diligente del sitio y de sus contenidos, respetando la legislación vigente, las buenas costumbres y el orden público.</p>'
-      + '<h3>4. Propiedad intelectual e industrial</h3>'
-      + '<p>Todos los contenidos del sitio web —incluyendo textos, imágenes, diseño gráfico, código fuente y logotipos— son propiedad de [NOMBRE_COMPLETO] o de terceros que han autorizado su uso. Queda expresamente prohibida su reproducción, distribución, comunicación pública o transformación sin autorización escrita del titular.</p>'
-      + '<h3>5. Exclusión de responsabilidad</h3>'
-      + '<p>El titular no garantiza la disponibilidad y continuidad del funcionamiento del sitio web ni la ausencia de errores en sus contenidos. Queda excluida cualquier responsabilidad por daños y perjuicios derivados del uso del sitio o de la imposibilidad de acceso al mismo.</p>'
-      + '<h3>6. Enlaces a terceros</h3>'
-      + '<p>El sitio web puede contener enlaces a páginas de terceros. El titular no controla dichos sitios ni se hace responsable de sus contenidos o políticas de privacidad.</p>'
-      + '<h3>7. Legislación aplicable y jurisdicción</h3>'
-      + '<p>Las presentes condiciones se rigen por la legislación española. Para la resolución de cualquier controversia, las partes se someten a los juzgados y tribunales del domicilio del titular, con renuncia expresa a cualquier otro fuero que pudiera corresponderles.</p>',
-
-    privacidad: '<h2>Política de Privacidad</h2>'
-      + '<h3>1. Responsable del tratamiento</h3>'
-      + '<ul>'
-      + '<li><strong>Identidad:</strong> [NOMBRE_COMPLETO]</li>'
-      + '<li><strong>Nombre comercial:</strong> Negoziax</li>'
-      + '<li><strong>Email:</strong> contacto@negoziax.com</li>'
-      + '</ul>'
-      + '<h3>2. Datos que tratamos</h3>'
-      + '<p>Únicamente tratamos los datos personales que tú nos facilitas de forma voluntaria cuando te pones en contacto con nosotros a través de WhatsApp o email: nombre, número de teléfono o dirección de correo electrónico, y la información que incluyas en tu mensaje.</p>'
-      + '<p>No recogemos datos mediante formularios automatizados ni a través de cookies de seguimiento.</p>'
-      + '<h3>3. Finalidad del tratamiento</h3>'
-      + '<p>Los datos facilitados se utilizan exclusivamente para gestionar tu consulta y, si así lo solicitas, para ofrecerte información sobre nuestros servicios de automatización.</p>'
-      + '<h3>4. Base jurídica</h3>'
-      + '<p>El tratamiento se basa en el consentimiento que prestas de forma libre e inequívoca al dirigirte a nosotros. Puedes retirar dicho consentimiento en cualquier momento sin que ello afecte a la licitud del tratamiento previo.</p>'
-      + '<h3>5. Conservación de los datos</h3>'
-      + '<p>Conservamos tus datos durante el tiempo necesario para atender tu consulta y, como máximo, durante el plazo establecido por las obligaciones legales aplicables.</p>'
-      + '<h3>6. Cesión a terceros</h3>'
-      + '<p>No cedemos tus datos personales a terceros, salvo obligación legal expresa. No realizamos transferencias internacionales de datos.</p>'
-      + '<h3>7. Tus derechos (ARCO+)</h3>'
-      + '<p>Puedes ejercer en cualquier momento los derechos de acceso, rectificación, cancelación, oposición, limitación del tratamiento y portabilidad de tus datos escribiendo a <strong>contacto@negoziax.com</strong>. Si consideras que el tratamiento no se ajusta a la normativa vigente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>'
-  };
-
-  var overlay = document.getElementById('modalOverlay');
-  var contentEl = document.getElementById('modalContent');
-  var closeBtn = document.getElementById('modalClose');
-
-  function openModal(type) {
-    contentEl.innerHTML = contents[type];
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.modal-link').forEach(function(btn) {
-    btn.addEventListener('click', function() { openModal(btn.dataset.modal); });
-  });
-  closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
-})();
 
 // Savings calculator
 (function(){
