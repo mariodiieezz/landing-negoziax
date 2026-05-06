@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6GDDG1XZ56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6GDDG1XZ56');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Negoziax</title>
@@ -393,6 +401,37 @@ nav.scrolled{
 .step h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
 .step p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
 
+/* TOOLS GRID */
+.tools-section{margin-top:4rem;text-align:center}
+.tools-title{
+  font-size:1.1rem;font-weight:600;color:var(--slate-700);
+  margin-bottom:2rem;letter-spacing:-0.01em;
+}
+.tools-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;
+  max-width:900px;margin:0 auto;
+}
+.tool-item{
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  min-width:80px;
+}
+.tool-icon{
+  width:48px;height:48px;
+  filter:grayscale(100%);
+  opacity:.6;
+  transition:filter .3s ease,opacity .3s ease,transform .3s ease;
+}
+.tool-item:hover .tool-icon{
+  filter:grayscale(0%);
+  opacity:1;
+  transform:translateY(-4px);
+}
+.tool-name{
+  font-size:.8rem;font-weight:500;color:var(--slate-500);
+  transition:color .3s ease;
+}
+.tool-item:hover .tool-name{color:var(--slate-700)}
+
 /* METRICS */
 .metrics{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -578,6 +617,37 @@ footer{
 .wa-fab:hover{
   transform:scale(1.05);
   box-shadow:0 6px 16px rgba(0,0,0,.2);
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top{
+  position:fixed;bottom:1.75rem;left:1.75rem;
+  width:50px;height:50px;border-radius:50%;
+  background:#fff;
+  color:var(--slate-700);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  z-index:200;
+  cursor:pointer;
+  border:none;
+  opacity:0;visibility:hidden;
+  transform:translateY(10px);
+  transition:opacity .3s ease,transform .3s ease,visibility .3s ease,box-shadow .25s;
+}
+.back-to-top.visible{
+  opacity:1;visibility:visible;
+  transform:translateY(0);
+}
+.back-to-top:hover{
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
+  transform:translateY(-2px);
+}
+.back-to-top svg{
+  width:22px;height:22px;
+}
+@media(max-width:680px){
+  .back-to-top{width:44px;height:44px;bottom:1.25rem;left:1.25rem}
+  .back-to-top svg{width:20px;height:20px}
 }
 
 /* REVEAL */
@@ -897,6 +967,31 @@ footer{
         <p>La automatización funciona sola desde el primer día. Si algo cambia o necesita ajustes, se adapta sin problemas.</p>
       </div>
     </div>
+    <div class="tools-section reveal">
+      <h3 class="tools-title">Conectamos con tus herramientas</h3>
+      <div class="tools-grid">
+        <div class="tool-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Gmail" class="tool-icon">
+          <span class="tool-name">Gmail</span>
+        </div>
+        <div class="tool-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlecalendar.svg" alt="Google Calendar" class="tool-icon">
+          <span class="tool-name">Google Calendar</span>
+        </div>
+        <div class="tool-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlesheets.svg" alt="Google Sheets" class="tool-icon">
+          <span class="tool-name">Google Sheets</span>
+        </div>
+        <div class="tool-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" class="tool-icon">
+          <span class="tool-name">WhatsApp</span>
+        </div>
+        <div class="tool-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/openai.svg" alt="OpenAI" class="tool-icon">
+          <span class="tool-name">OpenAI</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1152,11 +1247,43 @@ footer{
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.33 0-4.48-.78-6.206-2.093l-.353-.29-3.659 1.226 1.226-3.659-.29-.353A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
 </a>
 
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
 <script>
 // Nav scrolled state
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Hero parallax effect
+const hero = document.querySelector('.hero');
+const heroBlobs = document.querySelectorAll('.hero-blob-1, .hero-blob-2, .hero-blob-3');
+let heroTicking = false;
+
+function updateParallax() {
+  const scrollY = window.scrollY;
+  const heroHeight = hero.offsetHeight;
+  const heroOffset = hero.offsetTop;
+  
+  if (scrollY <= heroHeight + heroOffset) {
+    const progress = scrollY / (heroHeight + heroOffset);
+    heroBlobs.forEach((blob, index) => {
+      const speed = 0.15 + (index * 0.05);
+      const yOffset = scrollY * speed;
+      blob.style.transform = `translateY(${yOffset}px)`;
+    });
+  }
+  heroTicking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!heroTicking) {
+    requestAnimationFrame(updateParallax);
+    heroTicking = true;
+  }
 }, { passive: true });
 
 // Reveal animations (all variants)
@@ -1396,6 +1523,19 @@ window.addEventListener('scroll', () => {
     ticking = true;
   }
 }, { passive: true });
+
+// Back to top button
+const backToTopBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    backToTopBtn.classList.add('visible');
+  } else {
+    backToTopBtn.classList.remove('visible');
+  }
+}, { passive: true });
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
 
 </body>
