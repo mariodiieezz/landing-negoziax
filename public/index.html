@@ -62,8 +62,8 @@
   --slate-200:#e2e8f0;
   --slate-100:#f1f5f9;
   --slate-50:#f8fafc;
-  --blue-400:#60a5fa;
-  --blue-500:#3b82f6;
+  --blue-400:#3b82f6;
+  --blue-500:#2563eb;
   --blue-600:#2563eb;
   --green-500:#10b981;
   --green-600:#16a34a;
@@ -76,7 +76,7 @@ html{scroll-behavior:smooth}
 body{
   font-family:'DM Sans',system-ui,sans-serif;
   color:var(--slate-900);
-  background:var(--white);
+  background:linear-gradient(180deg,#fff 0%,#fafbff 100%);
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   line-height:1.6;
@@ -100,29 +100,24 @@ h1,h2,h3,h4{
 }
 .shape-1{
   width:480px;height:480px;
-  background:radial-gradient(circle,rgba(59,130,246,.18),transparent 70%);
+  background:radial-gradient(circle,rgba(59,130,246,.09),transparent 70%);
   top:-10%;right:-15%;
 }
 .shape-2{
   width:380px;height:380px;
-  background:radial-gradient(circle,rgba(96,165,250,.14),transparent 70%);
+  background:radial-gradient(circle,rgba(96,165,250,.07),transparent 70%);
   top:55%;left:-12%;
 }
 .shape-3{
   width:420px;height:420px;
-  background:radial-gradient(circle,rgba(30,41,59,.08),transparent 70%);
+  background:radial-gradient(circle,rgba(30,41,59,.04),transparent 70%);
   top:130%;right:5%;
 }
-.hex-deco{
-  position:absolute;opacity:.05;will-change:transform;pointer-events:none;
-}
-.hex-deco--1{top:30%;left:8%;width:140px}
-.hex-deco--2{top:160%;right:10%;width:180px}
 
 /* NAV */
 nav{
   position:fixed;top:0;width:100%;z-index:100;
-  padding:.95rem 1.75rem;
+  padding:.95rem .5rem;
   transition:background .4s ease,border-color .4s ease,box-shadow .4s ease;
   border-bottom:1px solid transparent;
 }
@@ -142,7 +137,7 @@ nav.scrolled{
   text-decoration:none;color:inherit;
   flex-shrink:0;
 }
-.nav-logo svg{width:38px;height:38px;display:block}
+.nav-logo svg{width:49px;height:49px;display:block}
 .nav-links{
   display:flex;align-items:center;gap:.25rem;
   list-style:none;
@@ -170,15 +165,15 @@ nav.scrolled{
 .nav-links a.active::after{transform:scaleX(1)}
 
 .nav-burger{
-  display:inline-flex;
+  display:none;
   background:none;border:none;cursor:pointer;
-  width:40px;height:40px;border-radius:10px;
+  width:52px;height:52px;border-radius:10px;
   align-items:center;justify-content:center;
   color:var(--slate-700);
   transition:background .2s;
 }
 .nav-burger:hover{background:var(--slate-100)}
-.nav-burger svg{width:22px;height:22px}
+.nav-burger svg{width:29px;height:29px}
 
 .nav-mobile{
   position:fixed;top:0;right:0;
@@ -250,39 +245,41 @@ nav.scrolled{
 
 /* LAYOUT */
 .container{max-width:1200px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
-.section{padding:6rem 2rem;position:relative;z-index:1;overflow:hidden;isolation:isolate}
-.section--alt{
-  background:linear-gradient(180deg,var(--slate-50) 0%,var(--white) 100%);
-  border-radius:0 0 56px 56px;
-}
-#solucion,#calculadora{padding:3rem 2rem}
+.section{padding:5rem 2rem;position:relative;z-index:1;overflow:hidden;background:transparent}
+.section .container{text-align:center}
 
 /* TYPOGRAPHY HELPERS */
 .eyebrow{
   display:inline-block;
   font-family:'DM Sans',sans-serif;
   font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--blue-500);margin-bottom:1rem;
+  color:var(--blue-500);
+  margin-bottom:1rem;
   padding:.35rem .75rem;
   background:rgba(59,130,246,.08);
   border-radius:999px;
 }
 .section-heading{
   font-size:clamp(2rem,4.2vw,3rem);
-  color:var(--slate-900);margin-bottom:1.1rem;
+  color:var(--slate-900);
+  margin:0 auto 1.1rem auto;
   letter-spacing:-0.035em;
+  text-align:center;
 }
 .section-sub{
-  font-size:1.1rem;color:var(--slate-600);
-  line-height:1.75;margin-bottom:3rem;
-  max-width:640px;
+  font-size:1.1rem;
+  color:var(--slate-600);
+  line-height:1.75;
+  margin:0 auto 3rem auto;
+  max-width:780px;
+  text-align:center;
 }
 
 /* HERO */
 .hero{
   min-height:100vh;
   display:flex;align-items:center;justify-content:center;
-  padding:9rem 1.75rem 6rem;
+  padding:9rem 1.75rem 8rem;
   text-align:center;
   position:relative;
   background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(239,246,255,0.5) 100%);
@@ -300,7 +297,7 @@ nav.scrolled{
   position:absolute;
   width:500px;height:500px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(96,165,250,.08),transparent 70%);
+  background:radial-gradient(circle,rgba(96,165,250,.04),transparent 70%);
   top:-15%;right:-10%;
   filter:blur(60px);
   z-index:0;
@@ -310,7 +307,7 @@ nav.scrolled{
   position:absolute;
   width:400px;height:400px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(59,130,246,.06),transparent 70%);
+  background:radial-gradient(circle,rgba(59,130,246,.03),transparent 70%);
   bottom:-10%;left:-8%;
   filter:blur(50px);
   z-index:0;
@@ -320,7 +317,7 @@ nav.scrolled{
   position:absolute;
   width:300px;height:300px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(147,197,253,.05),transparent 70%);
+  background:radial-gradient(circle,rgba(147,197,253,.025),transparent 70%);
   top:40%;left:50%;
   transform:translate(-50%,-50%);
   filter:blur(40px);
@@ -328,39 +325,89 @@ nav.scrolled{
   pointer-events:none;
 }
 .hero-inner{max-width:840px;margin:0 auto;position:relative;z-index:2}
-.hero h1{
+.hero-title{
   font-size:clamp(2.6rem,7.5vw,5.4rem);
   margin-bottom:1.5rem;
   letter-spacing:-0.045em;
   font-weight:800;
-  background:linear-gradient(135deg,var(--slate-900) 0%,var(--slate-700) 100%);
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-  color:transparent;
+  line-height:1.1;
 }
-.hero h1 .ia{
-  position:relative;display:inline-block;
-  isolation:isolate;
-  -webkit-text-fill-color:var(--blue-500);
+.title-line{
+  display:block;
+  color:var(--slate-900);
+  font-style:normal;
+  font-weight:800;
+  opacity:0;
+  transform:translateY(40px);
+  animation:heroSlideUp 0.8s ease-out forwards;
+}
+.title-line:nth-child(1){animation-delay:0s}
+.title-line:nth-child(2){animation-delay:0.2s}
+.title-line:nth-child(3){animation-delay:0.4s}
+.title-line.title-blue{
   color:var(--blue-500);
-  background:none;
 }
-.hero h1 .ia::after{
-  content:'';
-  position:absolute;
-  inset:-15% -25%;
-  background:radial-gradient(closest-side,rgba(59,130,246,.32),transparent 75%);
-  filter:blur(14px);
-  z-index:-1;
+@keyframes heroSlideUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
 }
 .hero-sub{
-  font-size:1.2rem;color:var(--slate-600);line-height:1.7;
-  margin:0 auto 3rem;
+  font-size:1.2rem;
+  color:var(--slate-600);
+  line-height:1.7;
+  margin:0 auto 1.5rem;
   font-weight:400;
+  opacity:0;
+  transform:translateY(40px);
+  animation:heroSlideUp 0.8s ease-out 0.6s forwards;
   white-space:nowrap;
 }
-
+.hero-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.75rem;
+  background:var(--blue-500);
+  color:#fff;
+  font-family:'DM Sans',sans-serif;
+  font-size:1.1rem;
+  font-weight:600;
+  text-decoration:none;
+  padding:1rem 2.25rem;
+  border-radius:50px;
+  box-shadow:0 4px 14px rgba(37,99,235,.35);
+  opacity:0;
+  transform:translateY(40px);
+  animation:heroSlideUp 0.8s ease-out 0.6s forwards;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.hero-cta-btn:hover{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 8px 24px rgba(37,99,235,.45);
+}
+.hero-cta-btn svg{flex-shrink:0}
+.hero-cta-secondary{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--slate-700);
+  text-decoration:none;
+  padding:.95rem 2rem;
+  border-radius:50px;
+  border:1.5px solid var(--slate-300);
+  background:transparent;
+  opacity:0;
+  transform:translateY(40px);
+  animation:heroSlideUp 0.8s ease-out 0.75s forwards;
+  transition:border-color .25s,color .25s,background .25s;
+}
+.hero-cta-secondary:hover{
+  border-color:var(--blue-500);
+  color:var(--blue-500);
+  background:rgba(59,130,246,.04);
+}
 
 /* GLASS CARDS */
 .pain-grid{
@@ -371,41 +418,49 @@ nav.scrolled{
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  border:1.5px solid #e2e8f0;
-  border-radius:22px;padding:2.5rem 2rem;
-  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s,border-color .25s;
+  border:1px solid var(--slate-200);
+  border-radius:20px;
+  padding:2.5rem 2rem;
+  text-align:center;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
 .pain-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 30px rgba(59,130,246,.08);
+  transform:translateY(-3px);
+  box-shadow:0 8px 30px rgba(59,130,246,.08);
   border-color:#93c5fd;
 }
 .pain-card-icon{
-  width:48px;height:48px;border-radius:14px;
+  width:48px;
+  height:48px;
+  border-radius:14px;
   background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(96,165,250,.06));
   color:var(--blue-500);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:1.25rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 1.25rem;
 }
-.pain-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
-.pain-card p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
+.pain-card h3,.step h3,.g-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
+.pain-card p,.step p,.g-card p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
 
 /* STEPS */
 .steps{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:1.5rem;margin-top:3rem;
 }
 .step{
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  border:1.5px solid #e2e8f0;
-  border-radius:22px;padding:2.5rem 2rem;
-  transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s,border-color .25s;
+  border:1px solid var(--slate-200);
+  border-radius:20px;
+  padding:2.5rem 2rem;
+  text-align:center;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
 .step:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 30px rgba(59,130,246,.08);
+  transform:translateY(-3px);
+  box-shadow:0 8px 30px rgba(59,130,246,.08);
   border-color:#93c5fd;
 }
 .step-num{
@@ -415,9 +470,8 @@ nav.scrolled{
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
   opacity:.95;line-height:1;margin-bottom:.875rem;
+  text-align:center;
 }
-.step h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
-.step p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
 
 /* TOOLS GRID */
 .tools-section{margin-top:4rem;text-align:center}
@@ -450,34 +504,45 @@ nav.scrolled{
 }
 .tool-item:hover .tool-name{color:var(--slate-700)}
 
-/* METRICS */
-.metrics{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:1.5rem;margin-top:3rem;
+/* METRICS BAR */
+.metrics-bar{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  background:transparent;
+  margin-top:6rem;
+  width:100%;
 }
-.metric{
-  text-align:center;padding:2.75rem 1rem;
-  background:rgba(255,255,255,.7);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border:1.5px solid #e2e8f0;
-  border-radius:22px;
-  transition:transform .4s,box-shadow .4s,border-color .25s;
+.metric-item{
+  text-align:center;
+  padding:25px 1rem;
+  border-right:1px solid rgba(148,163,184,.2);
+  transition:background .25s;
 }
-.metric:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 30px rgba(59,130,246,.08);
-  border-color:#93c5fd;
-}
+.metric-item:last-child{border-right:none}
+.metric-item:hover{background:rgba(59,130,246,.04)}
 .metric-num{
   font-family:'Outfit',sans-serif;
-  font-size:2.85rem;font-weight:700;letter-spacing:-0.04em;
-  background:linear-gradient(135deg,var(--slate-900),var(--blue-500));
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-  margin-bottom:.5rem;
+  font-size:36px;font-weight:700;letter-spacing:-0.02em;
+  color:var(--blue-500);
+  line-height:1;
 }
-.metric p{font-size:.9rem;color:var(--slate-600);line-height:1.55}
+.metric-label{
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--slate-600);
+  line-height:1.4;
+  margin-top:12px;
+}
+@media(max-width:768px){
+  .metrics-bar{grid-template-columns:repeat(2,1fr)}
+  .metric-item{border-right:none;border-bottom:1px solid rgba(0,0,0,0.1)}
+  .metric-item:nth-child(1),.metric-item:nth-child(2){border-bottom:1px solid rgba(0,0,0,0.1)}
+  .metric-item:nth-child(2n){border-right:none}
+  .metric-item:nth-child(1),.metric-item:nth-child(3){border-right:1px solid rgba(0,0,0,0.1)}
+}
 
 /* COMPARE (ANTES vs AHORA) */
 .compare-wrap{margin-top:3.5rem;position:relative}
@@ -492,7 +557,7 @@ nav.scrolled{
 }
 .compare-side{
   padding:2.75rem 2rem;
-  border:1.5px solid transparent;
+  border:1px solid transparent;
 }
 .compare-side--before{
   background:linear-gradient(180deg,rgba(239,68,68,.05) 0%,rgba(239,68,68,.09) 100%);
@@ -537,17 +602,33 @@ nav.scrolled{
   .compare-side--after{border-left-width:1.5px}
 }
 
+/* TESTIMONIOS */
+.rating-header{display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.5rem 0 2.5rem}
+.rating-header .stars{color:var(--blue-500);font-size:1.5rem;letter-spacing:2px}
+.rating-score{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:700;color:var(--blue-500)}
+.testimonials-wrapper{overflow:hidden;margin-top:2rem}
+.testimonials-track{display:flex;gap:1.5rem;animation:scrollTestimonials 35s linear infinite;width:max-content}
+.testimonials-wrapper:hover .testimonials-track{animation-play-state:paused}
+@keyframes scrollTestimonials{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.testimonial-card{flex-shrink:0;width:360px;background:var(--slate-50);border:1px solid var(--slate-200);border-radius:20px;padding:1.75rem;position:relative;text-align:left}
+.testimonial-stars{color:var(--blue-500);font-size:1.1rem;letter-spacing:2px;margin-bottom:1rem}
+.testimonial-text{color:var(--slate-900);font-size:1rem;line-height:1.7;margin-bottom:1.5rem}
+.testimonial-author{display:flex;flex-direction:column;gap:.25rem}
+.author-name{color:var(--slate-900);font-weight:600;font-size:.95rem}
+.author-role{color:var(--slate-400);font-size:.85rem}
+.testimonial-badge{position:absolute;top:1.75rem;right:1.75rem;background:var(--blue-500);color:#fff;font-size:.75rem;font-weight:600;padding:.35rem .75rem;border-radius:999px}
+
 /* FAQ */
-.faq-list{margin-top:3rem;max-width:780px}
+.faq-list{margin:3rem auto 0;max-width:780px}
 .faq-item{
-  border:1.5px solid #e2e8f0;
-  border-radius:18px;
+  border:1px solid var(--slate-200);
+  border-radius:20px;
   margin-bottom:.75rem;
   background:rgba(255,255,255,.6);
   backdrop-filter:blur(8px);
   -webkit-backdrop-filter:blur(8px);
   overflow:hidden;
-  transition:border-color .25s,box-shadow .25s;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
 .faq-item:hover{border-color:#93c5fd}
 .faq-item.open{
@@ -701,9 +782,9 @@ footer{
 .pain-grid>:nth-child(3){transition-delay:.16s}
 .steps>:nth-child(2){transition-delay:.08s}
 .steps>:nth-child(3){transition-delay:.16s}
-.metrics>:nth-child(2){transition-delay:.07s}
-.metrics>:nth-child(3){transition-delay:.14s}
-.metrics>:nth-child(4){transition-delay:.21s}
+.metrics-bar>:nth-child(2){transition-delay:.07s}
+.metrics-bar>:nth-child(3){transition-delay:.14s}
+.metrics-bar>:nth-child(4){transition-delay:.21s}
 .compare-list>:nth-child(2){transition-delay:.07s}
 .compare-list>:nth-child(3){transition-delay:.14s}
 .compare-list>:nth-child(4){transition-delay:.21s}
@@ -714,8 +795,7 @@ footer{
   .container{max-width:1140px}
   .hero-inner{max-width:780px}
   .pain-grid{grid-template-columns:repeat(3,1fr)}
-  .steps{grid-template-columns:repeat(3,1fr)}
-  .metrics{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(5,1fr)}
 }
 
 /* RESPONSIVE */
@@ -723,23 +803,28 @@ footer{
   .nav-links{display:none}
   .nav-burger{display:inline-flex}
   .hero-sub{white-space:normal;max-width:600px}
+  .testimonial-card{width:300px}
+  .testimonials-track{animation-duration:28s}
+}
+@media(max-width:780px){
+  .compare{grid-template-columns:1fr}
+  .compare-side--before{border-right-width:1.5px}
+  .compare-side--after{border-left-width:1.5px}
 }
 @media(max-width:680px){
   .section{padding:5rem 1.25rem}
   .hero{padding:7.5rem 1.25rem 5rem}
   .cta-section{padding:3rem 1.25rem 5rem}
   .cta-box{padding:3.75rem 1.5rem}
-  .pain-card,.step{padding:2rem 1.5rem}
-  .compare-side{padding:2rem 1.5rem}
   nav{padding:.7rem 1rem}
   .wa-fab{width:54px;height:54px;bottom:1.25rem;right:1.25rem}
+  .about-wrap{grid-template-columns:1fr;gap:1.5rem}
+  .about-photo{width:160px;height:160px;margin:0 auto}
 }
-
-@media(prefers-reduced-motion:reduce){
-  .reveal,.reveal-left,.reveal-right,.reveal-scale{
-    animation:none!important;transition:none!important;
-    opacity:1!important;transform:none!important;
-  }
+@media(max-width:520px){.calc-result{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr;gap:1.5rem}
+  .footer-bottom{flex-direction:column;align-items:center;text-align:center}
 }
 
 /* CALCULATOR */
@@ -747,14 +832,19 @@ footer{
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
-  border:1.5px solid #e2e8f0;
-  border-radius:22px;
+  border:1px solid var(--slate-200);
+  border-radius:20px;
   padding:2.5rem 2rem;
   max-width:680px;
-  margin-top:3rem;
-  transition:border-color .25s,box-shadow .25s;
+  margin:3rem auto 0;
+  text-align:center;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
-.calc-card:hover{border-color:#93c5fd;box-shadow:0 0 30px rgba(59,130,246,.08)}
+.calc-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 30px rgba(59,130,246,.08);
+  border-color:#93c5fd;
+}
 .calc-group{margin-bottom:2rem}
 .calc-lbl{
   display:flex;justify-content:space-between;align-items:baseline;
@@ -801,24 +891,34 @@ footer{
 .g-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:1.5rem;margin-top:3rem;
+  align-items:center;
+  text-align:center;
 }
 .g-card{
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  border:1.5px solid #e2e8f0;
-  border-radius:14px;
+  border:1px solid var(--slate-200);
+  border-radius:20px;
   padding:2rem;
-  transition:box-shadow .4s cubic-bezier(.25,.1,.25,1),transform .4s,border-color .25s;
+  text-align:center;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
 .g-card:hover{
-  box-shadow:0 0 30px rgba(59,130,246,.08);
   transform:translateY(-3px);
+  box-shadow:0 8px 30px rgba(59,130,246,.08);
   border-color:#93c5fd;
 }
 .g-card svg{display:block;margin-bottom:1.25rem;flex-shrink:0}
 .g-card h3{font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--slate-900);margin-bottom:.5rem}
 .g-card p{font-size:.93rem;color:var(--slate-600);line-height:1.7}
+
+/* SERVICE BULLETS */
+.service-bullets{list-style:none;margin-top:.75rem;display:flex;flex-direction:column;gap:.35rem;text-align:left}
+.service-bullets li{font-size:.85rem;color:var(--slate-500);display:flex;align-items:center;gap:.5rem}
+
+/* CTA BUTTONS */
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
 
 /* MODAL */
 .modal-overlay{
@@ -870,7 +970,8 @@ footer{
   grid-template-columns:200px 1fr;
   gap:2rem;
   margin-top:3rem;
-  align-items:start;
+  align-items:center;
+  text-align:center;
 }
 .about-photo{
   width:200px;height:200px;
@@ -883,13 +984,102 @@ footer{
   width:100%;height:100%;
   object-fit:cover;
 }
+.about-text{text-align:center}
 .about-text p{
   font-size:1rem;color:var(--slate-600);
   line-height:1.8;
+  text-align:center;
 }
 @media(max-width:680px){
   .about-wrap{grid-template-columns:1fr;gap:1.5rem}
   .about-photo{width:160px;height:160px;margin:0 auto}
+}
+
+/* FOOTER FULL */
+.footer-full{
+  border-top:1px solid var(--slate-200);
+  background:var(--white);
+  padding:4rem 2rem 2rem;
+  position:relative;z-index:1;
+}
+.footer-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+}
+.footer-brand p{font-size:.9rem;color:var(--slate-500);line-height:1.7;margin-top:.75rem;max-width:280px}
+.footer-contact{display:flex;flex-direction:column;gap:.4rem;margin-top:1rem}
+.footer-contact a{font-size:.85rem;color:var(--slate-500);text-decoration:none;transition:color .2s}
+.footer-contact a:hover{color:var(--blue-500)}
+.footer-socials{display:flex;gap:.75rem;margin-top:1rem}
+.footer-socials a{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--slate-100);color:var(--slate-500);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,color .2s;
+}
+.footer-socials a:hover{background:var(--blue-500);color:#fff}
+.footer-col h4{
+  font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--slate-900);
+  margin-bottom:1rem;
+}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:.5rem}
+.footer-col a{font-size:.9rem;color:var(--slate-500);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:var(--blue-500)}
+.footer-badges{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.25rem}
+.footer-badge{
+  font-size:.75rem;font-weight:500;color:var(--slate-500);
+  background:var(--slate-100);padding:.35rem .75rem;border-radius:999px;
+  display:flex;align-items:center;gap:.35rem;
+}
+.footer-bottom{
+  max-width:1200px;margin:2.5rem auto 0;
+  padding-top:1.5rem;
+  border-top:1px solid var(--slate-200);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;
+}
+.footer-bottom span,.footer-bottom a{font-size:.8rem;color:var(--slate-400)}
+.footer-bottom a{text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.footer-bottom a:hover{color:var(--blue-500)}
+@media(max-width:768px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr;gap:1.5rem}
+  .footer-bottom{flex-direction:column;align-items:center;text-align:center}
+}
+
+/* COOKIE BANNER */
+.cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(15,23,42,.95);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  padding:1.25rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  z-index:300;
+  transform:translateY(100%);
+  transition:transform .4s ease;
+}
+.cookie-banner.visible{transform:translateY(0)}
+.cookie-banner p{font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.5;margin:0}
+.cookie-banner a{color:var(--blue-400);text-decoration:underline;text-underline-offset:3px}
+.cookie-btns{display:flex;gap:.75rem;flex-shrink:0}
+.cookie-btn{
+  font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;
+  padding:.6rem 1.25rem;border-radius:999px;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+}
+.cookie-btn:hover{transform:scale(1.03)}
+.cookie-btn--accept{background:var(--blue-500);color:#fff}
+.cookie-btn--accept:hover{background:#1d4ed8}
+.cookie-btn--reject{background:rgba(255,255,255,.12);color:rgba(255,255,255,.7)}
+.cookie-btn--reject:hover{background:rgba(255,255,255,.18)}
+@media(max-width:600px){
+  .cookie-banner{flex-direction:column;padding:1rem 1.25rem;gap:1rem}
+  .cookie-btns{width:100%;justify-content:stretch}
+  .cookie-btn{flex:1}
 }
 
 </style>
@@ -900,17 +1090,22 @@ footer{
   <div class="shape shape-1"></div>
   <div class="shape shape-2"></div>
   <div class="shape shape-3"></div>
-  <svg class="hex-deco hex-deco--1" viewBox="0 0 64 64" aria-hidden="true">
-    <polygon points="32,4 56,18 56,46 32,60 8,46 8,18" fill="none" stroke="#1e293b" stroke-width="1.5"/>
-  </svg>
-  <svg class="hex-deco hex-deco--2" viewBox="0 0 64 64" aria-hidden="true">
-    <polygon points="32,4 56,18 56,46 32,60 8,46 8,18" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
-  </svg>
 </div>
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="logo"><img src="logo.png" alt="Negoziax" style="height:36px;width:auto"></a>
+    <a href="#" class="logo"><img src="logo.png" alt="Negoziax" style="height:47px;width:auto"></a>
+
+    <ul class="nav-links">
+      <li><a href="#servicios" data-link="servicios">Servicios</a></li>
+      <li><a href="#problema" data-link="problema">Problema</a></li>
+      <li><a href="#solucion" data-link="solucion">Funcionamiento</a></li>
+      <li><a href="#casos" data-link="casos">Comparativa</a></li>
+      <li><a href="#calculadora" data-link="calculadora">Estimación</a></li>
+      <li><a href="#garantias" data-link="garantias">Garantías</a></li>
+      <li><a href="#faq" data-link="faq">FAQ</a></li>
+      <li><a href="#contacto" data-link="contacto">Contacto</a></li>
+    </ul>
 
     <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -921,11 +1116,12 @@ footer{
 <div class="nav-overlay" id="navOverlay"></div>
 <aside class="nav-mobile" id="navMobile" aria-hidden="true">
   <ul>
+    <li><a href="#servicios" data-link="servicios">Servicios</a></li>
     <li><a href="#problema" data-link="problema">Problema</a></li>
     <li><a href="#solucion" data-link="solucion">Funcionamiento</a></li>
-    <li><a href="#resultados" data-link="resultados">Resultados</a></li>
     <li><a href="#casos" data-link="casos">Comparativa</a></li>
     <li><a href="#calculadora" data-link="calculadora">Estimación</a></li>
+    <li><a href="#garantias" data-link="garantias">Garantías</a></li>
     <li><a href="#faq" data-link="faq">FAQ</a></li>
     <li><a href="#sobre-mi" data-link="sobre-mi">Sobre mí</a></li>
     <li><a href="#contacto" data-link="contacto">Contacto</a></li>
@@ -937,12 +1133,46 @@ footer{
   <div class="hero-blob-2" aria-hidden="true"></div>
   <div class="hero-blob-3" aria-hidden="true"></div>
   <div class="hero-inner">
-    <h1 class="reveal">Automatizamos procesos de negocios con <span style="color:#3b82f6;text-shadow:0 0 20px rgba(59,130,246,0.25)">IA</span></h1>
-    <p class="hero-sub reveal">Automatiza tareas clave y deja de perder <span style="color:#3b82f6;font-weight:600">tiempo</span>, <span style="color:#3b82f6;font-weight:600">dinero</span> y <span style="color:#3b82f6;font-weight:600">clientes</span>.</p>
+    <h1 class="hero-title">
+      <span class="title-line">Gana.</span>
+      <span class="title-line">Ahorra.</span>
+      <span class="title-line title-blue">Automatiza.</span>
+    </h1>
+    <p class="hero-sub">No pierdas más: <span style="color:var(--slate-700);font-weight:600">tiempo</span>, <span style="color:var(--slate-700);font-weight:600">dinero</span> y <span style="color:var(--slate-700);font-weight:600">clientes</span>.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://wa.me/34611059182?text=Hola%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20vuestros%20servicios" class="hero-cta-btn" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Hablemos
+      </a>
+      <a href="#servicios" class="hero-cta-secondary">Ver servicios</a>
+    </div>
   </div>
 </section>
 
-<section class="section section--alt section-animate" id="problema">
+<section class="section" style="padding-top:0;padding-bottom:3rem;background:transparent">
+  <div class="container">
+    <div class="metrics-bar reveal-scale">
+      <div class="metric-item">
+        <div class="metric-num" data-counter data-target="50" data-prefix="+">+50</div>
+        <p class="metric-label">Proyectos integrados</p>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num" data-counter data-target="10" data-prefix="x">x10</div>
+        <p class="metric-label">Más rápido</p>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num" data-counter data-target="3" data-prefix="x">x3</div>
+        <p class="metric-label">ROI promedio</p>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num" data-counter data-target="4.9" data-decimals="1" data-suffix="/5">4.9/5</div>
+        <p class="metric-label">Satisfacción clientes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-animate" id="problema">
   <div class="container">
     <span class="eyebrow reveal">Problema</span>
     <h2 class="section-heading reveal">Tu empresa sigue dependiendo de procesos manuales</h2>
@@ -972,26 +1202,125 @@ footer{
   </div>
 </section>
 
+<section class="section section-animate" id="servicios">
+  <div class="container">
+    <span class="eyebrow reveal">Servicios</span>
+    <h2 class="section-heading reveal">Qué podemos automatizar</h2>
+    <p class="section-sub reveal">Cada negocio es diferente. Estos son los servicios que más impacto generan en pymes como la tuya.</p>
+    <div class="pain-grid">
+
+      <article class="pain-card reveal-left">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>Atención al cliente con IA</h3>
+        <p>Chatbots y asistentes que responden dudas, cualifican leads y atienden 24/7 por WhatsApp, web o email.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Respuestas 24/7 sin intervención</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> WhatsApp, web y email</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cualificación automática de leads</li>
+        </ul>
+      </article>
+
+      <article class="pain-card reveal-scale">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Captación de leads</h3>
+        <p>Sistemas que captan, contactan y filtran clientes potenciales de forma automática desde formularios, redes o bases de datos.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Prospección automática</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Filtrado por interés real</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Seguimiento sin esfuerzo manual</li>
+        </ul>
+      </article>
+
+      <article class="pain-card reveal-right">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Presupuestos automáticos</h3>
+        <p>El cliente rellena un formulario y recibe un presupuesto profesional en PDF en segundos, sin intervención manual.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> PDF profesional en segundos</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cálculos sin errores</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Seguimiento del estado</li>
+        </ul>
+      </article>
+
+      <article class="pain-card reveal-left">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3>Gestión de citas y agenda</h3>
+        <p>Reservas, confirmaciones y recordatorios automáticos sincronizados con Google Calendar o tu herramienta actual.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Reservas sin llamadas</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Confirmaciones y recordatorios</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Sincronización con Google Calendar</li>
+        </ul>
+      </article>
+
+      <article class="pain-card reveal-scale">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <h3>Facturación y documentos</h3>
+        <p>Generación automática de facturas, albaranes o informes a partir de los datos que ya tienes en hojas de cálculo o CRM.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Generación desde datos existentes</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Facturas, albaranes e informes</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Envío automático al cliente</li>
+        </ul>
+      </article>
+
+      <article class="pain-card reveal-right">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Seguimiento y remarketing</h3>
+        <p>Emails, WhatsApps o llamadas de seguimiento que se disparan solos según el estado del cliente o el tiempo transcurrido.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Emails y WhatsApps programados</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Activación por estado del cliente</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recuperación de leads fríos</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <section class="section section-animate" id="solucion">
   <div class="container">
     <span class="eyebrow reveal">FUNCIONAMIENTO</span>
-    <h2 class="section-heading reveal">Lo hacemos en tres pasos</h2>
+    <h2 class="section-heading reveal">Lo hacemos en cinco pasos</h2>
     <p class="section-sub reveal">Analizamos lo que te frena y lo que puede mejorar tu negocio, no solo a solucionar problemas. Lo automatizamos y lo dejamos funcionando.</p>
     <div class="steps">
       <div class="step reveal-left">
         <div class="step-num">01</div>
-        <h3>Hablamos</h3>
-        <p>Nos cuentas cómo funciona tu negocio y qué tareas te quitan más tiempo o te gustaría mejorar.</p>
+        <h3>Análisis</h3>
+        <p>Estudiamos tu negocio, tus herramientas y dónde se pierde más tiempo o dinero.</p>
       </div>
       <div class="step reveal-scale">
         <div class="step-num">02</div>
-        <h3>Construimos</h3>
-        <p>Diseñamos la automatización adaptada a tu negocio y a las herramientas que ya usas. Cada detalle se ajusta a cómo trabaja tu empresa.</p>
+        <h3>Diseño</h3>
+        <p>Creamos la solución adaptada a tu caso, sin tocar lo que ya funciona bien.</p>
       </div>
       <div class="step reveal-right">
         <div class="step-num">03</div>
-        <h3>Listo</h3>
-        <p>La automatización funciona sola desde el primer día. Si algo cambia o necesita ajustes, se adapta sin problemas.</p>
+        <h3>Integración</h3>
+        <p>Conectamos todo con tus herramientas actuales. Sin cortes ni interrupciones en tu día a día.</p>
+      </div>
+      <div class="step reveal-left">
+        <div class="step-num">04</div>
+        <h3>Formación</h3>
+        <p>Te explicamos cómo funciona todo para que no dependas de nadie.</p>
+      </div>
+      <div class="step reveal-right">
+        <div class="step-num">05</div>
+        <h3>Seguimiento</h3>
+        <p>Revisamos resultados, optimizamos y ajustamos lo que haga falta.</p>
       </div>
     </div>
     <div class="tools-section reveal">
@@ -1017,31 +1346,14 @@ footer{
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/openai.svg" alt="OpenAI" class="tool-icon" loading="lazy">
           <span class="tool-name">OpenAI</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt section-animate" id="resultados">
-  <div class="container">
-    <span class="eyebrow reveal">Resultados</span>
-    <h2 class="section-heading reveal">Los beneficios que obtendrás con nuestros servicios</h2>
-    <div class="metrics">
-      <div class="metric reveal-scale">
-        <div class="metric-num" data-counter data-target="10" data-suffix="x">10x</div>
-        <p>Más rápido que a mano</p>
-      </div>
-      <div class="metric reveal-scale">
-        <div class="metric-num" data-counter data-target="0">0</div>
-        <p>Errores humanos</p>
-      </div>
-      <div class="metric reveal-scale">
-        <div class="metric-num" data-counter data-target="24" data-suffix="/7">24/7</div>
-        <p>Siempre activo</p>
-      </div>
-      <div class="metric reveal-scale">
-        <div class="metric-num" data-counter data-target="70" data-prefix="+" data-suffix="%">+70%</div>
-        <p>Tiempo recuperado</p>
+        <div class="tool-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/notion.svg" alt="Notion" class="tool-icon" loading="lazy">
+          <span class="tool-name">Notion</span>
+        </div>
+        <div class="tool-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/telegram.svg" alt="Telegram" class="tool-icon" loading="lazy">
+          <span class="tool-name">Telegram</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1175,6 +1487,30 @@ footer{
   </div>
 </section>
 
+<section class="section section-animate" id="garantias">
+  <div class="container" style="text-align:center">
+    <span class="eyebrow reveal">Sin letra pequeña</span>
+    <h2 class="section-heading reveal">Trabajamos así</h2>
+    <div class="g-grid">
+      <div class="g-card reveal-left">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h3>Sin permanencia</h3>
+        <p>No hay contratos de larga duración. Si no te convence, te vas cuando quieras.</p>
+      </div>
+      <div class="g-card reveal-scale">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Satisfacción garantizada</h3>
+        <p>Si el resultado no cumple lo acordado, lo ajustamos sin coste adicional hasta que funcione.</p>
+      </div>
+      <div class="g-card reveal-right">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <h3>Soporte incluido</h3>
+        <p>Después de la entrega seguimos disponibles. Si algo falla o necesitas cambios, lo resolvemos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section-animate" id="sobre-mi">
   <div class="container">
     <span class="eyebrow reveal">Sobre mí</span>
@@ -1192,7 +1528,167 @@ footer{
   </div>
 </section>
 
-<section class="section section--alt section-animate" id="faq">
+<section class="section section-animate" id="testimonios">
+  <div class="container">
+    <span class="eyebrow reveal">TESTIMONIOS</span>
+    <h2 class="section-heading reveal">Lo que dicen nuestros clientes</h2>
+    <div class="rating-header reveal">
+      <div class="stars">★★★★★</div>
+      <span class="rating-score">4.9/5</span>
+    </div>
+    <div class="testimonials-wrapper reveal">
+      <div class="testimonials-track">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Se tomó su tiempo en explicarnos todo. El acompañamiento marca la diferencia."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Pablo S.</span>
+            <span class="author-role">Fundador, Startup Tech</span>
+          </div>
+          <span class="testimonial-badge">3x leads</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"La integración con nuestros sistemas existentes fue impecable. Cero fricciones."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Marta F.</span>
+            <span class="author-role">Directora IT, Retail</span>
+          </div>
+          <span class="testimonial-badge">-70% costes</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"El sistema de IA ha cambiado completamente nuestra atención al cliente. Ahora podemos atender consultas las 24 horas."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Carlos M.</span>
+            <span class="author-role">Director, Agencia Inmobiliaria</span>
+          </div>
+          <span class="testimonial-badge">+60% consultas</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Desde que implementamos la automatización, nuestra clínica ha experimentado una transformación completa en la gestión de citas."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Laura G.</span>
+            <span class="author-role">Propietaria, Clínica Podológica</span>
+          </div>
+          <span class="testimonial-badge">ROI 400%</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Nos ahorramos más de 20 horas semanales en tareas administrativas. No sabíamos que era posible."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Javier R.</span>
+            <span class="author-role">CEO, Consultoría Digital</span>
+          </div>
+          <span class="testimonial-badge">+80% eficiencia</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Automatizamos la gestión de pedidos y dejamos de perder ventas por errores humanos. En dos semanas ya se notaba."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Diego L.</span>
+            <span class="author-role">Gerente, Tienda Online</span>
+          </div>
+          <span class="testimonial-badge">+40% ventas</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Antes tardábamos horas en responder presupuestos. Ahora el cliente lo recibe en menos de un minuto."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Raquel T.</span>
+            <span class="author-role">Directora, Reformas</span>
+          </div>
+          <span class="testimonial-badge">x10 más rápido</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"El seguimiento automático nos recuperó clientes que dábamos por perdidos. Increíble."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Sergio A.</span>
+            <span class="author-role">CEO, Academia Online</span>
+          </div>
+          <span class="testimonial-badge">+25% retención</span>
+        </div>
+        <!-- Duplicados para loop infinito -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Se tomó su tiempo en explicarnos todo. El acompañamiento marca la diferencia."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Pablo S.</span>
+            <span class="author-role">Fundador, Startup Tech</span>
+          </div>
+          <span class="testimonial-badge">3x leads</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"La integración con nuestros sistemas existentes fue impecable. Cero fricciones."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Marta F.</span>
+            <span class="author-role">Directora IT, Retail</span>
+          </div>
+          <span class="testimonial-badge">-70% costes</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"El sistema de IA ha cambiado completamente nuestra atención al cliente. Ahora podemos atender consultas las 24 horas."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Carlos M.</span>
+            <span class="author-role">Director, Agencia Inmobiliaria</span>
+          </div>
+          <span class="testimonial-badge">+60% consultas</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Desde que implementamos la automatización, nuestra clínica ha experimentado una transformación completa en la gestión de citas."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Laura G.</span>
+            <span class="author-role">Propietaria, Clínica Podológica</span>
+          </div>
+          <span class="testimonial-badge">ROI 400%</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Nos ahorramos más de 20 horas semanales en tareas administrativas. No sabíamos que era posible."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Javier R.</span>
+            <span class="author-role">CEO, Consultoría Digital</span>
+          </div>
+          <span class="testimonial-badge">+80% eficiencia</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Automatizamos la gestión de pedidos y dejamos de perder ventas por errores humanos. En dos semanas ya se notaba."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Diego L.</span>
+            <span class="author-role">Gerente, Tienda Online</span>
+          </div>
+          <span class="testimonial-badge">+40% ventas</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Antes tardábamos horas en responder presupuestos. Ahora el cliente lo recibe en menos de un minuto."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Raquel T.</span>
+            <span class="author-role">Directora, Reformas</span>
+          </div>
+          <span class="testimonial-badge">x10 más rápido</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"El seguimiento automático nos recuperó clientes que dábamos por perdidos. Increíble."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Sergio A.</span>
+            <span class="author-role">CEO, Academia Online</span>
+          </div>
+          <span class="testimonial-badge">+25% retención</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-animate" id="faq">
   <div class="container">
     <span class="eyebrow reveal">FAQ</span>
     <h2 class="section-heading reveal">Lo que suele preguntar la gente</h2>
@@ -1243,17 +1739,72 @@ footer{
       <span class="eyebrow reveal">Contacto</span>
       <h2 class="reveal">Hablemos. Sin compromiso, sin rodeos.</h2>
       <p class="reveal">Escríbenos por WhatsApp y cuéntanos qué necesitas ↘</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem" class="reveal">
+        <a href="https://wa.me/34611059182?text=Hola%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20vuestros%20servicios" target="_blank" rel="noopener" class="hero-cta-btn" style="animation:none;opacity:1;transform:none">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.33 0-4.48-.78-6.206-2.093l-.353-.29-3.659 1.226 1.226-3.659-.29-.353A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          WhatsApp
+        </a>
+        <a href="mailto:contacto@negoziax.com" class="hero-cta-secondary" style="animation:none;opacity:1;transform:none;border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.85)">
+          Email
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <span class="brand brand--footer"><span class="b-1">negoz</span><span class="b-2">ia</span><span class="b-3">x</span></span>
-    <div class="footer-meta">
-      <span>&copy; 2026 Negoziax</span>
-      <span>·</span>
-      <a href="mailto:contacto@negoziax.com" style="color:var(--slate-400);text-decoration:underline;text-underline-offset:3px;transition:color .2s" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='var(--slate-400)'">contacto@negoziax.com</a>
+<footer class="footer-full">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="brand brand--footer"><span class="b-1">negoz</span><span class="b-2">ia</span><span class="b-3">x</span></span>
+      <p>Automatizamos procesos de negocios con inteligencia artificial para que tu empresa gane tiempo, dinero y clientes.</p>
+      <div class="footer-contact">
+        <a href="mailto:contacto@negoziax.com">contacto@negoziax.com</a>
+        <a href="tel:+34611059182">+34 611 059 182</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#servicios">Atención al cliente con IA</a></li>
+        <li><a href="#servicios">Captación de leads</a></li>
+        <li><a href="#servicios">Presupuestos automáticos</a></li>
+        <li><a href="#servicios">Gestión de citas</a></li>
+        <li><a href="#servicios">Facturación</a></li>
+        <li><a href="#servicios">Seguimiento</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#" class="modal-link" onclick="document.getElementById('modalLegal').classList.add('open')">Aviso legal</a></li>
+        <li><a href="#" class="modal-link" onclick="document.getElementById('modalPrivacidad').classList.add('open')">Política de privacidad</a></li>
+        <li><a href="#" class="modal-link" onclick="document.getElementById('modalCookies').classList.add('open')">Política de cookies</a></li>
+      </ul>
+      <div class="footer-badges">
+        <span class="footer-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> SSL</span>
+        <span class="footer-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> RGPD</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Negoziax. Todos los derechos reservados.</span>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="#" onclick="document.getElementById('modalLegal').classList.add('open');return false">Aviso legal</a>
+      <a href="#" onclick="document.getElementById('modalPrivacidad').classList.add('open');return false">Privacidad</a>
+      <a href="#" onclick="document.getElementById('modalCookies').classList.add('open');return false">Cookies</a>
     </div>
   </div>
 </footer>
@@ -1334,13 +1885,14 @@ function animateCounter(el) {
   const target = parseFloat(el.dataset.target);
   const prefix = el.dataset.prefix || '';
   const suffix = el.dataset.suffix || '';
+  const decimals = parseInt(el.dataset.decimals) || 0;
   const duration = 1500;
   const startTime = performance.now();
   function tick(now) {
     const progress = Math.min((now - startTime) / duration, 1);
     const eased = easeOutCubic(progress);
-    const current = Math.round(target * eased);
-    el.textContent = prefix + current + suffix;
+    const current = target * eased;
+    el.textContent = prefix + current.toFixed(decimals) + suffix;
     if (progress < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
@@ -1376,7 +1928,7 @@ faqItems.forEach(item => {
 });
 
 // Active section tracking for nav links
-const sectionIds = ['problema', 'solucion', 'resultados', 'calculadora', 'casos', 'faq', 'contacto'];
+const sectionIds = ['servicios', 'problema', 'solucion', 'resultados', 'calculadora', 'casos', 'garantias', 'faq', 'contacto'];
 const navLinks = document.querySelectorAll('[data-link]');
 function setActiveLink(id) {
   navLinks.forEach(a => {
@@ -1456,7 +2008,7 @@ navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMo
 })();
 
 // Lightweight parallax for decorative shapes and orbs
-const shapes = document.querySelectorAll('.shape, .hex-deco');
+const shapes = document.querySelectorAll('.shape');
 let lastY = 0, ticking = false;
 window.addEventListener('scroll', () => {
   lastY = window.scrollY;
@@ -1485,7 +2037,51 @@ backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// Cookie banner
+(function(){
+  if(localStorage.getItem('cookies_choice')) return;
+  const banner=document.getElementById('cookieBanner');
+  setTimeout(()=>banner.classList.add('visible'),1500);
+  document.getElementById('cookieAccept').addEventListener('click',()=>{
+    localStorage.setItem('cookies_choice','accepted');
+    banner.classList.remove('visible');
+  });
+  document.getElementById('cookieReject').addEventListener('click',()=>{
+    localStorage.setItem('cookies_choice','rejected');
+    banner.classList.remove('visible');
+    // Desactivar GA si rechaza
+    window['ga-disable-G-6GDDG1XZ56']=true;
+  });
+})();
+
 </script>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (Google Analytics) para mejorar tu experiencia. <a href="#" onclick="document.getElementById('modalCookies').classList.add('open');return false">Más info</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceptar</button>
+    <button class="cookie-btn cookie-btn--reject" id="cookieReject">Rechazar</button>
+  </div>
+</div>
+
+<!-- MODAL PRIVACIDAD -->
+<div class="modal-overlay" id="modalPrivacidad">
+  <div class="modal-box">
+    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <h2>Política de Privacidad</h2>
+    <p>Responsable: Mario Díez. Finalidad: responder consultas y gestionar servicios contratados. Base legal: consentimiento del interesado y ejecución de contrato. Destinatarios: no se ceden datos a terceros salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición y portabilidad dirigiéndose a contacto@negoziax.com. Los datos se conservan mientras dure la relación comercial o hasta que se solicite su supresión.</p>
+  </div>
+</div>
+
+<!-- MODAL COOKIES -->
+<div class="modal-overlay" id="modalCookies">
+  <div class="modal-box">
+    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <h2>Política de Cookies</h2>
+    <p>Este sitio utiliza cookies propias y de terceros (Google Analytics) con fines analíticos. Puedes aceptar, rechazar o configurar las cookies desde tu navegador. Si continúas navegando, entendemos que aceptas su uso. Para más información, contacta en contacto@negoziax.com.</p>
+  </div>
+</div>
 
 </body>
 </html>
