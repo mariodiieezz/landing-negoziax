@@ -853,6 +853,62 @@ nav.scrolled{
   .cookie-btn{flex:1}
 }
 
+@media(max-width:768px){
+  /* Hero */
+  .hero-title{font-size:2.6rem}
+  .hero-sub{font-size:1rem;white-space:normal}
+  .hero-cta-btn{font-size:.95rem;padding:.85rem 1.5rem}
+
+  /* Métricas */
+  .metrics-bar{grid-template-columns:repeat(2,1fr)}
+  .metric-num{font-size:28px}
+
+  /* Pain cards */
+  .pain-grid{grid-template-columns:1fr}
+
+  /* Calculadora */
+  .calc-card{padding:1.75rem 1.25rem}
+  .calc-result{grid-template-columns:1fr!important}
+  .calc-result-num{font-size:2rem}
+
+  /* Testimonios */
+  .testimonial-card{width:220px}
+  .testimonials-track{animation-duration:25s}
+
+  /* Sobre mí */
+  #sobre-mi .container>div{grid-template-columns:1fr!important;gap:2rem!important}
+  #sobre-mi .about-photo{width:100%!important;height:200px!important}
+
+  /* FAQ */
+  .faq-btn{font-size:.9rem;padding:1.1rem 1.25rem}
+  .faq-body p{padding:0 1.25rem 1.25rem}
+
+  /* CTA */
+  .cta-box{padding:3rem 1.25rem}
+  .cta-box h2{font-size:1.6rem}
+
+  /* Footer */
+  .footer-grid{grid-template-columns:1fr}
+  .footer-trust-bar{gap:1.25rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+
+  /* FAB y back-to-top */
+  .wa-fab{width:50px;height:50px;bottom:20px;right:20px}
+  .back-to-top{width:42px;height:42px;bottom:20px;left:20px}
+}
+
+@media(max-width:480px){
+  .hero{padding:6rem 1rem 4rem}
+  .section{padding:4rem 1rem}
+  .cta-section{padding:2.5rem 1rem 4rem}
+  nav{padding:.65rem .75rem}
+  .metric-num{font-size:24px}
+  .calc-result-num{font-size:1.75rem}
+  .cookie-banner{flex-direction:column;padding:1rem}
+  .cookie-btns{width:100%;justify-content:stretch}
+  .cookie-btn{flex:1}
+}
+
 
 
 </style>
@@ -943,87 +999,25 @@ nav.scrolled{
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
         <h3>Tiempo desaprovechado</h3>
-        <p>Introducir datos a mano, responder siempre los mismos emails, generar informes, pasar información de una herramienta a otra.</p>
+        <p>Copiar datos, responder los mismos mensajes, generar informes a mano.</p>
+        <p style="margin-top:.75rem">9 de cada 10 horas laborales se pierden así. Horas que tu equipo podría dedicar a algo que sí importa.</p>
       </article>
       <article class="pain-card">
         <div class="pain-card-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
         <h3>Dinero perdido</h3>
-        <p>Si tu equipo dedica 10 horas semanales a tareas repetitivas, estás pagando un sueldo por algo que una automatización haría en segundos.</p>
+        <p>¿Cuánto de la jornada de tu equipo se va en tareas que podría hacer una máquina en segundos? Sin errores, sin pausa.</p>
+        <p style="margin-top:.75rem">Las empresas pierden de media 1000€/mes en procesos automatizables.</p>
       </article>
       <article class="pain-card">
         <div class="pain-card-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
         </div>
         <h3>Clientes insatisfechos</h3>
-        <p>Una respuesta tarde, un error, un mal seguimiento. Con eso suficiente para elegir la competencia.</p>
+        <p>Un cliente que no recibe respuesta rápida no espera.</p>
+        <p style="margin-top:.75rem">El 75% compra al primero que responde. Con procesos manuales, ese primero podrías ser tú.</p>
       </article>
-    </div>
-  </div>
-</section>
-
-
-<section class="section section-animate" id="testimonios">
-  <div class="container">
-    <span class="eyebrow">TESTIMONIOS</span>
-    <h2 class="section-heading">Lo que dicen nuestros clientes</h2>
-    <div class="rating-header">
-      <div class="stars">★★★★★</div>
-      <span class="rating-score">4.9/5</span>
-    </div>
-    <div class="testimonials-wrapper">
-      <div class="testimonials-track">
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">3x leads</span></div><p class="testimonial-text">"Se tomó su tiempo en explicarnos todo. El acompañamiento marca la diferencia."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Carlos M.</span><span class="author-role" style="display:block">CEO, agencia de marketing</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">-70% costes</span></div><p class="testimonial-text">"La integración con nuestros sistemas existentes fue impecable. Cero fricciones."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Laura G.</span><span class="author-role" style="display:block">Directora, distribuidora logística</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+60% consultas</span></div><p class="testimonial-text">"El sistema de IA ha cambiado completamente nuestra atención al cliente. Ahora podemos atender consultas las 24 horas."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Javier R.</span><span class="author-role" style="display:block">Gerente, agencia inmobiliaria</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">ROI 400%</span></div><p class="testimonial-text">"Desde que implementamos la automatización, nuestra clínica ha experimentado una transformación completa en la gestión de citas."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Ana P.</span><span class="author-role" style="display:block">Propietaria, clínica dental</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+80% eficiencia</span></div><p class="testimonial-text">"Nos ahorramos más de 20 horas semanales en tareas administrativas. No sabíamos que era posible."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Miguel S.</span><span class="author-role" style="display:block">Fundador, consultoría financiera</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+40% ventas</span></div><p class="testimonial-text">"Automatizamos la gestión de pedidos y dejamos de perder ventas por errores humanos. En dos semanas ya se notaba."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">David L.</span><span class="author-role" style="display:block">Director comercial, tienda online</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">x10 más rápido</span></div><p class="testimonial-text">"Antes tardábamos horas en responder presupuestos. Ahora el cliente lo recibe en menos de un minuto."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Sara T.</span><span class="author-role" style="display:block">Socia directora, empresa de reformas</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+25% retención</span></div><p class="testimonial-text">"El seguimiento automático nos recuperó clientes que dábamos por perdidos. Increíble."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Pablo A.</span><span class="author-role" style="display:block">Fundador, academia de idiomas</span></div>
-        </div>
-        <!-- Duplicados para loop infinito -->
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">3x leads</span></div><p class="testimonial-text">"Se tomó su tiempo en explicarnos todo. El acompañamiento marca la diferencia."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Carlos M.</span><span class="author-role" style="display:block">CEO, agencia de marketing</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">-70% costes</span></div><p class="testimonial-text">"La integración con nuestros sistemas existentes fue impecable. Cero fricciones."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Laura G.</span><span class="author-role" style="display:block">Directora, distribuidora logística</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+60% consultas</span></div><p class="testimonial-text">"El sistema de IA ha cambiado completamente nuestra atención al cliente. Ahora podemos atender consultas las 24 horas."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Javier R.</span><span class="author-role" style="display:block">Gerente, agencia inmobiliaria</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">ROI 400%</span></div><p class="testimonial-text">"Desde que implementamos la automatización, nuestra clínica ha experimentado una transformación completa en la gestión de citas."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Ana P.</span><span class="author-role" style="display:block">Propietaria, clínica dental</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+80% eficiencia</span></div><p class="testimonial-text">"Nos ahorramos más de 20 horas semanales en tareas administrativas. No sabíamos que era posible."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Miguel S.</span><span class="author-role" style="display:block">Fundador, consultoría financiera</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+40% ventas</span></div><p class="testimonial-text">"Automatizamos la gestión de pedidos y dejamos de perder ventas por errores humanos. En dos semanas ya se notaba."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">David L.</span><span class="author-role" style="display:block">Director comercial, tienda online</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">x10 más rápido</span></div><p class="testimonial-text">"Antes tardábamos horas en responder presupuestos. Ahora el cliente lo recibe en menos de un minuto."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Sara T.</span><span class="author-role" style="display:block">Socia directora, empresa de reformas</span></div>
-        </div>
-        <div class="testimonial-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+25% retención</span></div><p class="testimonial-text">"El seguimiento automático nos recuperó clientes que dábamos por perdidos. Increíble."</p><hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0"><div><span class="author-name">Pablo A.</span><span class="author-role" style="display:block">Fundador, academia de idiomas</span></div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1068,6 +1062,199 @@ nav.scrolled{
   </div>
 </section>
 
+
+<section class="section section-animate" id="testimonios">
+  <div class="container">
+    <span class="eyebrow">TESTIMONIOS</span>
+    <h2 class="section-heading">Lo que dicen nuestros clientes</h2>
+    <div class="rating-header">
+      <div class="stars">★★★★★</div>
+      <span class="rating-score">4.9/5</span>
+    </div>
+    <div class="testimonials-wrapper">
+      <div class="testimonials-track">
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">-60% ausencias</span>
+          </div>
+          <p class="testimonial-text">"Antes perdíamos citas por olvidos constantemente. Ahora el sistema manda recordatorios solo y las cancelaciones han caído a la mitad."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Carmen R.</span>
+            <span class="author-role" style="display:block">CEO, Clínica Dental</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+45% reservas</span>
+          </div>
+          <p class="testimonial-text">"Mis clientas reservan solas por WhatsApp a cualquier hora. Ya no cojo el teléfono para gestionar citas. Un antes y un después."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Lucía M.</span>
+            <span class="author-role" style="display:block">Founder, Peluquería</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">x8 más rápido</span>
+          </div>
+          <p class="testimonial-text">"Los presupuestos los hacía a mano, 20 minutos cada uno. Ahora el cliente lo recibe en segundos y yo no hago nada."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Antonio P.</span>
+            <span class="author-role" style="display:block">COO, Mecánico</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+70% contactos</span>
+          </div>
+          <p class="testimonial-text">"Cada piso que publico genera respuesta automática con info y cualificación. Los interesados llegan al teléfono ya filtrados."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Miguel T.</span>
+            <span class="author-role" style="display:block">CEO, Inmobiliaria</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+50% matrículas</span>
+          </div>
+          <p class="testimonial-text">"El seguimiento automático recuperó alumnos que habían pedido info y no contestaron. Matrículas que daba por perdidas."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Sara G.</span>
+            <span class="author-role" style="display:block">Directora, Academia</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">-80% tiempo admin</span>
+          </div>
+          <p class="testimonial-text">"Las reservas, confirmaciones y recordatorios van solos. Mi equipo ahora atiende, no contesta el teléfono."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Carlos N.</span>
+            <span class="author-role" style="display:block">Founder, Restaurante</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">Trato excepcional</span>
+          </div>
+          <p class="testimonial-text">"Mario respondía el mismo día, explicaba todo sin tecnicismos y no desapareció tras la entrega. Eso no es lo habitual."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Patricia V.</span>
+            <span class="author-role" style="display:block">Founder, Cooperativa</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">Entrega en 4 días</span>
+          </div>
+          <p class="testimonial-text">"En menos de una semana teníamos todo funcionando. El seguimiento después fue lo que más me sorprendió, sigue ahí cuando lo necesitas."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Javier M.</span>
+            <span class="author-role" style="display:block">CEO, Osteopatía</span>
+          </div>
+        </div>
+        <!-- Duplicados para loop infinito -->
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">-60% ausencias</span>
+          </div>
+          <p class="testimonial-text">"Antes perdíamos citas por olvidos constantemente. Ahora el sistema manda recordatorios solo y las cancelaciones han caído a la mitad."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Carmen R.</span>
+            <span class="author-role" style="display:block">CEO, Clínica Dental</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+45% reservas</span>
+          </div>
+          <p class="testimonial-text">"Mis clientas reservan solas por WhatsApp a cualquier hora. Ya no cojo el teléfono para gestionar citas. Un antes y un después."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Lucía M.</span>
+            <span class="author-role" style="display:block">Founder, Peluquería</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">x8 más rápido</span>
+          </div>
+          <p class="testimonial-text">"Los presupuestos los hacía a mano, 20 minutos cada uno. Ahora el cliente lo recibe en segundos y yo no hago nada."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Antonio P.</span>
+            <span class="author-role" style="display:block">COO, Mecánico</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+70% contactos</span>
+          </div>
+          <p class="testimonial-text">"Cada piso que publico genera respuesta automática con info y cualificación. Los interesados llegan al teléfono ya filtrados."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Miguel T.</span>
+            <span class="author-role" style="display:block">CEO, Inmobiliaria</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">+50% matrículas</span>
+          </div>
+          <p class="testimonial-text">"El seguimiento automático recuperó alumnos que habían pedido info y no contestaron. Matrículas que daba por perdidas."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Sara G.</span>
+            <span class="author-role" style="display:block">Directora, Academia</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">-80% tiempo admin</span>
+          </div>
+          <p class="testimonial-text">"Las reservas, confirmaciones y recordatorios van solos. Mi equipo ahora atiende, no contesta el teléfono."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Carlos N.</span>
+            <span class="author-role" style="display:block">Founder, Restaurante</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">Trato excepcional</span>
+          </div>
+          <p class="testimonial-text">"Mario respondía el mismo día, explicaba todo sin tecnicismos y no desapareció tras la entrega. Eso no es lo habitual."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Patricia V.</span>
+            <span class="author-role" style="display:block">Founder, Cooperativa</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div class="testimonial-stars">★★★★★</div><span class="testimonial-badge">Entrega en 4 días</span>
+          </div>
+          <p class="testimonial-text">"En menos de una semana teníamos todo funcionando. El seguimiento después fue lo que más me sorprendió, sigue ahí cuando lo necesitas."</p>
+          <hr style="border:none;border-top:1px solid var(--slate-200);margin:.75rem 0">
+          <div>
+            <span class="author-name">Javier M.</span>
+            <span class="author-role" style="display:block">CEO, Osteopatía</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section-animate" id="sobre-mi">
   <div class="container">
     <div style="text-align:center;margin-bottom:2.5rem">
@@ -1079,9 +1266,9 @@ nav.scrolled{
       </div>
       <div style="text-align:left">
         <h3 style="font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;color:var(--slate-900);margin-bottom:1rem">Mario Díez</h3>
-        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8;margin-bottom:1rem">Tengo 20 años y llevo desde los 18 metido en esto. Aprendí solo, a base de construir cosas reales. No vengo del mundo académico ni de una gran agencia.</p>
-        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8;margin-bottom:1rem">Cuando trabajas conmigo, no hay intermediarios. Soy yo quien te responde, yo quien diseña la solución y yo quien la pone en marcha. Sin capas, sin retrasos, sin excusas.</p>
-        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8">Si lo que buscas es una agencia grande con mucho marketing, no soy tu opción. Si quieres que alguien de verdad se meta en tu negocio y lo mejore, aquí estoy.</p>
+        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8;margin-bottom:1rem">Tengo 20 años, desde los 17 metido en el mundo de la IA. Aprendí construyendo proyectos reales de forma autodidacta, no en un aula. Cada sistema que entrego tiene que funcionar.</p>
+        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8;margin-bottom:1rem">Cuando trabajas conmigo no hay filtros ni intermediarios. Me escribes a mí, te respondo yo. Analizo tu negocio, diseño la solución y la pongo en marcha. Y sigo disponible después.</p>
+        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8">Si quieres saber si puedo ayudarte, escríbeme. Sin compromiso, en una conversación te digo qué haría con tu negocio.</p>
       </div>
     </div>
   </div>
@@ -1098,7 +1285,7 @@ nav.scrolled{
           <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-body" role="region">
-          <p>Automatizaciones sencillas pueden estar listas en pocos días, las más complejas pueden requerir algunas semanas.</p>
+          <p>Depende de la complejidad. Una automatización sencilla está lista en 1-3 días. Una intermedia, con varias herramientas conectadas, entre 1-2 semanas. Las complejas, con IA o múltiples integraciones, entre 3-6 semanas. En la primera llamada te doy una estimación concreta para tu caso.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -1107,7 +1294,7 @@ nav.scrolled{
           <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-body" role="region">
-          <p>En la mayoría de casos trabajamos con lo que ya tienes. Si en algún momento necesitas incorporar algo nuevo, te lo explicamos paso a paso. El objetivo es que todo sea sencillo para ti.</p>
+          <p>No. Trabajamos sobre lo que ya tienes: Gmail, WhatsApp, Google Sheets, tu CRM... Si hace falta incorporar algo nuevo, lo decidimos juntos y te explico exactamente qué implica antes de tocar nada.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -1116,7 +1303,7 @@ nav.scrolled{
           <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-body" role="region">
-          <p>No hay un perfil concreto. Hay negocios de todo tipo que han ganado tiempo y reducido costes.</p>
+          <p>Si tienes tareas que se repiten y consumen tiempo, sí. He trabajado con clínicas, dentistas, peluquerías, talleres, inmobiliarias, academias y restaurantes. Si no veo margen de mejora real, te lo digo antes de presupuestar nada.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -1125,7 +1312,7 @@ nav.scrolled{
           <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-body" role="region">
-          <p>Cualquier cambio o modificación se puede hacer en cualquier momento.</p>
+          <p>El primer mes de soporte está incluido. Si algo falla durante ese tiempo, lo resuelvo sin coste. A partir del mes, hay un soporte mensual opcional. Sin permanencia, lo contratas solo si lo necesitas.</p>
         </div>
       </div>
     </div>
