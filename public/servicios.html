@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -662,37 +662,40 @@ nav.scrolled{
 }
 
 /* TIMELINE */
-.timeline-wrap{position:relative;max-width:900px;margin:0 auto}
-.timeline-line{
+.timeline-wrap{position:relative;max-width:700px;margin:0 auto}
+.timeline-track{
   position:absolute;left:50%;transform:translateX(-50%);
   top:0;bottom:0;width:2px;
-  background:rgba(59,130,246,.15);
+  background:rgba(59,130,246,.12);
   z-index:0;
 }
 .timeline-fill{
-  position:absolute;left:50%;
-  top:0;width:2px;height:100%;
+  position:absolute;left:50%;transform:translateX(-50%);
+  top:0;width:2px;height:0%;
   background:var(--blue-500);
-  box-shadow:0 0 8px rgba(59,130,246,.5);
+  box-shadow:0 0 8px rgba(59,130,246,.4);
   z-index:1;
-  transform-origin:top;
-  transform:translateX(-50%) scaleY(0);
+  will-change:height;
+  transition:none;
 }
-.timeline-dot{
-  position:absolute;
-  width:14px;height:14px;border-radius:50%;
-  background:var(--blue-500);
-  box-shadow:0 0 0 4px rgba(59,130,246,.2),0 0 20px rgba(59,130,246,.4);
-  left:50%;
-  top:0;
-  z-index:2;
-  transform:translateX(-50%) translateY(0px);
-}
-.timeline-steps{position:relative;z-index:1}
+.timeline-steps{position:relative;z-index:2}
 .timeline-step{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:3rem;align-items:center;
-  min-height:200px;padding:2rem 0;
+  display:grid;grid-template-columns:1fr 40px 1fr;
+  gap:1.5rem;align-items:center;
+  padding:1.5rem 0;
+}
+.timeline-step-spacer{}
+.timeline-node{
+  width:16px;height:16px;border-radius:50%;
+  background:rgba(59,130,246,.15);
+  border:2px solid rgba(59,130,246,.3);
+  transition:background .3s,border-color .3s,box-shadow .3s;
+  justify-self:center;
+}
+.timeline-node.active{
+  background:var(--blue-500);
+  border-color:var(--blue-500);
+  box-shadow:0 0 0 4px rgba(59,130,246,.2),0 0 12px rgba(59,130,246,.4);
 }
 .timeline-step-content{
   background:rgba(255,255,255,.7);
@@ -700,28 +703,30 @@ nav.scrolled{
   -webkit-backdrop-filter:blur(12px);
   border:1px solid var(--slate-200);
   border-radius:20px;
-  padding:2rem;
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity .5s ease,transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+  padding:1.75rem;
+  opacity:.4;
+  transform:translateY(8px);
+  transition:opacity .4s ease,transform .4s ease,border-color .3s,box-shadow .3s;
 }
-.timeline-step-content.visible{opacity:1;transform:translateY(0)}
-.timeline-step-content:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(59,130,246,.08);border-color:#93c5fd}
-.timeline-step-content h3{font-size:1.15rem;font-weight:700;color:var(--slate-900);margin-bottom:.5rem;letter-spacing:-0.02em}
-.timeline-step-content p{font-size:.95rem;color:var(--slate-600);line-height:1.7;margin:0}
-.timeline-step-num{
-  font-family:'Outfit',sans-serif;
-  font-size:2.5rem;font-weight:700;
-  color:var(--blue-500);line-height:1;margin-bottom:.75rem;
+.timeline-step-content.active{
+  opacity:1;transform:translateY(0);
+  border-color:#93c5fd;
+  box-shadow:0 8px 30px rgba(59,130,246,.08);
 }
-.timeline-step-spacer{}
+.timeline-step-content h3{font-size:1.1rem;font-weight:700;color:var(--slate-900);margin-bottom:.4rem;letter-spacing:-0.02em}
+.timeline-step-content p{font-size:.92rem;color:var(--slate-600);line-height:1.7;margin:0}
+.timeline-step-num{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--blue-500);line-height:1;margin-bottom:.5rem}
 .timeline-left{text-align:right}
 .timeline-right{text-align:left}
 @media(max-width:680px){
-  .timeline-line{left:1rem}
-  .timeline-step{grid-template-columns:1fr;padding-left:3rem}
-  .timeline-step-spacer{display:none}
-  .timeline-left,.timeline-right{text-align:left}
+  .timeline-track,.timeline-fill{left:1.5rem;transform:none}
+  .timeline-step{grid-template-columns:32px 1fr;gap:1rem}
+  .timeline-step .timeline-step-spacer{display:none}
+  .timeline-left{text-align:left}
+  .timeline-node{justify-self:start}
+}
+@media(max-width:680px){
+  #garantia .container>div{flex-direction:column;text-align:center;padding:2rem 1.5rem}
 }
 
 
@@ -768,12 +773,12 @@ nav.scrolled{
   <div class="hero-blob-3" aria-hidden="true"></div>
   <div class="hero-inner">
     <span class="eyebrow">Nuestros servicios</span>
-    <h1 class="hero-title" style="font-size:clamp(2rem,5vw,3.5rem)">Qué hacemos por tu negocio</h1>
-    <p class="hero-sub" style="white-space:normal">Nos enfocamos en tu caso particular y desarrollamos soluciones 100% personalizadas para tu empresa.</p>
+    <h1 class="hero-title" style="font-size:clamp(2rem,5vw,3.5rem);opacity:0;animation:heroSlideUp 0.8s ease-out 0.1s forwards">Qué hacemos por tu negocio</h1>
+    <p class="hero-sub" style="white-space:normal;opacity:0;animation:heroSlideUp 0.8s ease-out 0.4s forwards">Nos enfocamos en tu caso particular y desarrollamos soluciones 100% personalizadas para tu empresa.</p>
   </div>
 </section>
 
-<section class="section" id="servicios-cards">
+<section class="section section-animate" id="servicios-cards">
   <div class="container">
     <div class="pain-grid">
 
@@ -860,7 +865,7 @@ nav.scrolled{
 </section>
 
 
-<section class="section" id="proceso">
+<section class="section section-animate" id="proceso">
   <div class="container">
     <div style="text-align:center;margin-bottom:4rem">
       <span class="eyebrow">Cómo trabajamos</span>
@@ -868,62 +873,74 @@ nav.scrolled{
       <p class="section-sub" style="max-width:680px;margin:0 auto">Te acompañamos en cada paso. Sin sorpresas, sin tecnicismos innecesarios.</p>
     </div>
     <div class="timeline-wrap">
-      <div class="timeline-line"></div>
+      <div class="timeline-track"></div>
       <div class="timeline-fill" id="timelineFill"></div>
-      <div class="timeline-dot" id="timelineDot"></div>
       <div class="timeline-steps">
-
         <div class="timeline-step">
           <div class="timeline-step-content timeline-left">
             <div class="timeline-step-num">01</div>
             <h3>Análisis</h3>
-            <p>Evaluamos tus procesos actuales y detectamos dónde la automatización puede generar más impacto.</p>
+            <p>Evaluamos tus procesos y detectamos dónde la automatización genera más impacto.</p>
           </div>
+          <div class="timeline-node" data-node="0"></div>
           <div class="timeline-step-spacer"></div>
         </div>
-
         <div class="timeline-step">
           <div class="timeline-step-spacer"></div>
+          <div class="timeline-node" data-node="1"></div>
           <div class="timeline-step-content timeline-right">
             <div class="timeline-step-num">02</div>
             <h3>Diseño</h3>
             <p>Construimos una solución a medida integrada con las herramientas que ya usas.</p>
           </div>
         </div>
-
         <div class="timeline-step">
           <div class="timeline-step-content timeline-left">
             <div class="timeline-step-num">03</div>
             <h3>Integración</h3>
             <p>Implementación gradual, sin interrupciones en tu día a día.</p>
           </div>
+          <div class="timeline-node" data-node="2"></div>
           <div class="timeline-step-spacer"></div>
         </div>
-
         <div class="timeline-step">
           <div class="timeline-step-spacer"></div>
+          <div class="timeline-node" data-node="3"></div>
           <div class="timeline-step-content timeline-right">
             <div class="timeline-step-num">04</div>
             <h3>Formación</h3>
             <p>Te enseñamos a usar el sistema con sesiones prácticas y documentación clara.</p>
           </div>
         </div>
-
         <div class="timeline-step">
           <div class="timeline-step-content timeline-left">
             <div class="timeline-step-num">05</div>
             <h3>Seguimiento</h3>
             <p>Monitorizamos resultados y optimizamos continuamente. Soporte incluido.</p>
           </div>
+          <div class="timeline-node" data-node="4"></div>
           <div class="timeline-step-spacer"></div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section" id="contacto">
+<section class="section section-animate" id="garantia">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border:1px solid rgba(59,130,246,.25);border-radius:24px;padding:3rem 2.5rem;display:flex;gap:2.5rem;align-items:center;max-width:860px;margin:0 auto">
+      <div style="flex-shrink:0;width:80px;height:80px;background:rgba(59,130,246,.12);border-radius:18px;display:flex;align-items:center;justify-content:center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <div>
+        <p style="font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:1rem">Si en los primeros 7 días sientes que el resultado no cumple lo acordado, te devuelvo el 100% del dinero. Sin preguntas, sin burocracia. Estoy tan seguro de que vas a enamorarte de cómo trabaja tu negocio después de automatizarlo, que me puedo permitir esta garantía.</p>
+        <p style="font-size:.95rem;color:rgba(255,255,255,.5);font-weight:600">Mario Díez | CEO de Negoziax</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section section-animate" id="contacto">
   <div class="container">
     <div class="cta-box">
       <span class="eyebrow">Contacto</span>
@@ -961,7 +978,7 @@ nav.scrolled{
         <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
       </div>
     </div>
-    <div class="footer-col" style="margin:0 auto">
+    <div class="footer-col" style="margin:0 auto;padding-top:1rem">
       <h4>Servicios</h4>
       <ul>
         <li><a href="index.html#servicios">Asistente virtual con IA</a></li>
@@ -970,7 +987,7 @@ nav.scrolled{
         <li><a href="index.html#servicios">Gestión de citas</a></li>
       </ul>
     </div>
-    <div class="footer-col" style="margin:0 auto">
+    <div class="footer-col" style="margin:0 auto;padding-top:1rem">
       <h4>Empresa</h4>
       <ul>
         <li><a href="index.html#sobre-mi">Sobre mí</a></li>
@@ -979,13 +996,13 @@ nav.scrolled{
         <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
     </div>
-    <div class="footer-col" style="margin:0 auto">
+    <div class="footer-col" style="margin:0 auto;padding-top:1rem">
       <h4>Legal</h4>
       <ul>
         <li><a href="#" onclick="document.getElementById('modalLegal').classList.add('open');return false">Aviso legal</a></li>
         <li><a href="#" onclick="document.getElementById('modalPrivacidad').classList.add('open');return false">Política de privacidad</a></li>
         <li><a href="#" onclick="document.getElementById('modalCookies').classList.add('open');return false">Política de cookies</a></li>
-        <li><a href="#" onclick="document.getElementById('modalLegal').classList.add('open');return false">Términos de servicio</a></li>
+        <li><a href="#" onclick="document.getElementById('modalTerminos').classList.add('open');return false">Términos de servicio</a></li>
       </ul>
     </div>
   </div>
@@ -1118,33 +1135,32 @@ backToTopBtn.addEventListener('click', () => {
 
 // Timeline
 (function(){
-  const steps = document.querySelectorAll('.timeline-step-content');
-  const wrap = document.querySelector('.timeline-wrap');
-  if(!steps.length) return;
+  const wrap=document.querySelector('.timeline-wrap');
+  const fill=document.getElementById('timelineFill');
+  const nodes=document.querySelectorAll('.timeline-node');
+  const cards=document.querySelectorAll('.timeline-step-content');
+  if(!wrap||!fill)return;
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting) e.target.classList.add('visible');
+  function update(){
+    const rect=wrap.getBoundingClientRect();
+    const wh=wrap.offsetHeight;
+    const progress=Math.max(0,Math.min(1,(window.innerHeight*0.6-rect.top)/wh));
+    fill.style.height=(progress*100)+'%';
+
+    nodes.forEach((node,i)=>{
+      const nodeRect=node.getBoundingClientRect();
+      const active=nodeRect.top<window.innerHeight*0.65;
+      node.classList.toggle('active',active);
+      if(cards[i]) cards[i].classList.toggle('active',active);
     });
-  }, {threshold:0.2});
-  steps.forEach(s => obs.observe(s));
-
-  if(wrap){
-    let rafPending = false;
-    window.addEventListener('scroll', () => {
-      if(rafPending) return;
-      rafPending = true;
-      requestAnimationFrame(() => {
-        const rect = wrap.getBoundingClientRect();
-        const start = window.innerHeight * 0.2;
-        const end = window.innerHeight * 0.8;
-        const progress = Math.max(0, Math.min(1, (start - rect.top) / (wrap.offsetHeight - (end - start))));
-        document.getElementById('timelineFill').style.transform = 'scaleY(' + progress + ')';
-        document.getElementById('timelineDot').style.transform = 'translateX(-50%) translateY(' + (progress * wrap.offsetHeight) + 'px)';
-        rafPending = false;
-      });
-    }, {passive:true});
   }
+
+  let raf=null;
+  window.addEventListener('scroll',()=>{
+    if(raf)return;
+    raf=requestAnimationFrame(()=>{raf=null;update()});
+  },{passive:true});
+  update();
 })();
 
 // Cookie banner
@@ -1182,12 +1198,32 @@ backToTopBtn.addEventListener('click', () => {
   </div>
 </div>
 
+<!-- MODAL TERMINOS -->
+<div class="modal-overlay" id="modalTerminos">
+  <div class="modal-box">
+    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <h2>Términos de Servicio</h2>
+    <h3>Objeto</h3>
+    <p>Los presentes términos regulan la contratación de servicios de automatización con inteligencia artificial prestados por Negoziax.</p>
+    <h3>Contratación</h3>
+    <p>El contrato se formaliza mediante acuerdo expreso entre las partes. El inicio de los trabajos queda supeditado a la confirmación por escrito del encargo.</p>
+    <h3>Precios y pagos</h3>
+    <p>Los precios se acordarán individualmente para cada proyecto. El pago se realizará según las condiciones pactadas en cada propuesta.</p>
+    <h3>Propiedad del trabajo</h3>
+    <p>Una vez abonado el servicio, el cliente adquiere la titularidad de los sistemas desarrollados. Negoziax se reserva el derecho a mencionar el proyecto como referencia salvo indicación contraria.</p>
+    <h3>Limitación de responsabilidad</h3>
+    <p>Negoziax no se responsabiliza de pérdidas derivadas del mal uso de los sistemas entregados ni de interrupciones en servicios de terceros integrados.</p>
+    <h3>Ley aplicable</h3>
+    <p>Estos términos se rigen por la legislación española. Cualquier controversia se someterá a los juzgados de Ciudad Real.</p>
+  </div>
+</div>
+
 <!-- MODAL PRIVACIDAD -->
 <div class="modal-overlay" id="modalPrivacidad">
   <div class="modal-box">
     <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
     <h2>Política de Privacidad</h2>
-    <p>Responsable: Mario Díez. Finalidad: responder consultas y gestionar servicios contratados. Base legal: consentimiento del interesado y ejecución de contrato. Destinatarios: no se ceden datos a terceros salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición y portabilidad dirigiéndose a contacto@negoziax.com.</p>
+    <p>Responsable: Mario Díez. Finalidad: responder consultas y gestionar servicios contratados. Base legal: consentimiento del interesado y ejecución de contrato. Destinatarios: no se ceden datos a terceros salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición y portabilidad dirigiéndose a contacto@negoziax.com. Los datos se conservan mientras dure la relación comercial o hasta que se solicite su supresión. Asimismo, utilizamos Google Analytics (Google LLC, EEUU) como encargado de tratamiento para análisis estadístico del tráfico web, con las garantías adecuadas conforme al RGPD.</p>
   </div>
 </div>
 
@@ -1196,7 +1232,7 @@ backToTopBtn.addEventListener('click', () => {
   <div class="modal-box">
     <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
     <h2>Política de Cookies</h2>
-    <p>Este sitio utiliza cookies propias y de terceros (Google Analytics) con fines analíticos. Puedes aceptar, rechazar o configurar las cookies desde tu navegador.</p>
+    <p>Este sitio utiliza cookies propias y de terceros (Google Analytics) con fines analíticos. Puedes aceptar, rechazar o configurar las cookies desde tu navegador. Si continúas navegando, entendemos que aceptas su uso. Para más información, contacta en contacto@negoziax.com. Las cookies analíticas de Google Analytics solo se activan si aceptas el uso de cookies. Si las rechazas, no se recopila ningún dato de navegación.</p>
   </div>
 </div>
 
