@@ -282,7 +282,7 @@ nav.scrolled{
   padding:9rem 1.75rem 8rem;
   text-align:center;
   position:relative;
-  background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(239,246,255,0.5) 100%);
+  background:linear-gradient(180deg,#ffffff 0%,#eef4ff 40%,#dbeafe 100%);
   overflow:hidden;
 }
 .hero::before{
@@ -297,7 +297,7 @@ nav.scrolled{
   position:absolute;
   width:500px;height:500px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(96,165,250,.04),transparent 70%);
+  background:radial-gradient(circle,rgba(96,165,250,.10),transparent 70%);
   top:-15%;right:-10%;
   filter:blur(60px);
   z-index:0;
@@ -307,7 +307,7 @@ nav.scrolled{
   position:absolute;
   width:400px;height:400px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(59,130,246,.03),transparent 70%);
+  background:radial-gradient(circle,rgba(59,130,246,.08),transparent 70%);
   bottom:-10%;left:-8%;
   filter:blur(50px);
   z-index:0;
@@ -317,14 +317,14 @@ nav.scrolled{
   position:absolute;
   width:300px;height:300px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(147,197,253,.025),transparent 70%);
+  background:radial-gradient(circle,rgba(147,197,253,.07),transparent 70%);
   top:40%;left:50%;
   transform:translate(-50%,-50%);
   filter:blur(40px);
   z-index:0;
   pointer-events:none;
 }
-.hero-inner{max-width:840px;margin:0 auto;position:relative;z-index:2}
+.hero-inner{max-width:840px;margin:0 auto;position:relative;z-index:3}
 .hero-title{
   font-size:clamp(2.6rem,7.5vw,5.4rem);
   margin-bottom:1.5rem;
@@ -440,6 +440,8 @@ nav.scrolled{
   justify-content:center;
   margin:0 auto 1.25rem;
 }
+#servicios .pain-card{text-align:left}
+#servicios .pain-card-icon{margin:0 0 1.25rem}
 .pain-card h3,.step h3,.g-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
 .pain-card p,.step p,.g-card p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
 
@@ -1097,13 +1099,10 @@ footer{
     <a href="#" class="logo"><img src="logo.png" alt="Negoziax" style="height:47px;width:auto"></a>
 
     <ul class="nav-links">
-      <li><a href="#servicios" data-link="servicios">Servicios</a></li>
-      <li><a href="#problema" data-link="problema">Problema</a></li>
-      <li><a href="#solucion" data-link="solucion">Funcionamiento</a></li>
-      <li><a href="#casos" data-link="casos">Comparativa</a></li>
-      <li><a href="#calculadora" data-link="calculadora">Estimación</a></li>
-      <li><a href="#garantias" data-link="garantias">Garantías</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="#solucion" data-link="solucion">Cómo funciona</a></li>
       <li><a href="#faq" data-link="faq">FAQ</a></li>
+      <li><a href="#sobre-mi" data-link="sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto" data-link="contacto">Contacto</a></li>
     </ul>
 
@@ -1116,8 +1115,7 @@ footer{
 <div class="nav-overlay" id="navOverlay"></div>
 <aside class="nav-mobile" id="navMobile" aria-hidden="true">
   <ul>
-    <li><a href="#servicios" data-link="servicios">Servicios</a></li>
-    <li><a href="#problema" data-link="problema">Problema</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
     <li><a href="#solucion" data-link="solucion">Funcionamiento</a></li>
     <li><a href="#casos" data-link="casos">Comparativa</a></li>
     <li><a href="#calculadora" data-link="calculadora">Estimación</a></li>
@@ -1132,13 +1130,14 @@ footer{
   <div class="hero-blob-1" aria-hidden="true"></div>
   <div class="hero-blob-2" aria-hidden="true"></div>
   <div class="hero-blob-3" aria-hidden="true"></div>
+  <canvas id="heroNodes" style="position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.18"></canvas>
   <div class="hero-inner">
     <h1 class="hero-title">
       <span class="title-line">Gana.</span>
       <span class="title-line">Ahorra.</span>
       <span class="title-line title-blue">Automatiza.</span>
     </h1>
-    <p class="hero-sub">No pierdas más: <span style="color:var(--slate-700);font-weight:600">tiempo</span>, <span style="color:var(--slate-700);font-weight:600">dinero</span> y <span style="color:var(--slate-700);font-weight:600">clientes</span>.</p>
+    <p class="hero-sub">Automatizamos lo que te frena para que te centres en lo que te da dinero.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
       <a href="https://wa.me/34611059182?text=Hola%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20vuestros%20servicios" class="hero-cta-btn" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1172,6 +1171,95 @@ footer{
   </div>
 </section>
 
+<section class="section section-animate" id="servicios">
+  <div class="container">
+    <span class="eyebrow reveal">Nuestros servicios</span>
+    <h2 class="section-heading reveal">Qué hacemos por tu negocio</h2>
+    <p class="section-sub reveal">Nos enfocamos en tu caso particular y desarrollamos soluciones 100% personalizadas para tu empresa.</p>
+    <div class="pain-grid">
+
+<article class="pain-card">
+  <div class="pain-card-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </div>
+  <h3>Asistente virtual con IA</h3>
+  <p>Tu negocio responde al instante, a cualquier hora. Por WhatsApp, web o email, sin que tú intervengas.</p>
+  <ul class="service-bullets">
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Atención 24/7 sin contratar personal</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Filtra y cualifica leads solo</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Respuestas personalizadas con contexto</li>
+  </ul>
+</article>
+
+<article class="pain-card">
+  <div class="pain-card-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+  </div>
+  <h3>Captación automática de clientes</h3>
+  <p>Encuentra, contacta y filtra clientes potenciales sin que tu equipo mueva un dedo.</p>
+  <ul class="service-bullets">
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Prospección desde formularios y RRSS</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Contacto automático por email o WhatsApp</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Solo te llegan los que interesan de verdad</li>
+  </ul>
+</article>
+
+<article class="pain-card">
+  <div class="pain-card-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+  </div>
+  <h3>Presupuestos en segundos</h3>
+  <p>Tu cliente rellena un formulario y recibe un presupuesto profesional en PDF al instante. Sin errores, sin esperas.</p>
+  <ul class="service-bullets">
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> PDF profesional generado con IA</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cálculos automáticos sin errores</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Seguimiento del estado de cada uno</li>
+  </ul>
+</article>
+
+<article class="pain-card">
+  <div class="pain-card-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+  </div>
+  <h3>Citas y agenda automática</h3>
+  <p>Tus clientes reservan solos y reciben confirmación y recordatorio sin que tú hagas nada.</p>
+  <ul class="service-bullets">
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Reservas online sin llamadas</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recordatorios que reducen cancelaciones</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Sincronizado con Google Calendar</li>
+  </ul>
+</article>
+
+<article class="pain-card">
+  <div class="pain-card-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+  </div>
+  <h3>Seguimiento que vende solo</h3>
+  <p>Emails, WhatsApps o recordatorios que se disparan solos según lo que haga (o deje de hacer) cada cliente.</p>
+  <ul class="service-bullets">
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recupera clientes que no respondieron</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Se activa por tiempo o por acción</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cero trabajo manual</li>
+  </ul>
+</article>
+
+<article class="pain-card">
+  <div class="pain-card-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
+  </div>
+  <h3>Informes y documentos automáticos</h3>
+  <p>Facturas, albaranes, reportes o cualquier documento que hoy generas a mano, listo en segundos desde tus datos.</p>
+  <ul class="service-bullets">
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Desde Google Sheets, CRM o lo que uses</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Envío directo al cliente</li>
+    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Formatos profesionales personalizados</li>
+  </ul>
+</article>
+
+    </div>
+  </div>
+</section>
+
 <section class="section section-animate" id="problema">
   <div class="container">
     <span class="eyebrow reveal">Problema</span>
@@ -1198,95 +1286,6 @@ footer{
         <h3>Clientes insatisfechos</h3>
         <p>Una respuesta tarde, un error, un mal seguimiento. Con eso suficiente para elegir la competencia.</p>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section-animate" id="servicios">
-  <div class="container">
-    <span class="eyebrow reveal">Servicios</span>
-    <h2 class="section-heading reveal">Qué podemos automatizar</h2>
-    <p class="section-sub reveal">Cada negocio es diferente. Estos son los servicios que más impacto generan en pymes como la tuya.</p>
-    <div class="pain-grid">
-
-      <article class="pain-card reveal-left">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <h3>Atención al cliente con IA</h3>
-        <p>Chatbots y asistentes que responden dudas, cualifican leads y atienden 24/7 por WhatsApp, web o email.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Respuestas 24/7 sin intervención</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> WhatsApp, web y email</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cualificación automática de leads</li>
-        </ul>
-      </article>
-
-      <article class="pain-card reveal-scale">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <h3>Captación de leads</h3>
-        <p>Sistemas que captan, contactan y filtran clientes potenciales de forma automática desde formularios, redes o bases de datos.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Prospección automática</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Filtrado por interés real</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Seguimiento sin esfuerzo manual</li>
-        </ul>
-      </article>
-
-      <article class="pain-card reveal-right">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3>Presupuestos automáticos</h3>
-        <p>El cliente rellena un formulario y recibe un presupuesto profesional en PDF en segundos, sin intervención manual.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> PDF profesional en segundos</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cálculos sin errores</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Seguimiento del estado</li>
-        </ul>
-      </article>
-
-      <article class="pain-card reveal-left">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        </div>
-        <h3>Gestión de citas y agenda</h3>
-        <p>Reservas, confirmaciones y recordatorios automáticos sincronizados con Google Calendar o tu herramienta actual.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Reservas sin llamadas</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Confirmaciones y recordatorios</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Sincronización con Google Calendar</li>
-        </ul>
-      </article>
-
-      <article class="pain-card reveal-scale">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
-        </div>
-        <h3>Facturación y documentos</h3>
-        <p>Generación automática de facturas, albaranes o informes a partir de los datos que ya tienes en hojas de cálculo o CRM.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Generación desde datos existentes</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Facturas, albaranes e informes</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Envío automático al cliente</li>
-        </ul>
-      </article>
-
-      <article class="pain-card reveal-right">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Seguimiento y remarketing</h3>
-        <p>Emails, WhatsApps o llamadas de seguimiento que se disparan solos según el estado del cliente o el tiempo transcurrido.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Emails y WhatsApps programados</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Activación por estado del cliente</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recuperación de leads fríos</li>
-        </ul>
-      </article>
-
     </div>
   </div>
 </section>
@@ -1514,7 +1513,7 @@ footer{
 <section class="section section-animate" id="sobre-mi">
   <div class="container">
     <span class="eyebrow reveal">Sobre mí</span>
-    <h2 class="section-heading reveal">Sobre mí</h2>
+    <h2 class="section-heading reveal">Quién está detrás</h2>
     <div class="about-wrap reveal">
       <div class="about-photo">
         <!-- Reemplazar src con foto real -->
@@ -1522,7 +1521,7 @@ footer{
       </div>
       <div class="about-text">
         <h3 style="font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;color:var(--slate-900);margin-bottom:1rem">Mario Díez</h3>
-        <p>A los 18 años me metí en el mundo de la IA sin saber muy bien hasta dónde llegaría. Con 19 entré en la carrera de Ciencia de Datos e IA, pero me di cuenta de que el enfoque académico no era lo mío: demasiada programación, pocas herramientas aplicables al mundo real. Así que lo dejé, y aprendí a mi manera. Con 20 años ya estoy construyendo sistemas de automatización para empresas.</p>
+        <p>Me especializo en automatización de procesos con inteligencia artificial para empresas. Diseño sistemas que eliminan tareas repetitivas, reducen errores y liberan tiempo para lo que realmente importa en un negocio. Cada solución se construye a medida, adaptada a las herramientas que ya usas y al ritmo de tu empresa.</p>
       </div>
     </div>
   </div>
@@ -2052,6 +2051,45 @@ backToTopBtn.addEventListener('click', () => {
     // Desactivar GA si rechaza
     window['ga-disable-G-6GDDG1XZ56']=true;
   });
+})();
+
+(function(){
+  const c=document.getElementById('heroNodes');
+  if(!c)return;
+  const ctx=c.getContext('2d');
+  let w,h,pts=[];
+  const N=30,DIST=150;
+  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;if(!pts.length)init()}
+  function init(){pts=[];for(let i=0;i<N;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    pts.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>w)p.vx*=-1;
+      if(p.y<0||p.y>h)p.vy*=-1;
+    });
+    for(let i=0;i<N;i++){
+      for(let j=i+1;j<N;j++){
+        const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<DIST){
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x,pts[i].y);
+          ctx.lineTo(pts[j].x,pts[j].y);
+          ctx.strokeStyle='rgba(59,130,246,'+(1-d/DIST)*.5+')';
+          ctx.lineWidth=1;
+          ctx.stroke();
+        }
+      }
+      ctx.beginPath();
+      ctx.arc(pts[i].x,pts[i].y,2.5,0,Math.PI*2);
+      ctx.fillStyle='rgba(59,130,246,.6)';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',resize);
+  resize();draw();
 })();
 
 </script>
