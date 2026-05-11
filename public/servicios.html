@@ -73,6 +73,11 @@
 
 html{scroll-behavior:smooth}
 
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#3b82f6;border-radius:999px}
+::-webkit-scrollbar-thumb:hover{background:#2563eb}
+
 body{
   font-family:'DM Sans',system-ui,sans-serif;
   color:var(--slate-900);
@@ -293,8 +298,9 @@ nav.scrolled{
 /* SECTIONS */
 .section{
   position:relative;z-index:1;
-  padding:7rem 1.75rem;
+  padding:5rem 2rem;
   max-width:1180px;margin:0 auto;
+  background:transparent;
 }
 .section-animate{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease}
 .section-animate.visible{opacity:1;transform:translateY(0)}
@@ -302,11 +308,12 @@ nav.scrolled{
 .eyebrow{
   display:inline-block;
   font-family:'DM Sans',sans-serif;
-  font-size:.8rem;font-weight:600;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+  font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
   color:var(--blue-500);
-  margin-bottom:.75rem;
+  margin-bottom:1rem;
+  padding:.35rem .75rem;
+  background:rgba(59,130,246,.08);
+  border-radius:999px;
 }
 
 .section-heading{
@@ -314,10 +321,13 @@ nav.scrolled{
   color:var(--slate-900);
   margin-bottom:1.1rem;
   letter-spacing:-0.03em;
+  text-align:center;
 }
 .section-sub{
   font-size:1.08rem;color:var(--slate-600);
-  max-width:720px;line-height:1.7;
+  max-width:680px;line-height:1.7;
+  text-align:center;
+  margin:0 auto 3rem;
 }
 
 /* GLASS CARDS */
@@ -361,7 +371,7 @@ nav.scrolled{
 /* REVEAL animations */
 .reveal,.reveal-left,.reveal-right,.reveal-scale{
   opacity:0;
-  transition:opacity 0.7s ease,transform 0.7s ease;
+  transition:opacity .6s ease,transform .6s ease;
 }
 .reveal{transform:translateY(30px)}
 .reveal-left{transform:translateX(-40px)}
@@ -371,52 +381,11 @@ nav.scrolled{
   opacity:1;transform:none;
 }
 
-/* Servicios detalle */
-.servicio-bloque{
-  max-width:780px;
-  margin:0 auto 4rem;
-  padding-bottom:4rem;
-  border-bottom:1px solid var(--slate-200);
-}
-.servicio-bloque:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.servicio-num{
-  font-family:'Outfit',sans-serif;
-  font-size:3.5rem;font-weight:700;letter-spacing:-0.04em;
-  background:linear-gradient(135deg,var(--blue-500),var(--blue-400));
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-  line-height:1;margin-bottom:1rem;
-}
-.servicio-titulo{
-  font-size:clamp(1.5rem,3vw,2rem);
-  color:var(--slate-900);
-  margin-bottom:1rem;
-  letter-spacing:-0.03em;
-}
-.servicio-desc{
-  font-size:1.05rem;color:var(--slate-600);
-  line-height:1.8;margin-bottom:1.5rem;
-}
-.servicio-lista{
-  list-style:none;display:flex;flex-direction:column;gap:.6rem;
-}
-.servicio-lista li{
-  font-size:.95rem;color:var(--slate-600);
-  display:flex;align-items:center;gap:.6rem;
-  line-height:1.5;
-}
-.servicio-lista li::before{
-  content:'';
-  width:8px;height:8px;
-  border-radius:50%;
-  background:var(--blue-500);
-  flex-shrink:0;
-}
 
 /* Steps */
 .steps{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:1.5rem;margin-top:3rem;
+  gap:1rem;margin-top:3rem;
 }
 .step{
   background:rgba(255,255,255,.7);
@@ -426,7 +395,7 @@ nav.scrolled{
   border-radius:20px;
   padding:2rem 1.75rem;
   text-align:center;
-  transition:transform .3s ease,box-shadow .3 ease,border-color .3s ease;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
 .step:hover{
   transform:translateY(-3px);
@@ -520,9 +489,10 @@ nav.scrolled{
 .footer-grid{
   max-width:1180px;margin:0 auto;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
   gap:2.5rem 2rem;
   margin-bottom:3rem;
+  justify-items:start;
 }
 .footer-brand{grid-column:span 1}
 .footer-brand .brand--footer{margin-bottom:1rem}
@@ -586,17 +556,34 @@ nav.scrolled{
 
 /* Back to top */
 .back-to-top{
-  position:fixed;bottom:100px;right:28px;z-index:98;
-  width:44px;height:44px;border-radius:50%;
-  background:rgba(255,255,255,.9);color:var(--slate-700);
-  border:1px solid var(--slate-200);
+  position:fixed;bottom:1.75rem;left:1.75rem;
+  width:50px;height:50px;border-radius:50%;
+  background:#fff;
+  color:var(--slate-700);
   display:flex;align-items:center;justify-content:center;
-  cursor:pointer;opacity:0;pointer-events:none;
-  transition:opacity .3s ease,transform .2s ease;
-  backdrop-filter:blur(8px);
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  z-index:200;
+  cursor:pointer;
+  border:none;
+  opacity:0;visibility:hidden;
+  transform:translateY(10px);
+  transition:opacity .3s ease,transform .3s ease,visibility .3s ease,box-shadow .25s;
 }
-.back-to-top.visible{opacity:1;pointer-events:auto}
-.back-to-top:hover{transform:translateY(-2px);color:var(--blue-500)}
+.back-to-top.visible{
+  opacity:1;visibility:visible;
+  transform:translateY(0);
+}
+.back-to-top:hover{
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
+  transform:translateY(-2px);
+}
+.back-to-top svg{
+  width:22px;height:22px;
+}
+@media(max-width:680px){
+  .back-to-top{width:44px;height:44px;bottom:1.25rem;left:1.25rem}
+  .back-to-top svg{width:20px;height:20px}
+}
 
 /* Cookie banner */
 .cookie-banner{
@@ -672,6 +659,71 @@ nav.scrolled{
   .cookie-btns{justify-content:center}
 }
 
+/* TIMELINE */
+.timeline-wrap{position:relative;max-width:900px;margin:0 auto}
+.timeline-line{
+  position:absolute;left:50%;transform:translateX(-50%);
+  top:0;bottom:0;width:2px;
+  background:rgba(59,130,246,.15);
+  z-index:0;
+}
+.timeline-fill{
+  position:absolute;left:50%;
+  top:0;width:2px;height:100%;
+  background:var(--blue-500);
+  box-shadow:0 0 8px rgba(59,130,246,.5);
+  z-index:1;
+  transform-origin:top;
+  transform:translateX(-50%) scaleY(0);
+}
+.timeline-dot{
+  position:absolute;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--blue-500);
+  box-shadow:0 0 0 4px rgba(59,130,246,.2),0 0 20px rgba(59,130,246,.4);
+  left:50%;
+  top:0;
+  z-index:2;
+  transform:translateX(-50%) translateY(0px);
+}
+.timeline-steps{position:relative;z-index:1}
+.timeline-step{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3rem;align-items:center;
+  min-height:200px;padding:2rem 0;
+}
+.timeline-step-content{
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--slate-200);
+  border-radius:20px;
+  padding:2rem;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .5s ease,transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.timeline-step-content.visible{opacity:1;transform:translateY(0)}
+.timeline-step-content:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(59,130,246,.08);border-color:#93c5fd}
+.timeline-step-content h3{font-size:1.15rem;font-weight:700;color:var(--slate-900);margin-bottom:.5rem;letter-spacing:-0.02em}
+.timeline-step-content p{font-size:.95rem;color:var(--slate-600);line-height:1.7;margin:0}
+.timeline-step-num{
+  font-family:'Outfit',sans-serif;
+  font-size:2.5rem;font-weight:700;
+  color:var(--blue-500);line-height:1;margin-bottom:.75rem;
+}
+.timeline-step-spacer{}
+.timeline-left{text-align:right}
+.timeline-right{text-align:left}
+@media(max-width:680px){
+  .timeline-line{left:1rem}
+  .timeline-step{grid-template-columns:1fr;padding-left:3rem}
+  .timeline-step-spacer{display:none}
+  .timeline-left,.timeline-right{text-align:left}
+}
+
+
+
 </style>
 </head>
 <body>
@@ -688,10 +740,7 @@ nav.scrolled{
 
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="#servicios-cards" data-link="servicios-cards">Servicios</a></li>
-      <li><a href="#proceso" data-link="proceso">Cómo trabajamos</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
     </ul>
 
     <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false">
@@ -704,9 +753,9 @@ nav.scrolled{
 <aside class="nav-mobile" id="navMobile" aria-hidden="true">
   <ul>
     <li><a href="index.html">Inicio</a></li>
-    <li><a href="#servicios-cards" data-link="servicios-cards">Servicios</a></li>
-    <li><a href="#proceso" data-link="proceso">Cómo trabajamos</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
     <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
     <li><a href="index.html#contacto">Contacto</a></li>
   </ul>
 </aside>
@@ -808,132 +857,80 @@ nav.scrolled{
   </div>
 </section>
 
-<section class="section" id="servicios-detalle">
-  <div class="container">
-
-    <div class="servicio-bloque reveal">
-      <div class="servicio-num">01</div>
-      <h2 class="servicio-titulo">Asistente virtual con IA</h2>
-      <p class="servicio-desc">Tu negocio responde al instante, a cualquier hora. Por WhatsApp, web o email, sin que tú intervengas. El asistente entiende lo que pregunta el cliente, responde con contexto y filtra los que realmente interesan.</p>
-      <ul class="servicio-lista">
-        <li>Atención 24/7 sin contratar personal</li>
-        <li>Integración con WhatsApp, web y email</li>
-        <li>Cualificación automática de leads</li>
-        <li>Respuestas personalizadas con contexto real</li>
-      </ul>
-    </div>
-
-    <div class="servicio-bloque reveal">
-      <div class="servicio-num">02</div>
-      <h2 class="servicio-titulo">Captación automática de clientes</h2>
-      <p class="servicio-desc">Encuentra, contacta y filtra clientes potenciales sin que tu equipo mueva un dedo. Desde formularios, redes sociales o bases de datos, el sistema identifica a quien tiene interés real y lo contacta por ti.</p>
-      <ul class="servicio-lista">
-        <li>Prospección desde múltiples fuentes</li>
-        <li>Contacto automático por email o WhatsApp</li>
-        <li>Filtrado por interés real</li>
-        <li>Solo te llegan los que merecen tu tiempo</li>
-      </ul>
-    </div>
-
-    <div class="servicio-bloque reveal">
-      <div class="servicio-num">03</div>
-      <h2 class="servicio-titulo">Presupuestos en segundos</h2>
-      <p class="servicio-desc">Tu cliente rellena un formulario y recibe un presupuesto profesional en PDF al instante. Sin errores de cálculo, sin esperas de días, sin intervención manual.</p>
-      <ul class="servicio-lista">
-        <li>PDF profesional generado con IA</li>
-        <li>Cálculos automáticos sin errores</li>
-        <li>Seguimiento del estado de cada presupuesto</li>
-        <li>El cliente recibe el documento en menos de un minuto</li>
-      </ul>
-    </div>
-
-    <div class="servicio-bloque reveal">
-      <div class="servicio-num">04</div>
-      <h2 class="servicio-titulo">Citas y agenda automática</h2>
-      <p class="servicio-desc">Tus clientes reservan solos y reciben confirmación y recordatorio sin que tú hagas nada. Se acabaron las llamadas para agendar y las cancelaciones de última hora.</p>
-      <ul class="servicio-lista">
-        <li>Reservas online sin llamadas</li>
-        <li>Confirmaciones y recordatorios automáticos</li>
-        <li>Reducción de cancelaciones</li>
-        <li>Sincronizado con Google Calendar</li>
-      </ul>
-    </div>
-
-    <div class="servicio-bloque reveal">
-      <div class="servicio-num">05</div>
-      <h2 class="servicio-titulo">Seguimiento que vende solo</h2>
-      <p class="servicio-desc">Emails, WhatsApps o recordatorios que se disparan solos según lo que haga o deje de hacer cada cliente. Recupera oportunidades que antes se perdían por falta de seguimiento.</p>
-      <ul class="servicio-lista">
-        <li>Recupera clientes que no respondieron</li>
-        <li>Se activa por tiempo o por acción del cliente</li>
-        <li>Multicanal: email, WhatsApp, SMS</li>
-        <li>Cero trabajo manual</li>
-      </ul>
-    </div>
-
-    <div class="servicio-bloque reveal">
-      <div class="servicio-num">06</div>
-      <h2 class="servicio-titulo">Informes y documentos automáticos</h2>
-      <p class="servicio-desc">Facturas, albaranes, reportes o cualquier documento que hoy generas a mano, listo en segundos desde tus datos actuales.</p>
-      <ul class="servicio-lista">
-        <li>Generación desde Google Sheets, CRM o lo que uses</li>
-        <li>Envío directo al cliente</li>
-        <li>Formatos profesionales personalizados</li>
-        <li>Histórico organizado sin esfuerzo</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
 
 <section class="section" id="proceso">
-  <div class="container" style="text-align:center">
-    <span class="eyebrow reveal">Cómo trabajamos</span>
-    <h2 class="section-heading reveal">De la idea a la implementación</h2>
-    <p class="section-sub reveal" style="max-width:780px;margin:0 auto 3rem">Te acompañamos en cada paso. Sin sorpresas, sin tecnicismos innecesarios.</p>
-    <div class="steps">
-      <div class="step reveal-left">
-        <div class="step-num">01</div>
-        <h3>Análisis</h3>
-        <p>Evaluamos tus procesos actuales y detectamos dónde la automatización puede generar más impacto.</p>
-      </div>
-      <div class="step reveal-scale">
-        <div class="step-num">02</div>
-        <h3>Diseño</h3>
-        <p>Construimos una solución a medida integrada con las herramientas que ya usas.</p>
-      </div>
-      <div class="step reveal-right">
-        <div class="step-num">03</div>
-        <h3>Integración</h3>
-        <p>Implementación gradual, sin interrupciones en tu día a día.</p>
-      </div>
-      <div class="step reveal-left">
-        <div class="step-num">04</div>
-        <h3>Formación</h3>
-        <p>Te enseñamos a usar el sistema con sesiones prácticas y documentación clara.</p>
-      </div>
-      <div class="step reveal-right">
-        <div class="step-num">05</div>
-        <h3>Seguimiento</h3>
-        <p>Monitorizamos resultados y optimizamos continuamente. Soporte incluido.</p>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:4rem">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2 class="section-heading">De la idea a la implementación</h2>
+      <p class="section-sub" style="max-width:680px;margin:0 auto">Te acompañamos en cada paso. Sin sorpresas, sin tecnicismos innecesarios.</p>
+    </div>
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+      <div class="timeline-fill" id="timelineFill"></div>
+      <div class="timeline-dot" id="timelineDot"></div>
+      <div class="timeline-steps">
+
+        <div class="timeline-step">
+          <div class="timeline-step-content timeline-left">
+            <div class="timeline-step-num">01</div>
+            <h3>Análisis</h3>
+            <p>Evaluamos tus procesos actuales y detectamos dónde la automatización puede generar más impacto.</p>
+          </div>
+          <div class="timeline-step-spacer"></div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-step-spacer"></div>
+          <div class="timeline-step-content timeline-right">
+            <div class="timeline-step-num">02</div>
+            <h3>Diseño</h3>
+            <p>Construimos una solución a medida integrada con las herramientas que ya usas.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-step-content timeline-left">
+            <div class="timeline-step-num">03</div>
+            <h3>Integración</h3>
+            <p>Implementación gradual, sin interrupciones en tu día a día.</p>
+          </div>
+          <div class="timeline-step-spacer"></div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-step-spacer"></div>
+          <div class="timeline-step-content timeline-right">
+            <div class="timeline-step-num">04</div>
+            <h3>Formación</h3>
+            <p>Te enseñamos a usar el sistema con sesiones prácticas y documentación clara.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-step-content timeline-left">
+            <div class="timeline-step-num">05</div>
+            <h3>Seguimiento</h3>
+            <p>Monitorizamos resultados y optimizamos continuamente. Soporte incluido.</p>
+          </div>
+          <div class="timeline-step-spacer"></div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<section class="cta-section" id="contacto">
   <div class="container">
     <div class="cta-box">
-      <span class="eyebrow reveal">Empezar</span>
-      <h2 class="reveal">¿Necesitas algo a medida?</h2>
-      <p class="reveal">Cuéntanos qué necesitas y diseñamos la solución perfecta para tu negocio.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem" class="reveal">
-        <a href="https://wa.me/34611059182?text=Hola%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20vuestros%20servicios" target="_blank" rel="noopener" class="hero-cta-btn" style="animation:none;opacity:1;transform:none">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.33 0-4.48-.78-6.206-2.093l-.353-.29-3.659 1.226 1.226-3.659-.29-.353A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-          WhatsApp
-        </a>
-        <a href="mailto:contacto@negoziax.com" class="hero-cta-secondary" style="animation:none;opacity:1;transform:none;border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.85)">Email</a>
-      </div>
+      <span class="eyebrow">Contacto</span>
+      <h2 class="reveal">¿Listo para automatizar tu negocio?</h2>
+      <p class="reveal">Cuéntame qué necesitas. En menos de 24h te digo si puedo ayudarte y cómo.</p>
+      <a href="https://wa.me/34611059182?text=Hola%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20vuestros%20servicios" target="_blank" rel="noopener" class="hero-cta-btn reveal" style="animation:none;opacity:1;transform:none;margin-top:2rem">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.33 0-4.48-.78-6.206-2.093l-.353-.29-3.659 1.226 1.226-3.659-.29-.353A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -943,27 +940,35 @@ nav.scrolled{
     <div class="footer-brand">
       <span class="brand brand--footer"><span class="b-1">negoz</span><span class="b-2">ia</span><span class="b-3">x</span></span>
       <p>Automatizamos procesos de negocios con inteligencia artificial para que tu empresa gane tiempo, dinero y clientes.</p>
-      <div class="footer-contact">
-        <a href="mailto:contacto@negoziax.com">contacto@negoziax.com</a>
-        <a href="tel:+34611059182">+34 611 059 182</a>
+      <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:1rem">
+        <div style="display:flex;align-items:center;gap:.6rem">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--slate-400);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.19a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span style="font-size:.85rem;color:var(--slate-400)">+34 611 059 182</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.6rem">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--slate-400);flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:contacto@negoziax.com" style="font-size:.85rem;color:var(--slate-400);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='var(--slate-400)'">contacto@negoziax.com</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:.6rem">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--slate-400);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span style="font-size:.85rem;color:var(--slate-400)">Ciudad Real, España</span>
+        </div>
       </div>
-      <div class="footer-socials">
+      <div class="footer-socials" style="margin-top:1rem">
         <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
         <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
       </div>
     </div>
-    <div class="footer-col">
+    <div class="footer-col" style="margin:0 auto">
       <h4>Servicios</h4>
       <ul>
-        <li><a href="#servicios-cards">Asistente virtual con IA</a></li>
-        <li><a href="#servicios-cards">Captación de clientes</a></li>
-        <li><a href="#servicios-cards">Presupuestos automáticos</a></li>
-        <li><a href="#servicios-cards">Gestión de citas</a></li>
-        <li><a href="#servicios-cards">Facturación</a></li>
-        <li><a href="#servicios-cards">Seguimiento</a></li>
+        <li><a href="index.html#servicios">Asistente virtual con IA</a></li>
+        <li><a href="index.html#servicios">Captación de clientes</a></li>
+        <li><a href="index.html#servicios">Presupuestos automáticos</a></li>
+        <li><a href="index.html#servicios">Gestión de citas</a></li>
       </ul>
     </div>
-    <div class="footer-col">
+    <div class="footer-col" style="margin:0 auto">
       <h4>Empresa</h4>
       <ul>
         <li><a href="index.html#sobre-mi">Sobre mí</a></li>
@@ -972,18 +977,29 @@ nav.scrolled{
         <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
     </div>
-    <div class="footer-col">
+    <div class="footer-col" style="margin:0 auto">
       <h4>Legal</h4>
       <ul>
-        <li><a href="#" class="modal-link" onclick="document.getElementById('modalLegal').classList.add('open')">Aviso legal</a></li>
-        <li><a href="#" class="modal-link" onclick="document.getElementById('modalPrivacidad').classList.add('open')">Política de privacidad</a></li>
-        <li><a href="#" class="modal-link" onclick="document.getElementById('modalCookies').classList.add('open')">Política de cookies</a></li>
+        <li><a href="#" onclick="document.getElementById('modalLegal').classList.add('open');return false">Aviso legal</a></li>
+        <li><a href="#" onclick="document.getElementById('modalPrivacidad').classList.add('open');return false">Política de privacidad</a></li>
+        <li><a href="#" onclick="document.getElementById('modalCookies').classList.add('open');return false">Política de cookies</a></li>
+        <li><a href="#" onclick="document.getElementById('modalLegal').classList.add('open');return false">Términos de servicio</a></li>
       </ul>
-      <div class="footer-badges">
-        <span class="footer-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> SSL</span>
-        <span class="footer-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> RGPD</span>
-      </div>
     </div>
+  </div>
+  <div style="max-width:1200px;margin:2rem auto 0;padding:1.5rem 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:center;gap:3rem;flex-wrap:wrap">
+    <span style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--slate-400)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Datos protegidos con SSL
+    </span>
+    <span style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--slate-400)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      RGPD Compliant
+    </span>
+    <span style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--slate-400)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      Facturación legal en España
+    </span>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 Negoziax. Todos los derechos reservados.</span>
@@ -1106,6 +1122,37 @@ window.addEventListener('scroll', () => {
 backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Timeline
+(function(){
+  const steps = document.querySelectorAll('.timeline-step-content');
+  const wrap = document.querySelector('.timeline-wrap');
+  if(!steps.length) return;
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, {threshold:0.2});
+  steps.forEach(s => obs.observe(s));
+
+  if(wrap){
+    let rafPending = false;
+    window.addEventListener('scroll', () => {
+      if(rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(() => {
+        const rect = wrap.getBoundingClientRect();
+        const start = window.innerHeight * 0.2;
+        const end = window.innerHeight * 0.8;
+        const progress = Math.max(0, Math.min(1, (start - rect.top) / (wrap.offsetHeight - (end - start))));
+        document.getElementById('timelineFill').style.transform = 'scaleY(' + progress + ')';
+        document.getElementById('timelineDot').style.transform = 'translateX(-50%) translateY(' + (progress * wrap.offsetHeight) + 'px)';
+        rafPending = false;
+      });
+    }, {passive:true});
+  }
+})();
 
 // Cookie banner
 (function(){
