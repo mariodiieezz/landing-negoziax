@@ -320,6 +320,44 @@ nav.scrolled{
   max-width:720px;line-height:1.7;
 }
 
+/* GLASS CARDS */
+.pain-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;margin-top:3rem;
+}
+.pain-card{
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--slate-200);
+  border-radius:20px;
+  padding:2.5rem 2rem;
+  text-align:center;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.pain-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 30px rgba(59,130,246,.08);
+  border-color:#93c5fd;
+}
+.pain-card-icon{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(96,165,250,.06));
+  color:var(--blue-500);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 1.25rem;
+}
+#servicios-cards .pain-card{text-align:left}
+#servicios-cards .pain-card-icon{margin:0 0 1.25rem}
+.pain-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
+.pain-card p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
+.service-bullets{list-style:none;margin-top:.75rem;display:flex;flex-direction:column;gap:.35rem;text-align:left}
+.service-bullets li{font-size:.85rem;color:var(--slate-500);display:flex;align-items:center;gap:.5rem}
+
 /* REVEAL animations */
 .reveal,.reveal-left,.reveal-right,.reveal-scale{
   opacity:0;
@@ -650,7 +688,7 @@ nav.scrolled{
 
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="#servicios-detalle" data-link="servicios-detalle">Servicios</a></li>
+      <li><a href="#servicios-cards" data-link="servicios-cards">Servicios</a></li>
       <li><a href="#proceso" data-link="proceso">Cómo trabajamos</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
       <li><a href="index.html#contacto">Contacto</a></li>
@@ -666,7 +704,7 @@ nav.scrolled{
 <aside class="nav-mobile" id="navMobile" aria-hidden="true">
   <ul>
     <li><a href="index.html">Inicio</a></li>
-    <li><a href="#servicios-detalle" data-link="servicios-detalle">Servicios</a></li>
+    <li><a href="#servicios-cards" data-link="servicios-cards">Servicios</a></li>
     <li><a href="#proceso" data-link="proceso">Cómo trabajamos</a></li>
     <li><a href="index.html#faq">FAQ</a></li>
     <li><a href="index.html#contacto">Contacto</a></li>
@@ -681,6 +719,92 @@ nav.scrolled{
     <span class="eyebrow">Nuestros servicios</span>
     <h1 class="hero-title" style="font-size:clamp(2rem,5vw,3.5rem)">Qué hacemos por tu negocio</h1>
     <p class="hero-sub" style="white-space:normal">Nos enfocamos en tu caso particular y desarrollamos soluciones 100% personalizadas para tu empresa.</p>
+  </div>
+</section>
+
+<section class="section" id="servicios-cards">
+  <div class="container">
+    <div class="pain-grid">
+
+      <article class="pain-card">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>Asistente virtual con IA</h3>
+        <p>Tu negocio responde al instante, a cualquier hora. Por WhatsApp, web o email, sin que tú intervengas.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Atención 24/7 sin contratar personal</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Filtra y cualifica leads solo</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Respuestas personalizadas con contexto</li>
+        </ul>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Captación automática de clientes</h3>
+        <p>Encuentra, contacta y filtra clientes potenciales sin que tu equipo mueva un dedo.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Prospección desde formularios y RRSS</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Contacto automático por email o WhatsApp</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Solo te llegan los que interesan de verdad</li>
+        </ul>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <h3>Presupuestos en segundos</h3>
+        <p>Tu cliente rellena un formulario y recibe un presupuesto profesional en PDF al instante. Sin errores, sin esperas.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> PDF profesional generado con IA</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cálculos automáticos sin errores</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Seguimiento del estado de cada uno</li>
+        </ul>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3>Citas y agenda automática</h3>
+        <p>Tus clientes reservan solos y reciben confirmación y recordatorio sin que tú hagas nada.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Reservas online sin llamadas</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recordatorios que reducen cancelaciones</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Sincronizado con Google Calendar</li>
+        </ul>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Seguimiento que vende solo</h3>
+        <p>Emails, WhatsApps o recordatorios que se disparan solos según lo que haga o deje de hacer cada cliente.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recupera clientes que no respondieron</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Se activa por tiempo o por acción</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cero trabajo manual</li>
+        </ul>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Informes y documentos automáticos</h3>
+        <p>Facturas, albaranes, reportes o cualquier documento que hoy generas a mano, listo en segundos desde tus datos.</p>
+        <ul class="service-bullets">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Desde Google Sheets, CRM o lo que uses</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Envío directo al cliente</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Formatos profesionales personalizados</li>
+        </ul>
+      </article>
+
+    </div>
   </div>
 </section>
 
@@ -831,12 +955,12 @@ nav.scrolled{
     <div class="footer-col">
       <h4>Servicios</h4>
       <ul>
-        <li><a href="#servicios-detalle">Asistente virtual con IA</a></li>
-        <li><a href="#servicios-detalle">Captación de clientes</a></li>
-        <li><a href="#servicios-detalle">Presupuestos automáticos</a></li>
-        <li><a href="#servicios-detalle">Gestión de citas</a></li>
-        <li><a href="#servicios-detalle">Facturación</a></li>
-        <li><a href="#servicios-detalle">Seguimiento</a></li>
+        <li><a href="#servicios-cards">Asistente virtual con IA</a></li>
+        <li><a href="#servicios-cards">Captación de clientes</a></li>
+        <li><a href="#servicios-cards">Presupuestos automáticos</a></li>
+        <li><a href="#servicios-cards">Gestión de citas</a></li>
+        <li><a href="#servicios-cards">Facturación</a></li>
+        <li><a href="#servicios-cards">Seguimiento</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -914,7 +1038,7 @@ const sectionAnimateObserver = new IntersectionObserver(entries => {
 sectionEls.forEach(el => sectionAnimateObserver.observe(el));
 
 // Active section tracking for nav links
-const sectionIds = ['servicios-detalle', 'proceso'];
+const sectionIds = ['servicios-cards', 'proceso'];
 const navLinks = document.querySelectorAll('[data-link]');
 function setActiveLink(id) {
   navLinks.forEach(a => {
