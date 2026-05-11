@@ -424,69 +424,8 @@ nav.scrolled{
 }
 #servicios .pain-card{text-align:left}
 #servicios .pain-card-icon{margin:0 0 1.25rem}
-.pain-card h3,.step h3,.g-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
-.pain-card p,.step p,.g-card p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
-
-/* STEPS */
-.steps{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:1.5rem;margin-top:3rem;
-}
-.step{
-  background:rgba(255,255,255,.7);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border:1px solid var(--slate-200);
-  border-radius:20px;
-  padding:2.5rem 2rem;
-  text-align:center;
-  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
-}
-.step:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 30px rgba(59,130,246,.08);
-  border-color:#93c5fd;
-}
-.step-num{
-  font-family:'Outfit',sans-serif;
-  font-size:3rem;font-weight:700;letter-spacing:-0.04em;
-  background:linear-gradient(135deg,var(--blue-500),var(--blue-400));
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-  opacity:.95;line-height:1;margin-bottom:.875rem;
-  text-align:center;
-}
-
-/* TOOLS GRID */
-.tools-section{margin-top:4rem;text-align:center}
-.tools-title{
-  font-size:1.1rem;font-weight:600;color:var(--slate-700);
-  margin-bottom:2rem;letter-spacing:-0.01em;
-}
-.tools-grid{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;
-  max-width:800px;margin:0 auto;
-}
-.tool-item{
-  display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  min-width:80px;
-}
-.tool-icon{
-  width:48px;height:48px;
-  filter:grayscale(100%);
-  opacity:.6;
-  transition:filter .3s ease,opacity .3s ease,transform .3s ease;
-}
-.tool-item:hover .tool-icon{
-  filter:grayscale(0%);
-  opacity:1;
-  transform:translateY(-4px);
-}
-.tool-name{
-  font-size:.8rem;font-weight:500;color:var(--slate-500);
-  transition:color .3s ease;
-}
-.tool-item:hover .tool-name{color:var(--slate-700)}
+.pain-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
+.pain-card p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
 
 /* METRICS BAR */
 .metrics-bar{
@@ -526,63 +465,6 @@ nav.scrolled{
   .metric-item:last-child{border-bottom:none}
 }
 
-/* COMPARE (ANTES vs AHORA) */
-.compare-wrap{margin-top:3.5rem;position:relative}
-.compare{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0;
-  border-radius:24px;
-  overflow:hidden;
-  position:relative;
-  background:var(--white);
-}
-.compare-side{
-  padding:2.75rem 2rem;
-  border:1px solid transparent;
-}
-.compare-side--before{
-  background:linear-gradient(180deg,rgba(239,68,68,.05) 0%,rgba(239,68,68,.09) 100%);
-  border-color:#fecaca;
-  border-right-width:0;
-}
-.compare-side--after{
-  background:linear-gradient(180deg,rgba(59,130,246,.05) 0%,rgba(16,185,129,.09) 100%);
-  border-color:#bbf7d0;
-  border-left-width:0;
-}
-.compare-head{
-  display:flex;align-items:center;gap:.6rem;
-  margin-bottom:1.5rem;
-  font-family:'Outfit',sans-serif;font-weight:700;font-size:.85rem;
-  letter-spacing:.12em;text-transform:uppercase;
-}
-.compare-head--before{color:var(--red-500)}
-.compare-head--after{color:var(--green-500)}
-.compare-head .dot{
-  width:10px;height:10px;border-radius:50%;
-  background:currentColor;flex-shrink:0;
-  box-shadow:0 0 0 4px color-mix(in srgb,currentColor 18%,transparent);
-}
-.compare-list{list-style:none;display:flex;flex-direction:column;gap:.95rem}
-.compare-item{
-  display:flex;gap:.75rem;align-items:flex-start;
-  font-size:.97rem;color:var(--slate-700);line-height:1.55;
-}
-.compare-icon{
-  flex-shrink:0;width:24px;height:24px;border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  margin-top:1px;
-}
-.compare-icon--bad{background:rgba(239,68,68,.12);color:var(--red-500)}
-.compare-icon--good{background:rgba(16,185,129,.14);color:var(--green-500)}
-
-
-@media(max-width:780px){
-  .compare{grid-template-columns:1fr}
-  .compare-side--before{border-right-width:1.5px}
-  .compare-side--after{border-left-width:1.5px}
-}
 
 /* TESTIMONIOS */
 .rating-header{display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.5rem 0 2.5rem}
@@ -796,18 +678,13 @@ nav.scrolled{
   opacity:1;
   transform:translateY(0);
 }
-.compare-list>:nth-child(2){transition-delay:.07s}
-.compare-list>:nth-child(3){transition-delay:.14s}
-.compare-list>:nth-child(4){transition-delay:.21s}
-.compare-list>:nth-child(5){transition-delay:.28s}
-
 /* WIDE SCREENS - constrain layout */
 @media(min-width:1400px){
   .container{max-width:1140px}
   .hero-inner{max-width:780px}
   .pain-grid{grid-template-columns:repeat(3,1fr)}
-  .steps{grid-template-columns:repeat(5,1fr)}
 }
+
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -816,11 +693,6 @@ nav.scrolled{
   .hero-sub{font-size:1.05rem}
   .testimonial-card{width:240px}
   .testimonials-track{animation-duration:28s}
-}
-@media(max-width:780px){
-  .compare{grid-template-columns:1fr}
-  .compare-side--before{border-right-width:1.5px}
-  .compare-side--after{border-left-width:1.5px}
 }
 @media(max-width:680px){
   .section{padding:5rem 1.25rem}
@@ -894,14 +766,10 @@ nav.scrolled{
   color:var(--blue-500);line-height:1;margin-bottom:.3rem;
 }
 .calc-result-unit{font-size:.85rem;color:var(--slate-600)}
-@media(max-width:520px){.calc-result{grid-template-columns:1fr}}
 
 /* SERVICE BULLETS */
 .service-bullets{list-style:none;margin-top:.75rem;display:flex;flex-direction:column;gap:.35rem;text-align:left}
 .service-bullets li{font-size:.85rem;color:var(--slate-500);display:flex;align-items:center;gap:.5rem}
-
-/* CTA BUTTONS */
-.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
 
 /* MODAL */
 .modal-overlay{
@@ -1207,7 +1075,7 @@ nav.scrolled{
     </div>
     <div style="display:grid;grid-template-columns:280px 1fr;gap:4rem;align-items:start;max-width:900px;margin:0 auto">
       <div class="about-photo" style="width:280px;height:320px;border-radius:20px;background:var(--slate-100);overflow:hidden">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='380' viewBox='0 0 400 380'%3E%3Crect width='400' height='380' fill='%23e2e8f0'/%3E%3C/svg%3E" alt="Mario Díez" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <img src="mario.jpg" alt="Mario Díez" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div style="text-align:left">
         <h3 style="font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;color:var(--slate-900);margin-bottom:1rem">Mario Díez</h3>
@@ -1403,6 +1271,33 @@ const sectionAnimateObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.15 });
 sectionEls.forEach(el => sectionAnimateObserver.observe(el));
 
+// Counter animation
+const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const decimals = parseInt(el.dataset.decimals) || 0;
+  const duration = 1500;
+  const startTime = performance.now();
+  function tick(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = easeOutCubic(progress);
+    const current = target * eased;
+    el.textContent = prefix + current.toFixed(decimals) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
 
 // FAQ accordion
 const faqItems = document.querySelectorAll('.faq-item');
@@ -1425,7 +1320,7 @@ faqItems.forEach(item => {
 });
 
 // Active section tracking for nav links
-const sectionIds = ['problema', 'resultados', 'calculadora', 'casos', 'faq', 'contacto'];
+const sectionIds = ['problema', 'testimonios', 'calculadora', 'sobre-mi', 'faq', 'contacto'];
 const navLinks = document.querySelectorAll('[data-link]');
 function setActiveLink(id) {
   navLinks.forEach(a => {
