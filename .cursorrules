@@ -1,0 +1,11 @@
+Proyecto: landing negoziax.com (HTML/CSS/JS vanilla, single-page + páginas auxiliares)
+Idioma: español. Inglés solo en código y términos técnicos sin traducción.
+Stack: HTML estático servido con Nixpacks en EasyPanel. No hay framework JS.
+Estructura: public/ contiene index.html, servicios.html, assets.
+Reglas:
+- No añadas dependencias ni librerías externas salvo que se pida.
+- No modifiques archivos que no se mencionen.
+- No añadas comentarios obvios al código.
+- No cambies estilos, estructura o contenido que no se pida explícitamente.
+- Cambios mínimos y quirúrgicos: toca solo lo necesario.
+- Si algo es ambiguo, pregunta antes de actuar.
