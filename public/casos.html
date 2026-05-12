@@ -961,6 +961,28 @@ c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
 </div>
 
 <script>
+(function(){
+  try {
+    if (localStorage.getItem('cookies_choice')) return;
+  } catch (e) {}
+  const banner = document.getElementById('cookieBanner');
+  const accept = document.getElementById('cookieAccept');
+  const reject = document.getElementById('cookieReject');
+  if (!banner || !accept || !reject) return;
+  setTimeout(() => banner.classList.add('visible'), 1500);
+  accept.addEventListener('click', () => {
+    try { localStorage.setItem('cookies_choice', 'accepted'); } catch (e) {}
+    banner.classList.remove('visible');
+  });
+  reject.addEventListener('click', () => {
+    try { localStorage.setItem('cookies_choice', 'rejected'); } catch (e) {}
+    window['ga-disable-G-6GDDG1XZ56'] = true;
+    banner.classList.remove('visible');
+  });
+})();
+</script>
+
+<script>
 // Nav scrolled state
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -1091,20 +1113,6 @@ backToTopBtn.addEventListener('click', () => {
   update();
 })();
 
-(function(){
-  if(localStorage.getItem('cookies_choice')) return;
-  const banner=document.getElementById('cookieBanner');
-  setTimeout(()=>banner.classList.add('visible'),1500);
-  document.getElementById('cookieAccept').addEventListener('click',()=>{
-    localStorage.setItem('cookies_choice','accepted');
-    banner.classList.remove('visible');
-  });
-  document.getElementById('cookieReject').addEventListener('click',()=>{
-    localStorage.setItem('cookies_choice','rejected');
-    banner.classList.remove('visible');
-    window['ga-disable-G-6GDDG1XZ56']=true;
-  });
-})();
 </script>
 
 <!-- MODAL LEGAL -->
