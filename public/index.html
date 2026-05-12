@@ -30,8 +30,9 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Negoziax</title>
-<meta name="description" content="Automatizaciones con IA para empresas. Con Negoziax deja de perder tiempo, dinero y clientes en tareas repetitivas. Sistemas a medida con acompañamiento.">
+<title>Negoziax | Automatización con IA para negocios</title>
+<meta name="description" content="Automatiza tareas repetitivas, ahorra tiempo y no pierdas clientes. Presupuestos, citas y atención 24/7 con IA. Para pymes en España.">
+<meta name="keywords" content="automatización negocios IA, ahorrar tiempo empresa, presupuestos automáticos WhatsApp, gestión citas automática, chatbot WhatsApp negocios, automatización pymes España">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -80,7 +81,7 @@ html{scroll-behavior:smooth}
 body{
   font-family:'DM Sans',system-ui,sans-serif;
   color:var(--slate-900);
-  background:linear-gradient(180deg,#fff 0%,#fafbff 100%);
+  background:linear-gradient(180deg,#eaeff5 0%,#e4eaf2 100%);
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   line-height:1.6;
@@ -253,7 +254,7 @@ nav.scrolled{
   padding:9rem 1.75rem 8rem;
   text-align:center;
   position:relative;
-  background:linear-gradient(180deg,#ffffff 0%,#eef4ff 40%,#dbeafe 100%);
+  background:linear-gradient(180deg,#eaeff5 0%,#e0e8f2 40%,#d8e2ee 100%);
   overflow:hidden;
 }
 .hero::before{
@@ -397,10 +398,8 @@ nav.scrolled{
   gap:1.5rem;margin-top:3rem;
 }
 .pain-card{
-  background:rgba(255,255,255,.7);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border:1px solid var(--slate-200);
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  border:1px solid rgba(59,130,246,.2);
   border-radius:20px;
   padding:2.5rem 2rem;
   text-align:left;
@@ -424,8 +423,8 @@ nav.scrolled{
 }
 #servicios .pain-card{text-align:left}
 #servicios .pain-card-icon{margin:0 0 1.25rem}
-.pain-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
-.pain-card p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
+.pain-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:#fff}
+.pain-card p{font-size:.94rem;color:rgba(255,255,255,.65);line-height:1.7}
 
 /* METRICS BAR */
 .metrics-bar{
@@ -474,23 +473,22 @@ nav.scrolled{
 .testimonials-track{display:flex;gap:1.5rem;animation:scrollTestimonials 35s linear infinite;width:max-content}
 .testimonials-wrapper:hover .testimonials-track{animation-play-state:paused}
 @keyframes scrollTestimonials{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.testimonial-card{flex-shrink:0;width:280px;background:var(--slate-50);border:1px solid var(--slate-200);border-radius:20px;padding:1.25rem;position:relative;text-align:left}
+.testimonial-card{flex-shrink:0;width:280px;background:linear-gradient(135deg,#0f172a,#1e293b);border:1px solid rgba(59,130,246,.2);border-radius:20px;padding:1.25rem;position:relative;text-align:left}
 .testimonial-stars{color:var(--blue-500);font-size:1.1rem;letter-spacing:2px;margin-bottom:0}
-.testimonial-text{color:var(--slate-900);font-size:.88rem;line-height:1.7;margin-bottom:.75rem}
+.testimonial-text{color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.7;margin-bottom:.75rem}
 .testimonial-author{display:flex;flex-direction:column;gap:.25rem}
-.author-name{color:var(--slate-900);font-weight:600;font-size:.95rem}
-.author-role{color:var(--slate-400);font-size:.85rem}
+.author-name{color:#fff;font-weight:600;font-size:.95rem}
+.author-role{color:rgba(255,255,255,.45);font-size:.85rem}
+.testimonial-card hr{border:none!important;border-top:1px solid rgba(255,255,255,.08)!important;margin:.75rem 0!important}
 .testimonial-badge{background:var(--blue-500);color:#fff;font-size:.75rem;font-weight:600;padding:.35rem .75rem;border-radius:999px;flex-shrink:0}
 
 /* FAQ */
 .faq-list{margin:3rem auto 0;max-width:780px}
 .faq-item{
-  border:1px solid var(--slate-200);
+  border:1px solid rgba(59,130,246,.2);
   border-radius:20px;
   margin-bottom:.75rem;
-  background:rgba(255,255,255,.6);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
+  background:linear-gradient(135deg,#0f172a,#1e293b);
   overflow:hidden;
   transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
@@ -506,7 +504,7 @@ nav.scrolled{
   cursor:pointer;
   font-family:'Outfit',sans-serif;
   font-size:1rem;font-weight:600;letter-spacing:-0.015em;
-  color:var(--slate-900);text-align:left;
+  color:#fff;text-align:left;
   transition:color .2s;
 }
 .faq-btn:hover{color:var(--blue-500)}
@@ -514,7 +512,7 @@ nav.scrolled{
 .faq-item.open .faq-icon{transform:rotate(180deg);color:var(--blue-500)}
 .faq-body{overflow:hidden;max-height:0;transition:max-height .4s cubic-bezier(.25,.1,.25,1)}
 .faq-body p{
-  font-size:.95rem;color:var(--slate-600);line-height:1.75;
+  font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.75;
   padding:0 1.5rem 1.4rem;
   text-align:left;
 }
@@ -710,10 +708,8 @@ nav.scrolled{
 
 /* CALCULATOR */
 .calc-card{
-  background:rgba(255,255,255,.7);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border:1px solid var(--slate-200);
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  border:1px solid rgba(59,130,246,.2);
   border-radius:20px;
   padding:2.5rem 2rem;
   max-width:680px;
@@ -731,10 +727,10 @@ nav.scrolled{
   display:flex;justify-content:space-between;align-items:baseline;
   margin-bottom:.65rem;
 }
-.calc-lbl-text{font-size:.93rem;font-weight:500;color:var(--slate-700)}
+.calc-lbl-text{font-size:.93rem;font-weight:500;color:rgba(255,255,255,.75)}
 .calc-lbl-val{
   font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:700;
-  color:var(--blue-500);min-width:2.5rem;text-align:right;
+  color:#3b82f6;min-width:2.5rem;text-align:right;
 }
 .calc-range{
   width:100%;accent-color:#3b82f6;cursor:pointer;
@@ -750,8 +746,8 @@ nav.scrolled{
 }
 .calc-range::-webkit-slider-thumb:hover{box-shadow:0 0 0 5px rgba(59,130,246,.25)}
 .calc-result{
-  background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(96,165,250,.04));
-  border:1.5px solid #e2e8f0;
+  background:rgba(59,130,246,.08);
+  border:1.5px solid rgba(59,130,246,.2);
   border-radius:18px;
   padding:2rem 1.5rem;
   margin-top:2.5rem;
@@ -759,13 +755,14 @@ nav.scrolled{
   transition:border-color .25s,box-shadow .25s;
 }
 .calc-result:hover{border-color:#93c5fd;box-shadow:0 0 30px rgba(59,130,246,.08)}
-.calc-result-lbl{font-size:.85rem;color:var(--slate-500);margin-bottom:.35rem;line-height:1.4}
+.calc-result-lbl{font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:.35rem;line-height:1.4}
 .calc-result-num{
   font-family:'Outfit',sans-serif;
   font-size:2.6rem;font-weight:700;letter-spacing:-0.04em;
   color:var(--blue-500);line-height:1;margin-bottom:.3rem;
 }
-.calc-result-unit{font-size:.85rem;color:var(--slate-600)}
+.calc-result-unit{font-size:.85rem;color:rgba(255,255,255,.6)}
+#calcMsg{color:rgba(255,255,255,.7)}
 
 /* SERVICE BULLETS */
 .service-bullets{list-style:none;margin-top:.75rem;display:flex;flex-direction:column;gap:.35rem;text-align:left}
@@ -824,7 +821,8 @@ nav.scrolled{
 /* COOKIE BANNER */
 .cookie-banner{
   position:fixed;bottom:0;left:0;right:0;
-  background:rgba(15,23,42,.95);
+  background:rgba(255,255,255,.97);
+  border-top:2px solid #3b82f6;
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
   padding:1.25rem 2rem;
@@ -834,10 +832,11 @@ nav.scrolled{
   transition:transform .4s ease;
 }
 .cookie-banner.visible{transform:translateY(0)}
-.cookie-banner p{font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.5;margin:0}
+.cookie-banner p{font-size:.88rem;color:var(--slate-700);line-height:1.5;margin:0}
 .cookie-banner a{color:var(--blue-400);text-decoration:underline;text-underline-offset:3px}
 .cookie-btns{display:flex;gap:.75rem;flex-shrink:0}
 .cookie-btn{
+  display:flex;
   font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;
   padding:.6rem 1.25rem;border-radius:999px;border:none;cursor:pointer;
   transition:background .2s,transform .15s;
@@ -845,7 +844,7 @@ nav.scrolled{
 .cookie-btn:hover{transform:scale(1.03)}
 .cookie-btn--accept{background:var(--blue-500);color:#fff}
 .cookie-btn--accept:hover{background:#1d4ed8}
-.cookie-btn--reject{background:rgba(255,255,255,.12);color:rgba(255,255,255,.7)}
+.cookie-btn--reject{background:var(--slate-200);color:var(--slate-800)}
 .cookie-btn--reject:hover{background:rgba(255,255,255,.18)}
 @media(max-width:600px){
   .cookie-banner{flex-direction:column;padding:1rem 1.25rem;gap:1rem}
@@ -909,8 +908,28 @@ nav.scrolled{
   .cookie-btn{flex:1}
 }
 
+.section-animate{background:transparent}
 
+.metrics-bar{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  border-color:rgba(59,130,246,.2)!important;
+}
+.metric-item{border-right-color:rgba(59,130,246,.15)!important}
+.metric-label{color:rgba(255,255,255,.45)}
+.metrics-bar{margin-top:-1px}
+.section-animate:has(.metrics-bar){padding:0;margin:0}
 
+.timeline-step-content{
+  background:linear-gradient(135deg,#0f172a,#1e293b)!important;
+  border-color:rgba(59,130,246,.2)!important;
+}
+.timeline-step-content h3{color:#fff}
+.timeline-step-content p{color:rgba(255,255,255,.65)}
+.timeline-step-num{color:#3b82f6}
+
+html{scroll-padding-top:80px}
+
+.cookie-btn--reject{display:inline-flex!important}
 </style>
 </head>
 <body>
@@ -928,6 +947,7 @@ nav.scrolled{
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="casos.html">Casos</a></li>
     </ul>
 
     <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false">
@@ -941,6 +961,7 @@ nav.scrolled{
   <ul>
     <li><a href="index.html">Inicio</a></li>
     <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="casos.html">Casos</a></li>
     <li><a href="#faq" data-link="faq">FAQ</a></li>
     <li><a href="#sobre-mi" data-link="sobre-mi">Sobre mí</a></li>
     <li><a href="#contacto" data-link="contacto">Contacto</a></li>
@@ -951,7 +972,7 @@ nav.scrolled{
   <div class="hero-blob-1" aria-hidden="true"></div>
   <div class="hero-blob-2" aria-hidden="true"></div>
   <div class="hero-blob-3" aria-hidden="true"></div>
-  <canvas id="heroNodes" style="position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.18"></canvas>
+  <canvas id="heroNodesL" style="position:absolute;left:0;top:0;width:40%;height:100%;z-index:1;pointer-events:none;opacity:.15"></canvas>
   <div class="hero-inner">
     <h1 class="hero-title">
       <span class="title-line">Gana.</span>
@@ -964,9 +985,10 @@ nav.scrolled{
       WhatsApp
     </a>
   </div>
+  <canvas id="heroNodesR" style="position:absolute;right:0;top:0;width:40%;height:100%;z-index:1;pointer-events:none;opacity:.15"></canvas>
 </section>
 
-<section class="section-animate" style="background:transparent;padding:2rem 0;position:relative;z-index:1">
+<section class="section-animate" style="background:transparent;padding:0;position:relative;z-index:1">
   <div class="metrics-bar" style="border-top:1px solid var(--slate-200);border-bottom:1px solid var(--slate-200)">
     <div class="metric-item">
       <div class="metric-num" data-counter data-target="50" data-prefix="+">+50</div>
@@ -1255,25 +1277,6 @@ nav.scrolled{
   </div>
 </section>
 
-<section class="section section-animate" id="sobre-mi">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:2.5rem">
-      <span class="eyebrow">Sobre mí</span>
-    </div>
-    <div style="display:grid;grid-template-columns:280px 1fr;gap:4rem;align-items:start;max-width:900px;margin:0 auto">
-      <div class="about-photo" style="width:280px;height:320px;border-radius:20px;background:var(--slate-100);overflow:hidden">
-        <img src="mario.jpg" alt="Mario Díez" loading="lazy" style="width:100%;height:100%;object-fit:cover">
-      </div>
-      <div style="text-align:left">
-        <h3 style="font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;color:var(--slate-900);margin-bottom:1rem">Mario Díez</h3>
-        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8;margin-bottom:1rem">Tengo 20 años, desde los 17 metido en el mundo de la IA. Aprendí construyendo proyectos reales de forma autodidacta, no en un aula. Cada sistema que entrego tiene que funcionar.</p>
-        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8;margin-bottom:1rem">Cuando trabajas conmigo no hay filtros ni intermediarios. Me escribes a mí, te respondo yo. Analizo tu negocio, diseño la solución y la pongo en marcha. Y sigo disponible después.</p>
-        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8">Si quieres saber si puedo ayudarte, escríbeme. Sin compromiso, en una conversación te digo qué haría con tu negocio.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section section-animate" id="faq">
   <div class="container">
     <span class="eyebrow">FAQ</span>
@@ -1319,6 +1322,26 @@ nav.scrolled{
   </div>
 </section>
 
+<section class="section section-animate" id="sobre-mi">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <span class="eyebrow">Sobre mí</span>
+    </div>
+    <div style="display:grid;grid-template-columns:280px 1fr;gap:4rem;align-items:start;max-width:900px;margin:0 auto">
+      <div class="about-photo" style="width:260px;height:300px;border-radius:20px;background:var(--slate-100);overflow:hidden">
+        <img src="mario.jpeg" alt="Mario Díez" loading="lazy" 
+        style="object-fit:cover;object-position:center 60%;width:100%;height:100%">
+      </div>
+      <div style="text-align:left">
+        <h3 style="font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;color:var(--slate-900);margin-bottom:1rem">Mario Díez</h3>
+        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8;margin-bottom:1rem">Tengo 20 años, desde los 17 metido en el mundo de la IA. Aprendí construyendo proyectos reales de forma autodidacta, no en un aula. Cada sistema que entrego tiene que funcionar.</p>
+        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8;margin-bottom:1rem">Cuando trabajas conmigo no hay filtros ni intermediarios. Me escribes a mí, te respondo yo. Analizo tu negocio, diseño la solución y la pongo en marcha. Y sigo disponible después.</p>
+        <p style="font-size:1.05rem;color:var(--slate-600);line-height:1.8">Si quieres saber si puedo ayudarte, escríbeme. Sin compromiso, en una conversación te digo qué haría con tu negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section section-animate" id="contacto">
   <div class="container">
     <div class="cta-box">
@@ -1340,7 +1363,13 @@ nav.scrolled{
       <p>Automatizamos procesos de negocios con inteligencia artificial para que tu empresa gane tiempo, dinero y clientes.</p>
       <div class="footer-contact-info">
         <div>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--slate-400);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.19a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" style="color:var(--slate-400);flex-shrink:0">
+          <path d="M15.05 5A5 5 0 0119 8.95M15.05 1A9 9 0 0123 8.94M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07
+A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.19a16 16 0 006.29 6.29l1.42
+-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
           <span>+34 611 059 182</span>
         </div>
         <div>
@@ -1349,7 +1378,7 @@ nav.scrolled{
         </div>
         <div>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--slate-400);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Ciudad Real, España</span>
+          <span>Castilla-La Mancha, España</span>
         </div>
       </div>
       <div class="footer-socials" style="margin-top:1rem">
@@ -1360,10 +1389,10 @@ nav.scrolled{
     <div class="footer-col" style="margin:0 auto;padding-top:1rem">
       <h4>Servicios</h4>
       <ul>
-        <li><a href="index.html#servicios">Asistente virtual con IA</a></li>
-        <li><a href="index.html#servicios">Captación de clientes</a></li>
-        <li><a href="index.html#servicios">Presupuestos automáticos</a></li>
-        <li><a href="index.html#servicios">Gestión de citas</a></li>
+        <li><a href="servicios.html">Asistente virtual con IA</a></li>
+        <li><a href="servicios.html">Captación de clientes</a></li>
+        <li><a href="servicios.html">Presupuestos automáticos</a></li>
+        <li><a href="servicios.html">Gestión de citas</a></li>
       </ul>
     </div>
     <div class="footer-col" style="margin:0 auto;padding-top:1rem">
@@ -1410,6 +1439,15 @@ nav.scrolled{
 <button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (Google Analytics) para mejorar tu experiencia. <a href="#" onclick="document.getElementById('modalCookies').classList.add('open');return false">Más info</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceptar</button>
+    <button class="cookie-btn cookie-btn--reject" id="cookieReject">Rechazar</button>
+  </div>
+</div>
 
 <script>
 // Nav scrolled state
@@ -1599,25 +1637,8 @@ backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Cookie banner
 (function(){
-  if(localStorage.getItem('cookies_choice')) return;
-  const banner=document.getElementById('cookieBanner');
-  setTimeout(()=>banner.classList.add('visible'),1500);
-  document.getElementById('cookieAccept').addEventListener('click',()=>{
-    localStorage.setItem('cookies_choice','accepted');
-    banner.classList.remove('visible');
-  });
-  document.getElementById('cookieReject').addEventListener('click',()=>{
-    localStorage.setItem('cookies_choice','rejected');
-    banner.classList.remove('visible');
-    // Desactivar GA si rechaza
-    window['ga-disable-G-6GDDG1XZ56']=true;
-  });
-})();
-
-(function(){
-  const c=document.getElementById('heroNodes');
+  const c=document.getElementById('heroNodesL');
   if(!c)return;
   const ctx=c.getContext('2d');
   let w,h,pts=[];
@@ -1655,17 +1676,63 @@ backToTopBtn.addEventListener('click', () => {
   resize();draw();
 })();
 
+(function(){
+  const c=document.getElementById('heroNodesR');
+  if(!c)return;
+  const ctx=c.getContext('2d');
+  let w,h,pts=[];
+  const N=30,DIST=150;
+  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;if(!pts.length)init()}
+  function init(){pts=[];for(let i=0;i<N;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    pts.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>w)p.vx*=-1;
+      if(p.y<0||p.y>h)p.vy*=-1;
+    });
+    for(let i=0;i<N;i++){
+      for(let j=i+1;j<N;j++){
+        const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<DIST){
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x,pts[i].y);
+          ctx.lineTo(pts[j].x,pts[j].y);
+          ctx.strokeStyle='rgba(59,130,246,'+(1-d/DIST)*.5+')';
+          ctx.lineWidth=1;
+          ctx.stroke();
+        }
+      }
+      ctx.beginPath();
+      ctx.arc(pts[i].x,pts[i].y,2.5,0,Math.PI*2);
+      ctx.fillStyle='rgba(59,130,246,.6)';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',resize);
+  resize();draw();
+})();
+
+// Cookie banner
+(function(){
+  if(localStorage.getItem('cookies_choice')) return;
+  const banner=document.getElementById('cookieBanner');
+  setTimeout(()=>banner.classList.add('visible'),1500);
+  document.getElementById('cookieAccept').addEventListener('click',()=>{
+    localStorage.setItem('cookies_choice','accepted');
+    banner.classList.remove('visible');
+  });
+  document.getElementById('cookieReject').addEventListener('click',()=>{
+    localStorage.setItem('cookies_choice','rejected');
+    banner.classList.remove('visible');
+    // Desactivar GA si rechaza
+    window['ga-disable-G-6GDDG1XZ56']=true;
+  });
+})();
 
 </script>
-
-<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <p>Usamos cookies propias y de terceros (Google Analytics) para mejorar tu experiencia. <a href="#" onclick="document.getElementById('modalCookies').classList.add('open');return false">Más info</a></p>
-  <div class="cookie-btns">
-    <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceptar</button>
-    <button class="cookie-btn cookie-btn--reject" id="cookieReject">Rechazar</button>
-  </div>
-</div>
 
 <!-- MODAL LEGAL -->
 <div class="modal-overlay" id="modalLegal">

@@ -30,17 +30,17 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servicios | Negoziax</title>
-<meta name="description" content="Presupuestos automáticos, gestión de citas, atención 24/7 y captación de clientes con IA. Automatización a medida para tu negocio.">
-<meta name="keywords" content="presupuestos automáticos, gestión citas WhatsApp, chatbot IA para empresas, automatizar taller mecánico, automatizar clínica">
+<title>Casos de éxito | Negoziax</title>
+<meta name="description" content="Casos reales de automatización: clínicas, talleres y academias que ahorraron tiempo y ganaron clientes con IA.">
+<meta name="keywords" content="casos automatización IA, automatizar clínica dental, automatizar taller mecánico, automatizar academia idiomas">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta property="og:title" content="Servicios | Negoziax">
-<meta property="og:description" content="Automatizamos procesos de negocios con inteligencia artificial.">
+<meta property="og:title" content="Casos de éxito | Negoziax">
+<meta property="og:description" content="Resultados reales en negocios reales con automatización e IA.">
 <meta property="og:image" content="https://negoziax.com/logo.png">
 <meta property="og:image:type" content="image/png">
-<meta property="og:url" content="https://negoziax.com/servicios.html">
+<meta property="og:url" content="https://negoziax.com/casos.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500&display=swap" as="style">
@@ -336,8 +336,10 @@ nav.scrolled{
   gap:1.5rem;margin-top:3rem;
 }
 .pain-card{
-  background:linear-gradient(135deg,#0f172a,#1e293b);
-  border:1px solid rgba(59,130,246,.2);
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--slate-200);
   border-radius:20px;
   padding:2.5rem 2rem;
   text-align:center;
@@ -361,8 +363,36 @@ nav.scrolled{
 }
 #servicios-cards .pain-card{text-align:left}
 #servicios-cards .pain-card-icon{margin:0 0 1.25rem}
-.pain-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:#fff}
-.pain-card p{font-size:.94rem;color:rgba(255,255,255,.65);line-height:1.7}
+#casos-cards .pain-card{text-align:left;padding-top:3.35rem}
+#casos-cards .pain-card.pain-card--caso{position:relative}
+.caso-badge{
+  position:absolute;top:1.35rem;right:1.35rem;
+  font-size:.72rem;font-weight:700;
+  color:#fff;background:var(--blue-500);
+  padding:.42rem .85rem;border-radius:999px;
+  white-space:normal;max-width:min(200px,55%);text-align:right;line-height:1.25;
+  box-shadow:0 2px 10px rgba(37,99,235,.28);
+  z-index:1;
+}
+#casos-cards .pain-card h3{font-size:1.08rem;line-height:1.38;margin-top:.35rem;margin-bottom:.85rem}
+.caso-block-title{
+  font-family:'DM Sans',sans-serif;
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--blue-500);margin-top:1.15rem;margin-bottom:.45rem;
+}
+#casos-cards .pain-card .caso-block-title--first{margin-top:.55rem}
+#casos-cards .pain-card .caso-block-text{font-size:.94rem;color:var(--slate-600);line-height:1.7;margin:0}
+#casos-cards .pain-card .eyebrow{margin-right:6.5rem}
+#casos-cards .pain-card .service-bullets{margin-top:.35rem}
+a.caso-card-link{
+  text-decoration:none;color:inherit;display:block;border-radius:20px;
+}
+a.caso-card-link:focus-visible{
+  outline:2px solid var(--blue-500);outline-offset:3px;
+}
+a.caso-card-link .pain-card{height:100%}
+.pain-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:var(--slate-900)}
+.pain-card p{font-size:.94rem;color:var(--slate-600);line-height:1.7}
 .service-bullets{list-style:none;margin-top:.75rem;display:flex;flex-direction:column;gap:.35rem;text-align:left}
 .service-bullets li{font-size:.85rem;color:var(--slate-500);display:flex;align-items:center;gap:.5rem}
 
@@ -699,13 +729,45 @@ nav.scrolled{
   #garantia .container>div{flex-direction:column;text-align:center;padding:2rem 1.5rem}
 }
 
-.timeline-step-content{
-  background:linear-gradient(135deg,#0f172a,#1e293b)!important;
-  border-color:rgba(59,130,246,.2)!important;
+.caso-card{
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+  border:1px solid rgba(59,130,246,.25);
+  border-radius:24px;
+  padding:2.5rem;
+  position:relative;
+  transition:transform .3s ease,box-shadow .3s ease;
+  text-decoration:none;
+  display:block;
 }
-.timeline-step-content h3{color:#fff}
-.timeline-step-content p{color:rgba(255,255,255,.65)}
-.timeline-step-num{color:#3b82f6}
+.caso-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(59,130,246,.15)}
+.caso-num{font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-400);margin-bottom:1rem}
+.caso-title{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:1rem;line-height:1.2;letter-spacing:-0.03em}
+.caso-desc{font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:1.75rem}
+.caso-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1.75rem}
+.caso-metric{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:.5rem .4rem;text-align:center}
+.caso-metric-num{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:700;color:var(--blue-400);line-height:1}
+.caso-metric-lbl{font-size:.58rem;white-space:normal;word-break:break-word;line-height:1.3;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.25rem}
+.caso-cta{display:inline-flex;align-items:center;gap:.5rem;font-size:.95rem;font-weight:600;color:var(--blue-400)}
+
+.caso-card{padding:1.75rem}
+.caso-title{font-size:1.2rem}
+.caso-desc{font-size:.88rem;margin-bottom:1.25rem}
+
+.caso-cta{transition:color .2s,gap .2s}
+.caso-card:hover .caso-cta{color:#fff;gap:.75rem}
+
+.caso-card:first-child{
+  border-color:rgba(59,130,246,.5);
+  box-shadow:0 0 30px rgba(59,130,246,.1);
+}
+.caso-card:first-child .caso-num{
+  font-size:.85rem;
+}
+.caso-card:first-child .caso-title{
+  font-size:1.35rem;
+}
+
+html{scroll-padding-top:80px}
 
 </style>
 </head>
@@ -724,7 +786,7 @@ nav.scrolled{
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="casos.html">Casos</a></li>
+      <li><a href="casos.html" class="active">Casos</a></li>
     </ul>
 
     <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false">
@@ -750,173 +812,56 @@ nav.scrolled{
   <div class="hero-blob-2" aria-hidden="true"></div>
   <div class="hero-blob-3" aria-hidden="true"></div>
   <div class="hero-inner">
-    <span class="eyebrow">Nuestros servicios</span>
-    <h1 class="hero-title" style="font-size:clamp(2rem,5vw,3.5rem);opacity:0;animation:heroSlideUp 0.8s ease-out 0.1s forwards">Qué hacemos por tu negocio</h1>
-    <p class="hero-sub" style="white-space:normal;opacity:0;animation:heroSlideUp 0.8s ease-out 0.4s forwards">Nos enfocamos en tu caso particular y desarrollamos soluciones 100% personalizadas para tu empresa.</p>
+    <span class="eyebrow">Casos de éxito</span>
+    <h1 class="hero-title" style="font-size:clamp(2rem,5vw,3.5rem);opacity:0;animation:heroSlideUp 0.8s ease-out 0.1s forwards">Resultados reales en negocios</h1>
+    <p class="hero-sub" style="white-space:normal;opacity:0;animation:heroSlideUp 0.8s ease-out 0.4s forwards">Tres negocios. Tres problemas distintos. Un resultado en común: más tiempo, menos trabajo manual.</p>
   </div>
 </section>
 
-<section class="section section-animate" id="servicios-cards">
+<section class="section section-animate" id="casos-cards">
   <div class="container">
     <div class="pain-grid">
 
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <h3>Asistente virtual con IA</h3>
-        <p>Tu negocio responde al instante, a cualquier hora. Por WhatsApp, web o email, sin que tú intervengas.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Atención 24/7 sin contratar personal</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Filtra y cualifica leads solo</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Respuestas personalizadas con contexto</li>
-        </ul>
-      </article>
+<a href="caso-clinica.html" class="caso-card">
+  <p class="caso-num">Caso de éxito #01</p>
+  <h3 class="caso-title">Gestión automática de citas para clínica</h3>
+  <p class="caso-desc">Eliminamos las cancelaciones sin aviso y liberamos 3 horas diarias de recepción con un sistema de reservas y recordatorios automáticos.</p>
+  <div class="caso-metrics">
+    <div class="caso-metric"><div class="caso-metric-num">-60%</div><div class="caso-metric-lbl">Sin avisos</div></div>
+    <div class="caso-metric"><div class="caso-metric-num">+40%</div><div class="caso-metric-lbl">Ocupación</div></div>
+    <div class="caso-metric"><div class="caso-metric-num">3h/día</div><div class="caso-metric-lbl">Recuperadas</div></div>
+  </div>
+  <span class="caso-cta">Ver caso completo →</span>
+</a>
 
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <h3>Captación automática de clientes</h3>
-        <p>Encuentra, contacta y filtra clientes potenciales sin que tu equipo mueva un dedo.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Prospección desde formularios y RRSS</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Contacto automático por email o WhatsApp</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Solo te llegan los que interesan de verdad</li>
-        </ul>
-      </article>
+<a href="caso-taller.html" class="caso-card">
+  <p class="caso-num">Caso de éxito #02</p>
+  <h3 class="caso-title">Presupuestos automáticos en menos de 1 minuto para taller mecánico</h3>
+  <p class="caso-desc">Pasamos de 30 minutos por presupuesto a entrega instantánea en PDF, con un 35% más de conversión a trabajos confirmados.</p>
+  <div class="caso-metrics">
+    <div class="caso-metric"><div class="caso-metric-num">x8</div><div class="caso-metric-lbl">Más rápido</div></div>
+    <div class="caso-metric"><div class="caso-metric-num">+35%</div><div class="caso-metric-lbl">Conversión</div></div>
+    <div class="caso-metric"><div class="caso-metric-num">-80%</div><div class="caso-metric-lbl">Tiempo admin</div></div>
+  </div>
+  <span class="caso-cta">Ver caso completo →</span>
+</a>
 
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
-        </div>
-        <h3>Presupuestos en segundos</h3>
-        <p>Tu cliente rellena un formulario y recibe un presupuesto profesional en PDF al instante. Sin errores, sin esperas.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> PDF profesional generado con IA</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cálculos automáticos sin errores</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Seguimiento del estado de cada uno</li>
-        </ul>
-      </article>
-
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        </div>
-        <h3>Citas y agenda automática</h3>
-        <p>Tus clientes reservan solos y reciben confirmación y recordatorio sin que tú hagas nada.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Reservas online sin llamadas</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recordatorios que reducen cancelaciones</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Sincronizado con Google Calendar</li>
-        </ul>
-      </article>
-
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Seguimiento que vende solo</h3>
-        <p>Emails, WhatsApps o recordatorios que se disparan solos según lo que haga o deje de hacer cada cliente.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recupera clientes que no respondieron</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Se activa por tiempo o por acción</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cero trabajo manual</li>
-        </ul>
-      </article>
-
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3>Informes y documentos automáticos</h3>
-        <p>Facturas, albaranes, reportes o cualquier documento que hoy generas a mano, listo en segundos desde tus datos.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Desde Google Sheets, CRM o lo que uses</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Envío directo al cliente</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Formatos profesionales personalizados</li>
-        </ul>
-      </article>
+<a href="caso-academia.html" class="caso-card">
+  <p class="caso-num">Caso de éxito #03</p>
+  <h3 class="caso-title">Recuperación de leads fríos para academia de idiomas</h3>
+  <p class="caso-desc">Implementamos seguimiento automático por WhatsApp y email que reactivó el 25% de leads perdidos y aumentó matrículas un 50%.</p>
+  <div class="caso-metrics">
+    <div class="caso-metric"><div class="caso-metric-num">+50%</div><div class="caso-metric-lbl">Matrículas</div></div>
+    <div class="caso-metric"><div class="caso-metric-num">25%</div><div class="caso-metric-lbl">Leads reactivados</div></div>
+    <div class="caso-metric"><div class="caso-metric-num">-70%</div><div class="caso-metric-lbl">Gestión comercial</div></div>
+  </div>
+  <span class="caso-cta">Ver caso completo →</span>
+</a>
 
     </div>
   </div>
 </section>
 
-
-<section class="section section-animate" id="proceso">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:4rem">
-      <span class="eyebrow">Cómo trabajamos</span>
-      <h2 class="section-heading">De la idea a la implementación</h2>
-      <p class="section-sub" style="max-width:680px;margin:0 auto">Te acompañamos en cada paso. Sin sorpresas, sin tecnicismos innecesarios.</p>
-    </div>
-    <div class="timeline-wrap">
-      <div class="timeline-track"></div>
-      <div class="timeline-fill" id="timelineFill"></div>
-      <div class="timeline-steps">
-        <div class="timeline-step">
-          <div class="timeline-step-content timeline-left">
-            <div class="timeline-step-num">01</div>
-            <h3>Análisis</h3>
-            <p>Evaluamos tus procesos y detectamos dónde la automatización genera más impacto.</p>
-          </div>
-          <div class="timeline-node" data-node="0"></div>
-          <div class="timeline-step-spacer"></div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-step-spacer"></div>
-          <div class="timeline-node" data-node="1"></div>
-          <div class="timeline-step-content timeline-right">
-            <div class="timeline-step-num">02</div>
-            <h3>Diseño</h3>
-            <p>Construimos una solución a medida integrada con las herramientas que ya usas.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-step-content timeline-left">
-            <div class="timeline-step-num">03</div>
-            <h3>Integración</h3>
-            <p>Implementación gradual, sin interrupciones en tu día a día.</p>
-          </div>
-          <div class="timeline-node" data-node="2"></div>
-          <div class="timeline-step-spacer"></div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-step-spacer"></div>
-          <div class="timeline-node" data-node="3"></div>
-          <div class="timeline-step-content timeline-right">
-            <div class="timeline-step-num">04</div>
-            <h3>Formación</h3>
-            <p>Te enseñamos a usar el sistema con sesiones prácticas y documentación clara.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-step-content timeline-left">
-            <div class="timeline-step-num">05</div>
-            <h3>Seguimiento</h3>
-            <p>Monitorizamos resultados y optimizamos continuamente. Soporte incluido.</p>
-          </div>
-          <div class="timeline-node" data-node="4"></div>
-          <div class="timeline-step-spacer"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-animate" id="garantia">
-  <div class="container">
-    <div style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border:1px solid rgba(59,130,246,.25);border-radius:24px;padding:3rem 2.5rem;display:flex;gap:2.5rem;align-items:center;max-width:860px;margin:0 auto">
-      <div style="flex-shrink:0;width:80px;height:80px;background:rgba(59,130,246,.12);border-radius:18px;display:flex;align-items:center;justify-content:center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-      </div>
-      <div>
-        <p style="font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:1rem">El primer mes es gratis. Pruebas la automatización funcionando en tu negocio real, sin pagar nada. Si no te convence, lo dejamos y no debes nada.<br><br>Ofrezco esto porque confío al 100% en lo que entrego. Cuando ves tu negocio funcionando solo, respondiendo clientes a las 3 de la mañana, generando resultados mientras duermes, no hace falta que te convenza yo. Los resultados se muestran por si solos.</p>
-        <p style="font-size:.95rem;color:rgba(255,255,255,.5);font-weight:600">Mario Díez | CEO de Negoziax</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <footer class="footer-full">
   <div class="footer-grid">
@@ -1036,7 +981,7 @@ const sectionAnimateObserver = new IntersectionObserver(entries => {
 sectionEls.forEach(el => sectionAnimateObserver.observe(el));
 
 // Active section tracking for nav links
-const sectionIds = ['servicios-cards', 'proceso'];
+const sectionIds = ['casos-cards'];
 const navLinks = document.querySelectorAll('[data-link]');
 function setActiveLink(id) {
   navLinks.forEach(a => {

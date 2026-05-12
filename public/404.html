@@ -30,17 +30,16 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servicios | Negoziax</title>
-<meta name="description" content="Presupuestos automáticos, gestión de citas, atención 24/7 y captación de clientes con IA. Automatización a medida para tu negocio.">
-<meta name="keywords" content="presupuestos automáticos, gestión citas WhatsApp, chatbot IA para empresas, automatizar taller mecánico, automatizar clínica">
+<title>404 — Página no encontrada | Negoziax</title>
+<meta name="description" content="La página que buscas no existe o ha sido movida. Vuelve al inicio en Negoziax.">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta property="og:title" content="Servicios | Negoziax">
-<meta property="og:description" content="Automatizamos procesos de negocios con inteligencia artificial.">
+<meta property="og:title" content="Negoziax | Automatizamos procesos de negocios con IA">
+<meta property="og:description" content="Automatizaciones con IA para empresas. Con Negoziax deja de perder tiempo, dinero y clientes en tareas repetitivas. Sistemas a medida con acompañamiento.">
 <meta property="og:image" content="https://negoziax.com/logo.png">
 <meta property="og:image:type" content="image/png">
-<meta property="og:url" content="https://negoziax.com/servicios.html">
+<meta property="og:url" content="https://negoziax.com">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500&display=swap" as="style">
@@ -210,6 +209,43 @@ nav.scrolled{
 }
 .nav-mobile a:hover{color:var(--blue-500)}
 
+/* BRAND TYPOGRAPHY */
+.brand{font-family:'Outfit',sans-serif;font-weight:800;letter-spacing:-0.04em;font-size:1.6rem;display:inline-flex;align-items:center}
+.b-1{color:#e2e8f0}.b-2{color:#3b82f6}.b-3{color:#e2e8f0}
+.brand--footer{font-size:1.5rem}
+
+/* LAYOUT */
+.container{max-width:1200px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+.section{padding:5rem 2rem;position:relative;z-index:1;overflow:hidden;background:transparent}
+.section .container{text-align:center}
+
+/* TYPOGRAPHY HELPERS */
+.eyebrow{
+  display:inline-block;
+  font-family:'DM Sans',sans-serif;
+  font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue-500);
+  margin-bottom:1rem;
+  padding:.35rem .75rem;
+  background:rgba(59,130,246,.08);
+  border-radius:999px;
+}
+.section-heading{
+  font-size:clamp(2rem,4.2vw,3rem);
+  color:var(--slate-900);
+  margin:0 auto 1.1rem auto;
+  letter-spacing:-0.035em;
+  text-align:center;
+}
+.section-sub{
+  font-size:1.1rem;
+  color:var(--slate-600);
+  line-height:1.75;
+  margin:0 auto 3rem auto;
+  max-width:680px;
+  text-align:center;
+}
+
 /* HERO */
 .hero{
   min-height:100vh;
@@ -276,58 +312,83 @@ nav.scrolled{
   transform:translateY(40px);
   animation:heroSlideUp 0.8s ease-out forwards;
 }
-.title-line:nth-child(1){animation-delay:0.1s}
+.title-line:nth-child(1){animation-delay:0s}
 .title-line:nth-child(2){animation-delay:0.2s}
-.title-line:nth-child(3){animation-delay:0.3s}
-.title-blue{color:var(--blue-500)}
+.title-line:nth-child(3){animation-delay:0.4s}
+.title-line.title-blue{
+  color:var(--blue-500);
+}
 @keyframes heroSlideUp{
+  from{opacity:0;transform:translateY(40px)}
   to{opacity:1;transform:translateY(0)}
 }
 .hero-sub{
-  font-size:clamp(1.1rem,2.2vw,1.35rem);
+  font-size:1.2rem;
   color:var(--slate-600);
-  max-width:720px;
-  margin:0 auto 2.5rem;
-  line-height:1.55;
-  white-space:nowrap;
+  line-height:1.7;
+  margin:0 auto 1.5rem;
+  font-weight:400;
+  max-width:620px;
   opacity:0;
   transform:translateY(40px);
-  animation:heroSlideUp 0.8s ease-out 0.4s forwards;
+  animation:heroSlideUp 0.8s ease-out 0.6s forwards;
 }
-
-/* SECTIONS */
-.section{
-  position:relative;z-index:1;
-  padding:5rem 2rem;
-  max-width:1180px;margin:0 auto;
-  background:transparent;
-}
-.section-animate{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease}
-.section-animate.visible{opacity:1;transform:translateY(0)}
-
-.eyebrow{
-  display:inline-block;
+.hero-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.75rem;
+  background:var(--blue-500);
+  color:#fff;
   font-family:'DM Sans',sans-serif;
-  font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  font-size:1.1rem;
+  font-weight:600;
+  text-decoration:none;
+  padding:1rem 2.25rem;
+  border-radius:50px;
+  box-shadow:0 4px 14px rgba(37,99,235,.35);
+  opacity:0;
+  transform:translateY(40px);
+  animation:heroSlideUp 0.8s ease-out 0.6s forwards;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.hero-cta-btn:hover{
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:0 12px 32px rgba(37,99,235,.55);
+  background:#1d4ed8;
+}
+.hero-cta-btn:active{
+  transform:translateY(-1px) scale(1.01);
+}
+.hero-cta-btn svg{flex-shrink:0;transition:transform .3s ease}
+.hero-cta-btn:hover svg{transform:rotate(20deg) scale(1.15)}
+.hero-cta-btn--glow{
+  box-shadow:0 4px 14px rgba(37,99,235,.5),0 0 40px rgba(37,99,235,.7),0 0 80px rgba(37,99,235,.35),0 0 120px rgba(37,99,235,.15);
+}
+.hero-cta-btn--glow:hover{
+  box-shadow:0 12px 32px rgba(37,99,235,.7),0 0 50px rgba(37,99,235,.9),0 0 100px rgba(37,99,235,.5),0 0 160px rgba(37,99,235,.2);
+}
+.hero-cta-secondary{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--slate-700);
+  text-decoration:none;
+  padding:.95rem 2rem;
+  border-radius:50px;
+  border:1.5px solid var(--slate-300);
+  background:transparent;
+  opacity:0;
+  transform:translateY(40px);
+  animation:heroSlideUp 0.8s ease-out 0.75s forwards;
+  transition:border-color .25s,color .25s,background .25s;
+}
+.hero-cta-secondary:hover{
+  border-color:var(--blue-500);
   color:var(--blue-500);
-  margin-bottom:1rem;
-  padding:.35rem .75rem;
-  background:rgba(59,130,246,.08);
-  border-radius:999px;
-}
-
-.section-heading{
-  font-size:clamp(1.8rem,4vw,2.6rem);
-  color:var(--slate-900);
-  margin-bottom:1.1rem;
-  letter-spacing:-0.03em;
-  text-align:center;
-}
-.section-sub{
-  font-size:1.08rem;color:var(--slate-600);
-  max-width:680px;line-height:1.7;
-  text-align:center;
-  margin:0 auto 3rem;
+  background:rgba(59,130,246,.04);
 }
 
 /* GLASS CARDS */
@@ -340,7 +401,7 @@ nav.scrolled{
   border:1px solid rgba(59,130,246,.2);
   border-radius:20px;
   padding:2.5rem 2rem;
-  text-align:center;
+  text-align:left;
   transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
 .pain-card:hover{
@@ -357,98 +418,140 @@ nav.scrolled{
   display:flex;
   align-items:center;
   justify-content:center;
-  margin:0 auto 1.25rem;
+  margin:0 0 1.25rem;
 }
-#servicios-cards .pain-card{text-align:left}
-#servicios-cards .pain-card-icon{margin:0 0 1.25rem}
+#servicios .pain-card{text-align:left}
+#servicios .pain-card-icon{margin:0 0 1.25rem}
 .pain-card h3{font-size:1.15rem;margin-bottom:.55rem;letter-spacing:-0.02em;color:#fff}
 .pain-card p{font-size:.94rem;color:rgba(255,255,255,.65);line-height:1.7}
-.service-bullets{list-style:none;margin-top:.75rem;display:flex;flex-direction:column;gap:.35rem;text-align:left}
-.service-bullets li{font-size:.85rem;color:var(--slate-500);display:flex;align-items:center;gap:.5rem}
 
-/* REVEAL animations */
-.reveal,.reveal-left,.reveal-right,.reveal-scale{
-  opacity:0;
-  transition:opacity .6s ease,transform .6s ease;
+/* METRICS BAR */
+.metrics-bar{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  background:transparent;
+  width:100%;
 }
-.reveal{transform:translateY(30px)}
-.reveal-left{transform:translateX(-40px)}
-.reveal-right{transform:translateX(40px)}
-.reveal-scale{transform:scale(0.92)}
-.reveal.visible,.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible{
-  opacity:1;transform:none;
-}
-
-
-/* Steps */
-/* CTA Section */
-.cta-section{
-  padding:6rem 1.75rem 8rem;
-}
-.cta-box{
-  max-width:900px;margin:0 auto;
-  background:linear-gradient(135deg,var(--slate-900) 0%,#1e293b 100%);
-  border-radius:28px;
-  padding:4.5rem 2.5rem;
+.metric-item{
   text-align:center;
-  color:#fff;
+  padding:1.5rem .75rem;
+  border-right:1px solid var(--slate-200);
+  transition:background .25s;
+}
+.metric-item:last-child{border-right:none}
+.metric-num{
+  font-family:'Outfit',sans-serif;
+  font-size:36px;font-weight:700;letter-spacing:-0.02em;
+  color:var(--blue-500);
+  line-height:1;
+}
+.metric-label{
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--slate-500);
+  line-height:1.4;
+  margin-top:12px;
+}
+@media(max-width:768px){
+  .metrics-bar{grid-template-columns:repeat(2,1fr)}
+  .metric-item{border-right:none;border-bottom:1px solid var(--slate-200)}
+  .metric-item:nth-child(2n){border-right:none}
+  .metric-item:nth-child(1),.metric-item:nth-child(3){border-right:1px solid var(--slate-200)}
+  .metric-item:last-child{border-bottom:none}
+}
+
+
+/* TESTIMONIOS */
+.rating-header{display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.5rem 0 2.5rem}
+.rating-header .stars{color:var(--blue-500);font-size:1.5rem;letter-spacing:2px}
+.rating-score{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:700;color:var(--blue-500)}
+.testimonials-wrapper{overflow:hidden;margin-top:2rem}
+.testimonials-track{display:flex;gap:1.5rem;animation:scrollTestimonials 35s linear infinite;width:max-content}
+.testimonials-wrapper:hover .testimonials-track{animation-play-state:paused}
+@keyframes scrollTestimonials{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.testimonial-card{flex-shrink:0;width:280px;background:linear-gradient(135deg,#0f172a,#1e293b);border:1px solid rgba(59,130,246,.2);border-radius:20px;padding:1.25rem;position:relative;text-align:left}
+.testimonial-stars{color:var(--blue-500);font-size:1.1rem;letter-spacing:2px;margin-bottom:0}
+.testimonial-text{color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.7;margin-bottom:.75rem}
+.testimonial-author{display:flex;flex-direction:column;gap:.25rem}
+.author-name{color:#fff;font-weight:600;font-size:.95rem}
+.author-role{color:rgba(255,255,255,.45);font-size:.85rem}
+.testimonial-card hr{border:none!important;border-top:1px solid rgba(255,255,255,.08)!important;margin:.75rem 0!important}
+.testimonial-badge{background:var(--blue-500);color:#fff;font-size:.75rem;font-weight:600;padding:.35rem .75rem;border-radius:999px;flex-shrink:0}
+
+/* FAQ */
+.faq-list{margin:3rem auto 0;max-width:780px}
+.faq-item{
+  border:1px solid rgba(59,130,246,.2);
+  border-radius:20px;
+  margin-bottom:.75rem;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  overflow:hidden;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.faq-item:hover{border-color:#93c5fd}
+.faq-item.open{
+  border-color:#93c5fd;
+  box-shadow:0 12px 36px -16px rgba(59,130,246,.2);
+}
+.faq-btn{
+  width:100%;background:none;border:none;
+  padding:1.3rem 1.5rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  cursor:pointer;
+  font-family:'Outfit',sans-serif;
+  font-size:1rem;font-weight:600;letter-spacing:-0.015em;
+  color:#fff;text-align:left;
+  transition:color .2s;
+}
+.faq-btn:hover{color:var(--blue-500)}
+.faq-icon{flex-shrink:0;color:var(--slate-500);transition:transform .35s cubic-bezier(.25,.1,.25,1)}
+.faq-item.open .faq-icon{transform:rotate(180deg);color:var(--blue-500)}
+.faq-body{overflow:hidden;max-height:0;transition:max-height .4s cubic-bezier(.25,.1,.25,1)}
+.faq-body p{
+  font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.75;
+  padding:0 1.5rem 1.4rem;
+  text-align:left;
+}
+
+/* CTA */
+.cta-section{padding:5rem 1.75rem 7rem;position:relative;z-index:1}
+.cta-box{
+  background:linear-gradient(135deg,var(--slate-900) 0%,#0b1220 100%);
+  border-radius:28px;
+  padding:5rem 2.5rem;text-align:center;
+  max-width:880px;margin:0 auto;
   position:relative;overflow:hidden;
 }
 .cta-box::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at 30% 30%,rgba(59,130,246,.15),transparent 50%);
+  content:'';position:absolute;
+  top:-50%;right:-20%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(59,130,246,.18),transparent 70%);
   pointer-events:none;
 }
-.cta-box .eyebrow{color:#93c5fd;margin-bottom:1rem}
-.cta-box h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:1rem;position:relative;z-index:1}
-.cta-box>p{font-size:1.1rem;opacity:.9;max-width:560px;margin:0 auto;position:relative;z-index:1}
-
-/* Buttons */
-.hero-cta-btn{
-  display:inline-flex;align-items:center;gap:.6rem;
-  background:var(--blue-500);
-  color:#fff;
-  padding:.95rem 1.7rem;
-  border-radius:12px;
-  font-family:'DM Sans',sans-serif;
-  font-weight:600;
-  font-size:1rem;
-  text-decoration:none;
-  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
-  box-shadow:0 4px 20px rgba(37,99,235,.25);
-  animation:heroBtnIn 0.6s ease-out 0.7s forwards;
-  opacity:0;transform:translateY(20px);
+.cta-box::after{
+  content:'';position:absolute;
+  bottom:-50%;left:-20%;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(96,165,250,.12),transparent 70%);
+  pointer-events:none;
 }
-@keyframes heroBtnIn{
-  to{opacity:1;transform:translateY(0)}
+.cta-box>*{position:relative;z-index:1}
+.cta-box .eyebrow{background:rgba(255,255,255,.08);color:var(--blue-400)}
+.cta-box h2{
+  color:#fff;font-size:clamp(1.9rem,4vw,2.9rem);
+  margin-bottom:1rem;letter-spacing:-0.04em;
 }
-.hero-cta-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 28px rgba(37,99,235,.35);
-  background:var(--blue-600);
-}
-.hero-cta-secondary{
-  display:inline-flex;align-items:center;
-  background:transparent;
-  color:var(--slate-700);
-  padding:.95rem 1.7rem;
-  border-radius:12px;
-  font-family:'DM Sans',sans-serif;
-  font-weight:600;
-  font-size:1rem;
-  text-decoration:none;
-  border:1.5px solid var(--slate-300);
-  transition:all .2s ease;
-  animation:heroBtnIn 0.6s ease-out 0.85s forwards;
-  opacity:0;transform:translateY(20px);
-}
-.hero-cta-secondary:hover{
-  border-color:var(--blue-400);
-  color:var(--blue-500);
-  background:rgba(59,130,246,.04);
+.cta-box p{
+  color:rgba(255,255,255,.7);
+  font-size:1.1rem;line-height:1.75;
+  max-width:560px;margin:0 auto;
 }
 
-/* Footer */
+/* FOOTER */
 .footer-full{
   background:var(--slate-900);
   color:#cbd5e1;
@@ -510,11 +613,15 @@ nav.scrolled{
 }
 .footer-bottom a{color:#94a3b8;text-decoration:none}
 .footer-bottom a:hover{color:#fff}
+@media(max-width:980px){
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
 
-.brand{font-family:'Outfit',sans-serif;font-weight:800;letter-spacing:-0.04em;font-size:1.6rem;display:inline-flex;align-items:center}
-.b-1{color:#e2e8f0}.b-2{color:#3b82f6}.b-3{color:#e2e8f0}
-
-/* WhatsApp FAB */
+/* WA FAB */
 .wa-fab{
   position:fixed;bottom:28px;right:28px;z-index:99;
   width:58px;height:58px;border-radius:50%;
@@ -526,7 +633,7 @@ nav.scrolled{
 }
 .wa-fab:hover{transform:scale(1.05);box-shadow:0 6px 24px rgba(37,211,102,.45)}
 
-/* Back to top */
+/* BACK TO TOP BUTTON */
 .back-to-top{
   position:fixed;bottom:1.75rem;left:1.75rem;
   width:50px;height:50px;border-radius:50%;
@@ -557,67 +664,32 @@ nav.scrolled{
   .back-to-top svg{width:20px;height:20px}
 }
 
-/* Cookie banner */
-.cookie-banner{
-  position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(12px);
-  border-top:1px solid var(--slate-200);
-  padding:1rem 1.25rem;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
-  transform:translateY(100%);
-  transition:transform .4s ease;
+/* REVEAL */
+/* SECTION ANIMATIONS */
+.section-animate{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .8s ease,transform .8s ease;
 }
-.cookie-banner.visible{transform:translateY(0)}
-.cookie-banner p{font-size:.9rem;color:var(--slate-600);margin:0;flex:1 1 300px}
-.cookie-banner a{color:var(--blue-500);text-decoration:none}
-.cookie-btns{display:flex;gap:.75rem}
-.cookie-btn{
-  padding:.6rem 1.2rem;border-radius:10px;
-  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;border:none;
+.section-animate.visible{
+  opacity:1;
+  transform:translateY(0);
 }
-.cookie-btn--accept{background:var(--blue-500);color:#fff}
-.cookie-btn--accept:hover{background:var(--blue-600)}
-.cookie-btn--reject{background:var(--slate-100);color:var(--slate-700)}
-.cookie-btn--reject:hover{background:var(--slate-200)}
+/* WIDE SCREENS - constrain layout */
+@media(min-width:1400px){
+  .container{max-width:1140px}
+  .hero-inner{max-width:780px}
+  .pain-grid{grid-template-columns:repeat(3,1fr)}
+}
 
-/* Modals */
-.modal-overlay{
-  position:fixed;inset:0;z-index:150;
-  background:rgba(15,23,42,.55);
-  display:flex;align-items:center;justify-content:center;
-  padding:1rem;
-  opacity:0;pointer-events:none;
-  transition:opacity .3s ease;
-}
-.modal-overlay.open{opacity:1;pointer-events:auto}
-.modal-box{
-  background:#fff;border-radius:20px;
-  max-width:600px;width:100%;
-  max-height:80vh;overflow-y:auto;
-  padding:2rem;
-  position:relative;
-}
-.modal-close{
-  position:absolute;top:1rem;right:1rem;
-  width:36px;height:36px;border-radius:50%;
-  background:var(--slate-100);border:none;
-  color:var(--slate-600);font-size:1.5rem;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-}
-.modal-close:hover{background:var(--slate-200);color:var(--slate-900)}
-.modal-box h2{margin-bottom:1rem;color:var(--slate-900)}
-.modal-box p{color:var(--slate-600);line-height:1.7}
 
-/* Responsive */
-@media(max-width:980px){
-  .footer-grid{grid-template-columns:repeat(2,1fr)}
-}
+/* RESPONSIVE */
 @media(max-width:768px){
   .nav-links{display:none}
   .nav-burger{display:inline-flex}
-  .footer-grid{grid-template-columns:1fr;gap:2rem}
-  .footer-bottom{flex-direction:column;text-align:center}
+  .hero-sub{font-size:1.05rem}
+  .testimonial-card{width:240px}
+  .testimonials-track{animation-duration:28s}
 }
 @media(max-width:680px){
   .section{padding:5rem 1.25rem}
@@ -625,79 +697,226 @@ nav.scrolled{
   .cta-section{padding:3rem 1.25rem 5rem}
   .cta-box{padding:3.75rem 1.5rem}
   nav{padding:.7rem 1rem}
+  .wa-fab{width:52px;height:52px;bottom:20px;right:20px}
 }
-@media(max-width:420px){
-  .cookie-banner{flex-direction:column;align-items:stretch;text-align:center}
-  .cookie-btns{justify-content:center}
+@media(max-width:520px){.calc-result{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr;gap:1.5rem}
+  .footer-bottom{flex-direction:column;align-items:center;text-align:center}
 }
 
-/* TIMELINE */
-.timeline-wrap{position:relative;max-width:700px;margin:0 auto}
-.timeline-track{
-  position:absolute;left:50%;transform:translateX(-50%);
-  top:0;bottom:0;width:2px;
-  background:rgba(59,130,246,.12);
-  z-index:0;
+/* CALCULATOR */
+.calc-card{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  border:1px solid rgba(59,130,246,.2);
+  border-radius:20px;
+  padding:2.5rem 2rem;
+  max-width:680px;
+  margin:3rem auto 0;
+  text-align:center;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
-.timeline-fill{
-  position:absolute;left:50%;transform:translateX(-50%);
-  top:0;width:2px;height:0%;
-  background:var(--blue-500);
-  box-shadow:0 0 8px rgba(59,130,246,.4);
-  z-index:1;
-  will-change:height;
-  transition:none;
+.calc-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 30px rgba(59,130,246,.08);
+  border-color:#93c5fd;
 }
-.timeline-steps{position:relative;z-index:2}
-.timeline-step{
-  display:grid;grid-template-columns:1fr 40px 1fr;
-  gap:1.5rem;align-items:center;
-  padding:1.5rem 0;
+.calc-group{margin-bottom:2rem}
+.calc-lbl{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:.65rem;
 }
-.timeline-step-spacer{}
-.timeline-node{
-  width:16px;height:16px;border-radius:50%;
-  background:rgba(59,130,246,.15);
-  border:2px solid rgba(59,130,246,.3);
-  transition:background .3s,border-color .3s,box-shadow .3s;
-  justify-self:center;
+.calc-lbl-text{font-size:.93rem;font-weight:500;color:rgba(255,255,255,.75)}
+.calc-lbl-val{
+  font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:700;
+  color:#3b82f6;min-width:2.5rem;text-align:right;
 }
-.timeline-node.active{
-  background:var(--blue-500);
-  border-color:var(--blue-500);
-  box-shadow:0 0 0 4px rgba(59,130,246,.2),0 0 12px rgba(59,130,246,.4);
+.calc-range{
+  width:100%;accent-color:#3b82f6;cursor:pointer;
+  appearance:none;-webkit-appearance:none;
+  height:6px;border-radius:4px;
+  background:var(--slate-200);outline:none;
 }
-.timeline-step-content{
-  background:rgba(255,255,255,.7);
+.calc-range::-webkit-slider-thumb{
+  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+  background:#3b82f6;cursor:pointer;
+  box-shadow:0 0 0 3px rgba(59,130,246,.2);
+  transition:box-shadow .2s;
+}
+.calc-range::-webkit-slider-thumb:hover{box-shadow:0 0 0 5px rgba(59,130,246,.25)}
+.calc-result{
+  background:rgba(59,130,246,.08);
+  border:1.5px solid rgba(59,130,246,.2);
+  border-radius:18px;
+  padding:2rem 1.5rem;
+  margin-top:2.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;text-align:center;
+  transition:border-color .25s,box-shadow .25s;
+}
+.calc-result:hover{border-color:#93c5fd;box-shadow:0 0 30px rgba(59,130,246,.08)}
+.calc-result-lbl{font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:.35rem;line-height:1.4}
+.calc-result-num{
+  font-family:'Outfit',sans-serif;
+  font-size:2.6rem;font-weight:700;letter-spacing:-0.04em;
+  color:var(--blue-500);line-height:1;margin-bottom:.3rem;
+}
+.calc-result-unit{font-size:.85rem;color:rgba(255,255,255,.6)}
+#calcMsg{color:rgba(255,255,255,.7)}
+
+/* SERVICE BULLETS */
+.service-bullets{list-style:none;margin-top:.75rem;display:flex;flex-direction:column;gap:.35rem;text-align:left}
+.service-bullets li{font-size:.85rem;color:var(--slate-500);display:flex;align-items:center;gap:.5rem}
+
+/* MODAL */
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.8);
+  z-index:10000;
+  display:flex;align-items:center;justify-content:center;
+  padding:1.5rem;
+  opacity:0;pointer-events:none;
+  transition:opacity .25s ease;
+}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal-box{
+  background:#fff;
+  max-width:700px;width:100%;
+  max-height:85vh;
+  border-radius:14px;
+  padding:2rem;
+  overflow-y:auto;
+  position:relative;
+  transform:translateY(16px);
+  transition:transform .25s ease;
+}
+.modal-overlay.open .modal-box{transform:translateY(0)}
+.modal-close{
+  position:sticky;top:0;float:right;
+  background:none;border:none;cursor:pointer;
+  font-size:1.6rem;line-height:1;
+  color:var(--slate-400);padding:.1rem .4rem;
+  transition:color .2s;
+}
+.modal-close:hover{color:var(--slate-900)}
+.modal-box h2{font-size:1.35rem;margin-bottom:1.25rem;color:var(--slate-900);letter-spacing:-0.02em}
+.modal-box h3{font-size:.95rem;font-weight:600;margin:1.25rem 0 .4rem;color:var(--slate-800)}
+.modal-box p{font-size:.9rem;color:var(--slate-600);line-height:1.7;margin-bottom:.5rem}
+.modal-box ul{padding-left:1.25rem;margin-bottom:.75rem}
+.modal-box li{font-size:.9rem;color:var(--slate-600);line-height:1.7;margin-bottom:.2rem}
+.modal-link{
+  background:none;border:none;cursor:pointer;
+  color:var(--slate-500);font-size:.8rem;font-family:inherit;
+  text-decoration:underline;text-underline-offset:3px;
+  transition:color .2s;padding:0;
+}
+.modal-link:hover{color:var(--blue-500)}
+
+/* ABOUT ME */
+@media(max-width:768px){
+  #sobre-mi .container>div{grid-template-columns:1fr!important;gap:2rem!important}
+  #sobre-mi .about-photo{width:100%!important;height:220px!important}
+}
+
+/* COOKIE BANNER */
+.cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(255,255,255,.97);
+  border-top:2px solid #3b82f6;
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  border:1px solid var(--slate-200);
-  border-radius:20px;
-  padding:1.75rem;
-  opacity:.4;
-  transform:translateY(8px);
-  transition:opacity .4s ease,transform .4s ease,border-color .3s,box-shadow .3s;
+  padding:1.25rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  z-index:300;
+  transform:translateY(100%);
+  transition:transform .4s ease;
 }
-.timeline-step-content.active{
-  opacity:1;transform:translateY(0);
-  border-color:#93c5fd;
-  box-shadow:0 8px 30px rgba(59,130,246,.08);
+.cookie-banner.visible{transform:translateY(0)}
+.cookie-banner p{font-size:.88rem;color:var(--slate-700);line-height:1.5;margin:0}
+.cookie-banner a{color:var(--blue-400);text-decoration:underline;text-underline-offset:3px}
+.cookie-btns{display:flex;gap:.75rem;flex-shrink:0}
+.cookie-btn{
+  display:flex;
+  font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;
+  padding:.6rem 1.25rem;border-radius:999px;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
 }
-.timeline-step-content h3{font-size:1.1rem;font-weight:700;color:var(--slate-900);margin-bottom:.4rem;letter-spacing:-0.02em}
-.timeline-step-content p{font-size:.92rem;color:var(--slate-600);line-height:1.7;margin:0}
-.timeline-step-num{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--blue-500);line-height:1;margin-bottom:.5rem}
-.timeline-left{text-align:right}
-.timeline-right{text-align:left}
-@media(max-width:680px){
-  .timeline-track,.timeline-fill{left:1.5rem;transform:none}
-  .timeline-step{grid-template-columns:32px 1fr;gap:1rem}
-  .timeline-step .timeline-step-spacer{display:none}
-  .timeline-left{text-align:left}
-  .timeline-node{justify-self:start}
+.cookie-btn:hover{transform:scale(1.03)}
+.cookie-btn--accept{background:var(--blue-500);color:#fff}
+.cookie-btn--accept:hover{background:#1d4ed8}
+.cookie-btn--reject{background:var(--slate-200);color:var(--slate-800)}
+.cookie-btn--reject:hover{background:rgba(255,255,255,.18)}
+@media(max-width:600px){
+  .cookie-banner{flex-direction:column;padding:1rem 1.25rem;gap:1rem}
+  .cookie-btns{width:100%;justify-content:stretch}
+  .cookie-btn{flex:1}
 }
-@media(max-width:680px){
-  #garantia .container>div{flex-direction:column;text-align:center;padding:2rem 1.5rem}
+
+@media(max-width:768px){
+  /* Hero */
+  .hero-title{font-size:2.6rem}
+  .hero-sub{font-size:1rem;white-space:normal}
+  .hero-cta-btn{font-size:.95rem;padding:.85rem 1.5rem}
+
+  /* Métricas */
+  .metrics-bar{grid-template-columns:repeat(2,1fr)}
+  .metric-num{font-size:28px}
+
+  /* Pain cards */
+  .pain-grid{grid-template-columns:1fr}
+
+  /* Calculadora */
+  .calc-card{padding:1.75rem 1.25rem}
+  .calc-result{grid-template-columns:1fr!important}
+  .calc-result-num{font-size:2rem}
+
+  /* Testimonios */
+  .testimonial-card{width:220px}
+  .testimonials-track{animation-duration:25s}
+
+  /* Sobre mí */
+  #sobre-mi .container>div{grid-template-columns:1fr!important;gap:2rem!important}
+  #sobre-mi .about-photo{width:100%!important;height:200px!important}
+
+  /* FAQ */
+  .faq-btn{font-size:.9rem;padding:1.1rem 1.25rem}
+  .faq-body p{padding:0 1.25rem 1.25rem}
+
+  /* CTA */
+  .cta-box{padding:3rem 1.25rem}
+  .cta-box h2{font-size:1.6rem}
+
+  /* Footer */
+  .footer-grid{grid-template-columns:1fr}
+  .footer-trust-bar{gap:1.25rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+
+  /* FAB y back-to-top */
+  .wa-fab{width:50px;height:50px;bottom:20px;right:20px}
+  .back-to-top{width:42px;height:42px;bottom:20px;left:20px}
 }
+
+@media(max-width:480px){
+  .hero{padding:6rem 1rem 4rem}
+  .section{padding:4rem 1rem}
+  .cta-section{padding:2.5rem 1rem 4rem}
+  nav{padding:.65rem .75rem}
+  .metric-num{font-size:24px}
+  .calc-result-num{font-size:1.75rem}
+  .cookie-banner{flex-direction:column;padding:1rem}
+  .cookie-btns{width:100%;justify-content:stretch}
+  .cookie-btn{flex:1}
+}
+
+.section-animate{background:transparent}
+
+.metrics-bar{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  border-color:rgba(59,130,246,.2)!important;
+}
+.metric-item{border-right-color:rgba(59,130,246,.15)!important}
+.metric-label{color:rgba(255,255,255,.45)}
+.metrics-bar{margin-top:-1px}
+.section-animate:has(.metrics-bar){padding:0;margin:0}
 
 .timeline-step-content{
   background:linear-gradient(135deg,#0f172a,#1e293b)!important;
@@ -707,11 +926,14 @@ nav.scrolled{
 .timeline-step-content p{color:rgba(255,255,255,.65)}
 .timeline-step-num{color:#3b82f6}
 
+html{scroll-padding-top:80px}
+
+.cookie-btn--reject{display:inline-flex!important}
 </style>
 </head>
 <body>
 
-<div class="bg-shapes">
+<div class="bg-shapes" aria-hidden="true">
   <div class="shape shape-1"></div>
   <div class="shape shape-2"></div>
   <div class="shape shape-3"></div>
@@ -739,182 +961,24 @@ nav.scrolled{
     <li><a href="index.html">Inicio</a></li>
     <li><a href="servicios.html">Servicios</a></li>
     <li><a href="casos.html">Casos</a></li>
-    <li><a href="index.html#faq">FAQ</a></li>
-    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
+    <li><a href="#faq" data-link="faq">FAQ</a></li>
+    <li><a href="#sobre-mi" data-link="sobre-mi">Sobre mí</a></li>
+    <li><a href="#contacto" data-link="contacto">Contacto</a></li>
   </ul>
 </aside>
 
-<section class="hero" style="min-height:auto;padding:10rem 1.75rem 4rem">
-  <div class="hero-blob-1" aria-hidden="true"></div>
-  <div class="hero-blob-2" aria-hidden="true"></div>
-  <div class="hero-blob-3" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <span class="eyebrow">Nuestros servicios</span>
-    <h1 class="hero-title" style="font-size:clamp(2rem,5vw,3.5rem);opacity:0;animation:heroSlideUp 0.8s ease-out 0.1s forwards">Qué hacemos por tu negocio</h1>
-    <p class="hero-sub" style="white-space:normal;opacity:0;animation:heroSlideUp 0.8s ease-out 0.4s forwards">Nos enfocamos en tu caso particular y desarrollamos soluciones 100% personalizadas para tu empresa.</p>
-  </div>
-</section>
-
-<section class="section section-animate" id="servicios-cards">
-  <div class="container">
-    <div class="pain-grid">
-
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <h3>Asistente virtual con IA</h3>
-        <p>Tu negocio responde al instante, a cualquier hora. Por WhatsApp, web o email, sin que tú intervengas.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Atención 24/7 sin contratar personal</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Filtra y cualifica leads solo</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Respuestas personalizadas con contexto</li>
-        </ul>
-      </article>
-
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <h3>Captación automática de clientes</h3>
-        <p>Encuentra, contacta y filtra clientes potenciales sin que tu equipo mueva un dedo.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Prospección desde formularios y RRSS</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Contacto automático por email o WhatsApp</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Solo te llegan los que interesan de verdad</li>
-        </ul>
-      </article>
-
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
-        </div>
-        <h3>Presupuestos en segundos</h3>
-        <p>Tu cliente rellena un formulario y recibe un presupuesto profesional en PDF al instante. Sin errores, sin esperas.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> PDF profesional generado con IA</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cálculos automáticos sin errores</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Seguimiento del estado de cada uno</li>
-        </ul>
-      </article>
-
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        </div>
-        <h3>Citas y agenda automática</h3>
-        <p>Tus clientes reservan solos y reciben confirmación y recordatorio sin que tú hagas nada.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Reservas online sin llamadas</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recordatorios que reducen cancelaciones</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Sincronizado con Google Calendar</li>
-        </ul>
-      </article>
-
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Seguimiento que vende solo</h3>
-        <p>Emails, WhatsApps o recordatorios que se disparan solos según lo que haga o deje de hacer cada cliente.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Recupera clientes que no respondieron</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Se activa por tiempo o por acción</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Cero trabajo manual</li>
-        </ul>
-      </article>
-
-      <article class="pain-card">
-        <div class="pain-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3>Informes y documentos automáticos</h3>
-        <p>Facturas, albaranes, reportes o cualquier documento que hoy generas a mano, listo en segundos desde tus datos.</p>
-        <ul class="service-bullets">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Desde Google Sheets, CRM o lo que uses</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Envío directo al cliente</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Formatos profesionales personalizados</li>
-        </ul>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="section section-animate" id="proceso">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:4rem">
-      <span class="eyebrow">Cómo trabajamos</span>
-      <h2 class="section-heading">De la idea a la implementación</h2>
-      <p class="section-sub" style="max-width:680px;margin:0 auto">Te acompañamos en cada paso. Sin sorpresas, sin tecnicismos innecesarios.</p>
-    </div>
-    <div class="timeline-wrap">
-      <div class="timeline-track"></div>
-      <div class="timeline-fill" id="timelineFill"></div>
-      <div class="timeline-steps">
-        <div class="timeline-step">
-          <div class="timeline-step-content timeline-left">
-            <div class="timeline-step-num">01</div>
-            <h3>Análisis</h3>
-            <p>Evaluamos tus procesos y detectamos dónde la automatización genera más impacto.</p>
-          </div>
-          <div class="timeline-node" data-node="0"></div>
-          <div class="timeline-step-spacer"></div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-step-spacer"></div>
-          <div class="timeline-node" data-node="1"></div>
-          <div class="timeline-step-content timeline-right">
-            <div class="timeline-step-num">02</div>
-            <h3>Diseño</h3>
-            <p>Construimos una solución a medida integrada con las herramientas que ya usas.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-step-content timeline-left">
-            <div class="timeline-step-num">03</div>
-            <h3>Integración</h3>
-            <p>Implementación gradual, sin interrupciones en tu día a día.</p>
-          </div>
-          <div class="timeline-node" data-node="2"></div>
-          <div class="timeline-step-spacer"></div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-step-spacer"></div>
-          <div class="timeline-node" data-node="3"></div>
-          <div class="timeline-step-content timeline-right">
-            <div class="timeline-step-num">04</div>
-            <h3>Formación</h3>
-            <p>Te enseñamos a usar el sistema con sesiones prácticas y documentación clara.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-step-content timeline-left">
-            <div class="timeline-step-num">05</div>
-            <h3>Seguimiento</h3>
-            <p>Monitorizamos resultados y optimizamos continuamente. Soporte incluido.</p>
-          </div>
-          <div class="timeline-node" data-node="4"></div>
-          <div class="timeline-step-spacer"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-animate" id="garantia">
-  <div class="container">
-    <div style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border:1px solid rgba(59,130,246,.25);border-radius:24px;padding:3rem 2.5rem;display:flex;gap:2.5rem;align-items:center;max-width:860px;margin:0 auto">
-      <div style="flex-shrink:0;width:80px;height:80px;background:rgba(59,130,246,.12);border-radius:18px;display:flex;align-items:center;justify-content:center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-      </div>
-      <div>
-        <p style="font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:1rem">El primer mes es gratis. Pruebas la automatización funcionando en tu negocio real, sin pagar nada. Si no te convence, lo dejamos y no debes nada.<br><br>Ofrezco esto porque confío al 100% en lo que entrego. Cuando ves tu negocio funcionando solo, respondiendo clientes a las 3 de la mañana, generando resultados mientras duermes, no hace falta que te convenza yo. Los resultados se muestran por si solos.</p>
-        <p style="font-size:.95rem;color:rgba(255,255,255,.5);font-weight:600">Mario Díez | CEO de Negoziax</p>
-      </div>
-    </div>
+<section class="hero" style="min-height:100vh">
+  <div class="hero-inner" style="text-align:center">
+    <p class="eyebrow">Error 404</p>
+    <h1 class="hero-title">
+      <span class="title-line">Página</span>
+      <span class="title-line title-blue">no encontrada.</span>
+    </h1>
+    <p class="hero-sub">Esta página no existe o ha sido movida.</p>
+    <a href="index.html" class="hero-cta-btn"
+       style="animation:none;opacity:1;transform:none">
+      Volver al inicio
+    </a>
   </div>
 </section>
 
@@ -928,11 +992,9 @@ nav.scrolled{
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round"
           stroke-linejoin="round" style="color:var(--slate-400);flex-shrink:0">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07
-A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012
-.84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45
-2.11L6.09 8.19a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45
-c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          <path d="M15.05 5A5 5 0 0119 8.95M15.05 1A9 9 0 0123 8.94M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07
+A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.19a16 16 0 006.29 6.29l1.42
+-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
           </svg>
           <span>+34 611 059 182</span>
         </div>
@@ -962,10 +1024,10 @@ c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
     <div class="footer-col" style="margin:0 auto;padding-top:1rem">
       <h4>Empresa</h4>
       <ul>
-        <li><a href="index.html#sobre-mi">Sobre mí</a></li>
-        <li><a href="index.html#testimonios">Testimonios</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
     <div class="footer-col" style="margin:0 auto;padding-top:1rem">
@@ -1004,6 +1066,15 @@ c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
 
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (Google Analytics) para mejorar tu experiencia. <a href="#" onclick="document.getElementById('modalCookies').classList.add('open');return false">Más info</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceptar</button>
+    <button class="cookie-btn cookie-btn--reject" id="cookieReject">Rechazar</button>
+  </div>
+</div>
+
 <script>
 // Nav scrolled state
 const nav = document.getElementById('nav');
@@ -1011,17 +1082,33 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// Reveal animations
-const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-revealEls.forEach(el => revealObserver.observe(el));
+// Hero parallax effect
+const hero = document.querySelector('.hero');
+const heroBlobs = document.querySelectorAll('.hero-blob-1, .hero-blob-2, .hero-blob-3');
+let heroTicking = false;
+
+function updateParallax() {
+  const scrollY = window.scrollY;
+  const heroHeight = hero.offsetHeight;
+  const heroOffset = hero.offsetTop;
+  
+  if (scrollY <= heroHeight + heroOffset) {
+    const progress = scrollY / (heroHeight + heroOffset);
+    heroBlobs.forEach((blob, index) => {
+      const speed = 0.15 + (index * 0.05);
+      const yOffset = scrollY * speed;
+      blob.style.transform = `translateY(${yOffset}px)`;
+    });
+  }
+  heroTicking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!heroTicking) {
+    requestAnimationFrame(updateParallax);
+    heroTicking = true;
+  }
+}, { passive: true });
 
 // Section scroll animations
 const sectionEls = document.querySelectorAll('.section-animate');
@@ -1035,8 +1122,56 @@ const sectionAnimateObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.15 });
 sectionEls.forEach(el => sectionAnimateObserver.observe(el));
 
+// Counter animation
+const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const decimals = parseInt(el.dataset.decimals) || 0;
+  const duration = 1500;
+  const startTime = performance.now();
+  function tick(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = easeOutCubic(progress);
+    const current = target * eased;
+    el.textContent = prefix + current.toFixed(decimals) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
+
+// FAQ accordion
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+  const btn = item.querySelector('.faq-btn');
+  const body = item.querySelector('.faq-body');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    faqItems.forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      i.querySelector('.faq-body').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  });
+});
+
 // Active section tracking for nav links
-const sectionIds = ['servicios-cards', 'proceso'];
+const sectionIds = ['problema', 'testimonios', 'calculadora', 'sobre-mi', 'faq', 'contacto'];
 const navLinks = document.querySelectorAll('[data-link]');
 function setActiveLink(id) {
   navLinks.forEach(a => {
@@ -1075,7 +1210,30 @@ burger.addEventListener('click', () => {
 navOverlay.addEventListener('click', closeMobile);
 navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
 
-// Lightweight parallax for decorative shapes
+// Savings calculator
+(function(){
+  const sl=document.getElementById('calcHoras');
+  const slC=document.getElementById('calcCoste');
+  const vH=document.getElementById('calcValHoras');
+  const vC=document.getElementById('calcValCoste');
+  const rH=document.getElementById('calcResHoras');
+  const rD=document.getElementById('calcResDinero');
+  if(!sl)return;
+  function calc(){
+    const h=+sl.value;
+    vH.textContent=h+' horas';
+    vC.textContent=slC.value+' €/h';
+    const horas=Math.round(h*4*0.8);
+    const dinero=horas*+slC.value;
+    rH.textContent=horas;
+    rD.textContent=dinero.toLocaleString('es-ES');
+  }
+  sl.addEventListener('input',calc);
+  slC.addEventListener('input',calc);
+  calc();
+})();
+
+// Lightweight parallax for decorative shapes and orbs
 const shapes = document.querySelectorAll('.shape');
 let lastY = 0, ticking = false;
 window.addEventListener('scroll', () => {
@@ -1105,34 +1263,82 @@ backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Timeline
 (function(){
-  const wrap=document.querySelector('.timeline-wrap');
-  const fill=document.getElementById('timelineFill');
-  const nodes=document.querySelectorAll('.timeline-node');
-  const cards=document.querySelectorAll('.timeline-step-content');
-  if(!wrap||!fill)return;
-
-  function update(){
-    const rect=wrap.getBoundingClientRect();
-    const wh=wrap.offsetHeight;
-    const progress=Math.max(0,Math.min(1,(window.innerHeight*0.6-rect.top)/wh));
-    fill.style.height=(progress*100)+'%';
-
-    nodes.forEach((node,i)=>{
-      const nodeRect=node.getBoundingClientRect();
-      const active=nodeRect.top<window.innerHeight*0.65;
-      node.classList.toggle('active',active);
-      if(cards[i]) cards[i].classList.toggle('active',active);
+  const c=document.getElementById('heroNodesL');
+  if(!c)return;
+  const ctx=c.getContext('2d');
+  let w,h,pts=[];
+  const N=30,DIST=150;
+  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;if(!pts.length)init()}
+  function init(){pts=[];for(let i=0;i<N;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    pts.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>w)p.vx*=-1;
+      if(p.y<0||p.y>h)p.vy*=-1;
     });
+    for(let i=0;i<N;i++){
+      for(let j=i+1;j<N;j++){
+        const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<DIST){
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x,pts[i].y);
+          ctx.lineTo(pts[j].x,pts[j].y);
+          ctx.strokeStyle='rgba(59,130,246,'+(1-d/DIST)*.5+')';
+          ctx.lineWidth=1;
+          ctx.stroke();
+        }
+      }
+      ctx.beginPath();
+      ctx.arc(pts[i].x,pts[i].y,2.5,0,Math.PI*2);
+      ctx.fillStyle='rgba(59,130,246,.6)';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
   }
+  window.addEventListener('resize',resize);
+  resize();draw();
+})();
 
-  let raf=null;
-  window.addEventListener('scroll',()=>{
-    if(raf)return;
-    raf=requestAnimationFrame(()=>{raf=null;update()});
-  },{passive:true});
-  update();
+(function(){
+  const c=document.getElementById('heroNodesR');
+  if(!c)return;
+  const ctx=c.getContext('2d');
+  let w,h,pts=[];
+  const N=30,DIST=150;
+  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;if(!pts.length)init()}
+  function init(){pts=[];for(let i=0;i<N;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    pts.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>w)p.vx*=-1;
+      if(p.y<0||p.y>h)p.vy*=-1;
+    });
+    for(let i=0;i<N;i++){
+      for(let j=i+1;j<N;j++){
+        const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<DIST){
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x,pts[i].y);
+          ctx.lineTo(pts[j].x,pts[j].y);
+          ctx.strokeStyle='rgba(59,130,246,'+(1-d/DIST)*.5+')';
+          ctx.lineWidth=1;
+          ctx.stroke();
+        }
+      }
+      ctx.beginPath();
+      ctx.arc(pts[i].x,pts[i].y,2.5,0,Math.PI*2);
+      ctx.fillStyle='rgba(59,130,246,.6)';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',resize);
+  resize();draw();
 })();
 
 // Cookie banner
@@ -1147,26 +1353,25 @@ backToTopBtn.addEventListener('click', () => {
   document.getElementById('cookieReject').addEventListener('click',()=>{
     localStorage.setItem('cookies_choice','rejected');
     banner.classList.remove('visible');
+    // Desactivar GA si rechaza
     window['ga-disable-G-6GDDG1XZ56']=true;
   });
 })();
-</script>
 
-<!-- Cookie Banner -->
-<div class="cookie-banner" id="cookieBanner">
-  <p>Usamos cookies propias y de terceros (Google Analytics) para mejorar tu experiencia.</p>
-  <div class="cookie-btns">
-    <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceptar</button>
-    <button class="cookie-btn cookie-btn--reject" id="cookieReject">Rechazar</button>
-  </div>
-</div>
+</script>
 
 <!-- MODAL LEGAL -->
 <div class="modal-overlay" id="modalLegal">
   <div class="modal-box">
     <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
     <h2>Aviso Legal</h2>
-    <p>Titular: Mario Díez. Correo electrónico: contacto@negoziax.com. Este sitio web es un espacio informativo y comercial sobre servicios de automatización de procesos empresariales con inteligencia artificial. Todos los derechos reservados.</p>
+    <p>Titular: Mario Díez. Actividad: prestación de servicios de automatización de procesos con inteligencia artificial. Domicilio: Ciudad Real, España. Email: contacto@negoziax.com.</p>
+    <h3>Condiciones de uso</h3>
+    <p>El acceso y uso de este sitio web implica la aceptación de las presentes condiciones. Negoziax se reserva el derecho de modificar los contenidos sin previo aviso.</p>
+    <h3>Propiedad intelectual</h3>
+    <p>Los contenidos, diseño y código fuente de este sitio son propiedad de Negoziax y están protegidos por la legislación de propiedad intelectual. Queda prohibida su reproducción sin autorización expresa.</p>
+    <h3>Responsabilidad</h3>
+    <p>Negoziax no se hace responsable de los daños derivados del uso o imposibilidad de uso del sitio web, ni de los contenidos de terceros enlazados.</p>
   </div>
 </div>
 
