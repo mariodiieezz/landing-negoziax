@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://wa.me">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GDDG1XZ56"></script>
 <script>
@@ -29,6 +31,7 @@
 }
 </script>
 <meta charset="UTF-8">
+<link rel="canonical" href="https://negoziax.com/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -46,10 +49,10 @@
 <meta property="og:url" content="https://negoziax.com">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500&display=swap" as="style">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <style>
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -798,7 +801,7 @@ nav.scrolled{
   position:sticky;top:0;float:right;
   background:none;border:none;cursor:pointer;
   font-size:1.6rem;line-height:1;
-  color:var(--slate-400);padding:.1rem .4rem;
+  color:var(--slate-600);padding:.1rem .4rem;
   transition:color .2s;
 }
 .modal-close:hover{color:var(--slate-900)}
@@ -825,7 +828,7 @@ nav.scrolled{
 .cookie-banner{
   position:fixed;bottom:0;left:0;right:0;
   background:rgba(255,255,255,.97);
-  border-top:2px solid #3b82f6;
+  border-top:2px solid #94a3b8;
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
   padding:1.25rem 2rem;
@@ -933,6 +936,51 @@ nav.scrolled{
 html{scroll-padding-top:80px}
 
 .cookie-btn--reject{display:inline-flex!important}
+
+@media(max-width:768px){
+  .hero{padding:7rem 1.25rem 4rem;min-height:auto}
+  .hero-title{font-size:clamp(2.2rem,8vw,3.2rem)}
+  .hero-sub{font-size:1rem;white-space:normal}
+  .hero-cta-btn{font-size:.95rem;padding:.85rem 1.5rem}
+  .nav-links{display:none}
+  .nav-burger{display:inline-flex}
+  .pain-grid{grid-template-columns:1fr}
+  .metrics-bar{grid-template-columns:repeat(2,1fr)}
+  .calc-card{padding:1.5rem 1rem}
+  .calc-result{grid-template-columns:1fr!important}
+  .calc-result-num{font-size:2rem}
+  .testimonial-card{width:220px}
+  .timeline-wrap{padding:0 .5rem}
+  .timeline-step{grid-template-columns:32px 1fr;gap:.75rem}
+  .timeline-step .timeline-step-spacer{display:none}
+  .timeline-left{text-align:left}
+  .timeline-node{justify-self:start}
+  .footer-grid{grid-template-columns:1fr;gap:1.5rem}
+  .footer-trust-bar{gap:1rem;flex-direction:column;align-items:center}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .cta-box{padding:3rem 1.25rem}
+  .cta-box h2{font-size:1.6rem}
+  #sobre-mi .container>div{grid-template-columns:1fr!important;gap:2rem!important}
+  .about-photo{width:100%!important;height:200px!important}
+  .caso-card{padding:1.25rem}
+  .caso-metrics{grid-template-columns:repeat(3,1fr)}
+  .faq-btn{font-size:.9rem;padding:1rem 1.1rem}
+  .wa-fab{width:50px;height:50px;bottom:18px;right:18px}
+  .back-to-top{width:42px;height:42px;bottom:18px;left:18px}
+  .cookie-banner{flex-direction:column;padding:1rem}
+  .cookie-btns{width:100%;justify-content:stretch}
+  .cookie-btn{flex:1}
+}
+
+@media(max-width:480px){
+  .hero{padding:6rem 1rem 3.5rem}
+  .section{padding:3.5rem 1rem}
+  nav{padding:.65rem .75rem}
+  .metric-num{font-size:22px}
+  .caso-metrics{grid-template-columns:repeat(3,1fr)}
+  .caso-metric-num{font-size:.9rem}
+  .modal-box{padding:1.25rem}
+}
 </style>
 </head>
 <body>
@@ -945,7 +993,7 @@ html{scroll-padding-top:80px}
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><img src="logo.png" alt="Negoziax" style="height:47px;width:auto"></a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Logotipo de Negoziax, automatización empresarial con IA" fetchpriority="high" width="224" height="270" style="height:47px;width:auto"></a>
 
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
@@ -965,9 +1013,6 @@ html{scroll-padding-top:80px}
     <li><a href="index.html">Inicio</a></li>
     <li><a href="servicios.html">Servicios</a></li>
     <li><a href="casos.html">Casos</a></li>
-    <li><a href="#faq" data-link="faq">FAQ</a></li>
-    <li><a href="#sobre-mi" data-link="sobre-mi">Sobre mí</a></li>
-    <li><a href="#contacto" data-link="contacto">Contacto</a></li>
   </ul>
 </aside>
 
@@ -1082,6 +1127,11 @@ html{scroll-padding-top:80px}
             <div class="calc-result-unit">€/mes</div>
           </div>
         </div>
+      </div>
+      <div style="text-align:center">
+        <a href="https://wa.me/34611059182?text=Hola%2C%20he%20calculado%20que%20puedo%20ahorrar%20tiempo%20y%20dinero%20con%20automatización.%20" target="_blank" rel="noopener" class="hero-cta-btn" style="animation:none;opacity:1;transform:none;margin-top:1.5rem;display:inline-flex">
+  Quiero recuperar ese tiempo →
+</a>
       </div>
     </div>
   </div>
@@ -1332,7 +1382,7 @@ html{scroll-padding-top:80px}
     </div>
     <div style="display:grid;grid-template-columns:280px 1fr;gap:4rem;align-items:start;max-width:900px;margin:0 auto">
       <div class="about-photo" style="width:260px;height:300px;border-radius:20px;background:var(--slate-100);overflow:hidden">
-        <img src="mario.jpeg" alt="Mario Díez" loading="lazy" 
+        <img src="mario.jpeg" alt="Retrato de Mario Díez, fundador de Negoziax" loading="lazy" width="655" height="800"
         style="object-fit:cover;object-position:center 60%;width:100%;height:100%">
       </div>
       <div style="text-align:left">
@@ -1662,15 +1712,17 @@ backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-(function(){
-  const c=document.getElementById('heroNodesL');
-  if(!c)return;
+function initNodeCanvas(canvasId){
+  const c=document.getElementById(canvasId);
+  if(!c)return{start:function(){},stop:function(){}};
   const ctx=c.getContext('2d');
   let w,h,pts=[];
-  const N=30,DIST=150;
-  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;if(!pts.length)init()}
-  function init(){pts=[];for(let i=0;i<N;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
-  function draw(){
+  const N = window.matchMedia('(max-width: 768px)').matches ? 15 : 30;
+  const DIST=150;
+  let rafId=null;
+  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;if(!pts.length)init();}
+  function init(){pts=[];for(let i=0;i<N;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4});}
+  function tick(){
     ctx.clearRect(0,0,w,h);
     pts.forEach(p=>{
       p.x+=p.vx;p.y+=p.vy;
@@ -1695,57 +1747,45 @@ backToTopBtn.addEventListener('click', () => {
       ctx.fillStyle='rgba(59,130,246,.6)';
       ctx.fill();
     }
-    requestAnimationFrame(draw);
+    rafId=requestAnimationFrame(tick);
   }
-  window.addEventListener('resize',resize);
-  resize();draw();
-})();
-
-(function(){
-  const c=document.getElementById('heroNodesR');
-  if(!c)return;
-  const ctx=c.getContext('2d');
-  let w,h,pts=[];
-  const N=30,DIST=150;
-  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;if(!pts.length)init()}
-  function init(){pts=[];for(let i=0;i<N;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
-  function draw(){
-    ctx.clearRect(0,0,w,h);
-    pts.forEach(p=>{
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0||p.x>w)p.vx*=-1;
-      if(p.y<0||p.y>h)p.vy*=-1;
-    });
-    for(let i=0;i<N;i++){
-      for(let j=i+1;j<N;j++){
-        const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
-        const d=Math.sqrt(dx*dx+dy*dy);
-        if(d<DIST){
-          ctx.beginPath();
-          ctx.moveTo(pts[i].x,pts[i].y);
-          ctx.lineTo(pts[j].x,pts[j].y);
-          ctx.strokeStyle='rgba(59,130,246,'+(1-d/DIST)*.5+')';
-          ctx.lineWidth=1;
-          ctx.stroke();
-        }
-      }
-      ctx.beginPath();
-      ctx.arc(pts[i].x,pts[i].y,2.5,0,Math.PI*2);
-      ctx.fillStyle='rgba(59,130,246,.6)';
-      ctx.fill();
+  function start(){
+    if(rafId!==null)return;
+    resize();
+    rafId=requestAnimationFrame(tick);
+  }
+  function stop(){
+    if(rafId!==null){
+      cancelAnimationFrame(rafId);
+      rafId=null;
     }
-    requestAnimationFrame(draw);
   }
   window.addEventListener('resize',resize);
-  resize();draw();
-})();
+  return{start:start,stop:stop};
+}
+const heroNodeCanvases=[initNodeCanvas('heroNodesL'),initNodeCanvas('heroNodesR')];
+const heroSectionEl=document.querySelector('.hero');
+if(heroSectionEl&&'IntersectionObserver' in window){
+  const heroCanvasObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        heroNodeCanvases.forEach(function(api){api.start();});
+      }else{
+        heroNodeCanvases.forEach(function(api){api.stop();});
+      }
+    });
+  },{threshold:0});
+  heroCanvasObs.observe(heroSectionEl);
+}else{
+  heroNodeCanvases.forEach(function(api){api.start();});
+}
 
 </script>
 
 <!-- MODAL LEGAL -->
 <div class="modal-overlay" id="modalLegal">
   <div class="modal-box">
-    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <button class="modal-close" aria-label="Cerrar aviso legal" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
     <h2>Aviso Legal</h2>
     <p>Titular: Mario Díez. Actividad: prestación de servicios de automatización de procesos con inteligencia artificial. Domicilio: Ciudad Real, España. Email: contacto@negoziax.com.</p>
     <h3>Condiciones de uso</h3>
@@ -1760,7 +1800,7 @@ backToTopBtn.addEventListener('click', () => {
 <!-- MODAL TERMINOS -->
 <div class="modal-overlay" id="modalTerminos">
   <div class="modal-box">
-    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <button class="modal-close" aria-label="Cerrar términos de servicio" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
     <h2>Términos de Servicio</h2>
     <h3>Objeto</h3>
     <p>Los presentes términos regulan la contratación de servicios de automatización con inteligencia artificial prestados por Negoziax.</p>
@@ -1780,7 +1820,7 @@ backToTopBtn.addEventListener('click', () => {
 <!-- MODAL PRIVACIDAD -->
 <div class="modal-overlay" id="modalPrivacidad">
   <div class="modal-box">
-    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <button class="modal-close" aria-label="Cerrar política de privacidad" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
     <h2>Política de Privacidad</h2>
     <p>Responsable: Mario Díez. Finalidad: responder consultas y gestionar servicios contratados. Base legal: consentimiento del interesado y ejecución de contrato. Destinatarios: no se ceden datos a terceros salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición y portabilidad dirigiéndose a contacto@negoziax.com. Los datos se conservan mientras dure la relación comercial o hasta que se solicite su supresión. Asimismo, utilizamos Google Analytics (Google LLC, EEUU) como encargado de tratamiento para análisis estadístico del tráfico web, con las garantías adecuadas conforme al RGPD.</p>
   </div>
@@ -1789,7 +1829,7 @@ backToTopBtn.addEventListener('click', () => {
 <!-- MODAL COOKIES -->
 <div class="modal-overlay" id="modalCookies">
   <div class="modal-box">
-    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <button class="modal-close" aria-label="Cerrar política de cookies" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
     <h2>Política de Cookies</h2>
     <p>Este sitio utiliza cookies propias y de terceros (Google Analytics) con fines analíticos. Puedes aceptar, rechazar o configurar las cookies desde tu navegador. Si continúas navegando, entendemos que aceptas su uso. Para más información, contacta en contacto@negoziax.com. Las cookies analíticas de Google Analytics solo se activan si aceptas el uso de cookies. Si las rechazas, no se recopila ningún dato de navegación.</p>
   </div>

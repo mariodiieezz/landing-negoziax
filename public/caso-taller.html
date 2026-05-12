@@ -29,6 +29,7 @@
 }
 </script>
 <meta charset="UTF-8">
+<link rel="canonical" href="https://negoziax.com/caso-taller.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -49,7 +50,9 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500&display=swap" as="style">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://wa.me">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <style>
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -757,6 +760,51 @@ nav.scrolled{
 
 html{scroll-padding-top:80px}
 
+@media(max-width:768px){
+  .hero{padding:7rem 1.25rem 4rem;min-height:auto}
+  .hero-title{font-size:clamp(2.2rem,8vw,3.2rem)}
+  .hero-sub{font-size:1rem;white-space:normal}
+  .hero-cta-btn{font-size:.95rem;padding:.85rem 1.5rem}
+  .nav-links{display:none}
+  .nav-burger{display:inline-flex}
+  .pain-grid{grid-template-columns:1fr}
+  .metrics-bar{grid-template-columns:repeat(2,1fr)}
+  .calc-card{padding:1.5rem 1rem}
+  .calc-result{grid-template-columns:1fr!important}
+  .calc-result-num{font-size:2rem}
+  .testimonial-card{width:220px}
+  .timeline-wrap{padding:0 .5rem}
+  .timeline-step{grid-template-columns:32px 1fr;gap:.75rem}
+  .timeline-step .timeline-step-spacer{display:none}
+  .timeline-left{text-align:left}
+  .timeline-node{justify-self:start}
+  .footer-grid{grid-template-columns:1fr;gap:1.5rem}
+  .footer-trust-bar{gap:1rem;flex-direction:column;align-items:center}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .cta-box{padding:3rem 1.25rem}
+  .cta-box h2{font-size:1.6rem}
+  #sobre-mi .container>div{grid-template-columns:1fr!important;gap:2rem!important}
+  .about-photo{width:100%!important;height:200px!important}
+  .caso-card{padding:1.25rem}
+  .caso-metrics{grid-template-columns:repeat(3,1fr)}
+  .faq-btn{font-size:.9rem;padding:1rem 1.1rem}
+  .wa-fab{width:50px;height:50px;bottom:18px;right:18px}
+  .back-to-top{width:42px;height:42px;bottom:18px;left:18px}
+  .cookie-banner{flex-direction:column;padding:1rem}
+  .cookie-btns{width:100%;justify-content:stretch}
+  .cookie-btn{flex:1}
+}
+
+@media(max-width:480px){
+  .hero{padding:6rem 1rem 3.5rem}
+  .section{padding:3.5rem 1rem}
+  nav{padding:.65rem .75rem}
+  .metric-num{font-size:22px}
+  .caso-metrics{grid-template-columns:repeat(3,1fr)}
+  .caso-metric-num{font-size:.9rem}
+  .modal-box{padding:1.25rem}
+}
+
 </style>
 </head>
 <body>
@@ -769,7 +817,7 @@ html{scroll-padding-top:80px}
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><img src="logo.png" alt="Negoziax" style="height:47px;width:auto"></a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Negoziax" width="224" height="270" style="height:47px;width:auto"></a>
 
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
@@ -794,9 +842,6 @@ html{scroll-padding-top:80px}
     <li><a href="index.html">Inicio</a></li>
     <li><a href="servicios.html">Servicios</a></li>
     <li><a href="casos.html">Casos</a></li>
-    <li><a href="index.html#faq">FAQ</a></li>
-    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
   </ul>
 </aside>
 
