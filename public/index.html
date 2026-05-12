@@ -591,7 +591,7 @@ nav.scrolled{
   transition:background .2s ease,color .2s ease;
 }
 .footer-socials a:hover{background:rgba(255,255,255,.15);color:#fff}
-.footer-col h4{
+.footer-col h3{
   font-family:'DM Sans',sans-serif;
   font-size:.85rem;font-weight:700;
   letter-spacing:.06em;
@@ -1008,7 +1008,7 @@ html{scroll-padding-top:80px}
 </nav>
 
 <div class="nav-overlay" id="navOverlay"></div>
-<aside class="nav-mobile" id="navMobile" aria-hidden="true">
+<aside class="nav-mobile" id="navMobile">
   <ul>
     <li><a href="index.html">Inicio</a></li>
     <li><a href="servicios.html">Servicios</a></li>
@@ -1016,6 +1016,7 @@ html{scroll-padding-top:80px}
   </ul>
 </aside>
 
+<main role="main">
 <section class="hero">
   <div class="hero-blob-1" aria-hidden="true"></div>
   <div class="hero-blob-2" aria-hidden="true"></div>
@@ -1103,14 +1104,14 @@ html{scroll-padding-top:80px}
           <span class="calc-lbl-text">Horas semanales en tareas repetitivas</span>
           <span class="calc-lbl-val" id="calcValHoras">10 horas</span>
         </div>
-        <input class="calc-range" type="range" id="calcHoras" min="1" max="40" value="10">
+        <input class="calc-range" type="range" id="calcHoras" min="1" max="40" value="10" aria-label="Horas semanales en tareas repetitivas">
       </div>
       <div class="calc-group">
         <div class="calc-lbl">
           <span class="calc-lbl-text">Coste por hora de tu equipo</span>
           <span class="calc-lbl-val" id="calcValCoste">20 €/h</span>
         </div>
-        <input class="calc-range" type="range" id="calcCoste" min="10" max="60" value="20">
+        <input class="calc-range" type="range" id="calcCoste" min="10" max="60" value="20" aria-label="Coste por hora en euros">
       </div>
       <div class="calc-result" style="margin-top:2rem;text-align:center">
         <div>
@@ -1409,6 +1410,8 @@ html{scroll-padding-top:80px}
   </div>
 </section>
 
+</main>
+
 <footer class="footer-full">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -1440,7 +1443,7 @@ A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .84h3a2 2 0 012 1.
       </div>
     </div>
     <div class="footer-col" style="margin:0 auto;padding-top:1rem">
-      <h4>Servicios</h4>
+      <h3>Servicios</h3>
       <ul>
         <li><a href="servicios.html">Asistente virtual con IA</a></li>
         <li><a href="servicios.html">Captación de clientes</a></li>
@@ -1449,7 +1452,7 @@ A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .84h3a2 2 0 012 1.
       </ul>
     </div>
     <div class="footer-col" style="margin:0 auto;padding-top:1rem">
-      <h4>Empresa</h4>
+      <h3>Empresa</h3>
       <ul>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#testimonios">Testimonios</a></li>
@@ -1458,7 +1461,7 @@ A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .84h3a2 2 0 012 1.
       </ul>
     </div>
     <div class="footer-col" style="margin:0 auto;padding-top:1rem">
-      <h4>Legal</h4>
+      <h3>Legal</h3>
       <ul>
         <li><a href="#" onclick="document.getElementById('modalLegal').classList.add('open');return false">Aviso legal</a></li>
         <li><a href="#" onclick="document.getElementById('modalPrivacidad').classList.add('open');return false">Política de privacidad</a></li>
@@ -1644,13 +1647,11 @@ const navOverlay = document.getElementById('navOverlay');
 function closeMobile() {
   navMobile.classList.remove('open');
   navOverlay.classList.remove('open');
-  navMobile.setAttribute('aria-hidden', 'true');
   burger.setAttribute('aria-expanded', 'false');
 }
 function openMobile() {
   navMobile.classList.add('open');
   navOverlay.classList.add('open');
-  navMobile.setAttribute('aria-hidden', 'false');
   burger.setAttribute('aria-expanded', 'true');
 }
 burger.addEventListener('click', () => {
