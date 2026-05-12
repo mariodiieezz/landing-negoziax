@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "npx serve public -l 80"
+    "start": "npx serve public -l 80 -c serve.json"
   },
   "devDependencies": {
     "sharp": "^0.34.5"
