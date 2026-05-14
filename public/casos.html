@@ -652,8 +652,48 @@ a.caso-card-link .pain-card{height:100%}
 @media(max-width:768px){
   .nav-links{display:none}
   .nav-burger{display:inline-flex}
-  .footer-grid{grid-template-columns:1fr;gap:2rem}
-  .footer-bottom{flex-direction:column;text-align:center}
+  .footer-full{
+    padding:2.25rem 1.25rem 1.5rem;
+  }
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:1.25rem;
+    margin-bottom:1.75rem;
+    justify-items:stretch;
+    text-align:left;
+  }
+  .footer-brand,
+  .footer-col{
+    text-align:left!important;
+    width:100%;
+    margin-left:0!important;
+    margin-right:0!important;
+    padding-top:.35rem;
+  }
+  .footer-brand>p{margin-bottom:.85rem}
+  .footer-contact-info{margin-top:.75rem}
+  .footer-col h3,
+  .footer-col h4{
+    margin-bottom:.5rem;
+  }
+  .footer-col ul{gap:.3rem}
+  .footer-col a{font-size:.88rem;line-height:1.45}
+  .footer-trust-bar{
+    margin-top:1.25rem;
+    padding:1rem 0;
+    gap:.75rem;
+    justify-content:flex-start;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .footer-trust-bar>span{justify-content:flex-start}
+  .footer-bottom{
+    padding-top:1.25rem;
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:left;
+    gap:.75rem;
+  }
 }
 @media(max-width:680px){
   .section{padding:5rem 1.25rem}
@@ -729,7 +769,8 @@ a.caso-card-link .pain-card{height:100%}
   .timeline-step{grid-template-columns:32px 1fr;gap:1rem}
   .timeline-step .timeline-step-spacer{display:none}
   .timeline-left{text-align:left}
-  .timeline-node{justify-self:start}
+  .timeline-step .timeline-node{grid-column:1;grid-row:1;justify-self:center}
+  .timeline-step .timeline-step-content{grid-column:2;grid-row:1;min-width:0}
 }
 @media(max-width:680px){
   #garantia .container>div{flex-direction:column;text-align:center;padding:2rem 1.5rem}
@@ -792,10 +833,8 @@ html{scroll-padding-top:80px}
   .timeline-step{grid-template-columns:32px 1fr;gap:.75rem}
   .timeline-step .timeline-step-spacer{display:none}
   .timeline-left{text-align:left}
-  .timeline-node{justify-self:start}
-  .footer-grid{grid-template-columns:1fr;gap:1.5rem}
-  .footer-trust-bar{gap:1rem;flex-direction:column;align-items:center}
-  .footer-bottom{flex-direction:column;text-align:center}
+  .timeline-step .timeline-node{grid-column:1;grid-row:1;justify-self:center}
+  .timeline-step .timeline-step-content{grid-column:2;grid-row:1;min-width:0}
   .cta-box{padding:3rem 1.25rem}
   .cta-box h2{font-size:1.6rem}
   #sobre-mi .container>div{grid-template-columns:1fr!important;gap:2rem!important}

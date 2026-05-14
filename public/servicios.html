@@ -622,8 +622,48 @@ nav.scrolled{
 @media(max-width:768px){
   .nav-links{display:none}
   .nav-burger{display:inline-flex}
-  .footer-grid{grid-template-columns:1fr;gap:2rem}
-  .footer-bottom{flex-direction:column;text-align:center}
+  .footer-full{
+    padding:2.25rem 1.25rem 1.5rem;
+  }
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:1.25rem;
+    margin-bottom:1.75rem;
+    justify-items:stretch;
+    text-align:left;
+  }
+  .footer-brand,
+  .footer-col{
+    text-align:left!important;
+    width:100%;
+    margin-left:0!important;
+    margin-right:0!important;
+    padding-top:.35rem;
+  }
+  .footer-brand>p{margin-bottom:.85rem}
+  .footer-contact-info{margin-top:.75rem}
+  .footer-col h3,
+  .footer-col h4{
+    margin-bottom:.5rem;
+  }
+  .footer-col ul{gap:.3rem}
+  .footer-col a{font-size:.88rem;line-height:1.45}
+  .footer-trust-bar{
+    margin-top:1.25rem;
+    padding:1rem 0;
+    gap:.75rem;
+    justify-content:flex-start;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .footer-trust-bar>span{justify-content:flex-start}
+  .footer-bottom{
+    padding-top:1.25rem;
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:left;
+    gap:.75rem;
+  }
 }
 @media(max-width:680px){
   .section{padding:5rem 1.25rem}
@@ -699,7 +739,8 @@ nav.scrolled{
   .timeline-step{grid-template-columns:32px 1fr;gap:1rem}
   .timeline-step .timeline-step-spacer{display:none}
   .timeline-left{text-align:left}
-  .timeline-node{justify-self:start}
+  .timeline-step .timeline-node{grid-column:1;grid-row:1;justify-self:center}
+  .timeline-step .timeline-step-content{grid-column:2;grid-row:1;min-width:0}
 }
 @media(max-width:680px){
   #garantia .container>div{flex-direction:column;text-align:center;padding:2rem 1.5rem}
@@ -730,10 +771,8 @@ nav.scrolled{
   .timeline-step{grid-template-columns:32px 1fr;gap:.75rem}
   .timeline-step .timeline-step-spacer{display:none}
   .timeline-left{text-align:left}
-  .timeline-node{justify-self:start}
-  .footer-grid{grid-template-columns:1fr;gap:1.5rem}
-  .footer-trust-bar{gap:1rem;flex-direction:column;align-items:center}
-  .footer-bottom{flex-direction:column;text-align:center}
+  .timeline-step .timeline-node{grid-column:1;grid-row:1;justify-self:center}
+  .timeline-step .timeline-step-content{grid-column:2;grid-row:1;min-width:0}
   .cta-box{padding:3rem 1.25rem}
   .cta-box h2{font-size:1.6rem}
   #sobre-mi .container>div{grid-template-columns:1fr!important;gap:2rem!important}
@@ -906,7 +945,7 @@ nav.scrolled{
           <div class="timeline-step-content timeline-left">
             <div class="timeline-step-num">01</div>
             <h3>Análisis</h3>
-            <p>Evaluamos tus procesos y detectamos dónde la automatización genera más impacto.</p>
+            <p>Evaluamos tus procesos y detectamos donde genera más impacto la automatización.</p>
           </div>
           <div class="timeline-node" data-node="0"></div>
           <div class="timeline-step-spacer"></div>
@@ -917,7 +956,7 @@ nav.scrolled{
           <div class="timeline-step-content timeline-right">
             <div class="timeline-step-num">02</div>
             <h3>Diseño</h3>
-            <p>Construimos una solución a medida integrada con las herramientas que ya usas.</p>
+            <p>Construimos una solución a medida, e integración con las herramientas que ya usas.</p>
           </div>
         </div>
         <div class="timeline-step">
@@ -942,7 +981,7 @@ nav.scrolled{
           <div class="timeline-step-content timeline-left">
             <div class="timeline-step-num">05</div>
             <h3>Seguimiento</h3>
-            <p>Monitorizamos resultados y optimizamos continuamente. Soporte incluido.</p>
+            <p>Monitorizamos resultados y optimizamos continuamente.</p>
           </div>
           <div class="timeline-node" data-node="4"></div>
           <div class="timeline-step-spacer"></div>
@@ -959,8 +998,8 @@ nav.scrolled{
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
       <div>
-        <p style="font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:1rem">El primer mes es gratis. Pruebas la automatización funcionando en tu negocio real, sin pagar nada. Si no te convence, lo dejamos y no debes nada.<br><br>Ofrezco esto porque confío al 100% en lo que entrego. Cuando ves tu negocio funcionando solo, respondiendo clientes a las 3 de la mañana, generando resultados mientras duermes, no hace falta que te convenza yo. Los resultados se muestran por si solos.</p>
-        <p style="font-size:.95rem;color:rgba(255,255,255,.5);font-weight:600">Mario Díez | CEO de Negoziax</p>
+        <p style="font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:1rem">El primer mes es gratis. Pruebas la automatización funcionando en tu negocio real, sin pagar nada. Si no te convence, lo dejamos sin compromisos.<br><br>Ofrezco esto porque confío al 100% en lo que entrego. Cuando ves tu negocio funcionando solo, respondiendo clientes a las 3 de la mañana, generando resultados mientras duermes, no hace falta que te convenza yo. Los resultados se muestran por si solos.</p>
+        <p style="font-size:.95rem;color:rgba(255,255,255,.5);font-weight:600">Mario Díez | CEO & Founder de Negoziax</p>
       </div>
     </div>
   </div>
