@@ -40,6 +40,7 @@
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
 <meta property="og:title" content="Negoziax">
 <meta property="og:description" content="De la agenda caótica a cero llamadas para gestionar citas.">
 <meta property="og:image" content="https://negoziax.com/assets/logo.png">
@@ -47,12 +48,10 @@
 <meta property="og:url" content="https://negoziax.com/caso-clinica.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500&display=swap" as="style">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://wa.me">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -870,7 +869,7 @@ html{scroll-padding-top:80px}
   </div>
 </nav>
 
-<a href="casos.html" style="display:inline-flex;align-items:center;gap:.6rem;margin:5.5rem 0 0 2rem;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;color:var(--slate-600);text-decoration:none;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);border:1px solid var(--slate-200);padding:.55rem 1.1rem;border-radius:50px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:all .2s ease" onmouseover="this.style.borderColor='#3b82f6';this.style.color='#2563eb';this.style.boxShadow='0 4px 12px rgba(59,130,246,.15)'" onmouseout="this.style.borderColor='var(--slate-200)';this.style.color='var(--slate-600)';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+<a href="casos.html" class="casos-back-link">
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
   Volver a casos
 </a>
@@ -1051,10 +1050,10 @@ c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
     <div class="footer-col" style="margin:0 auto;padding-top:1rem">
       <h4>Legal</h4>
       <ul>
-        <li><a href="#" onclick="document.getElementById('modalLegal').classList.add('open');return false">Aviso legal</a></li>
-        <li><a href="#" onclick="document.getElementById('modalPrivacidad').classList.add('open');return false">Política de privacidad</a></li>
-        <li><a href="#" onclick="document.getElementById('modalCookies').classList.add('open');return false">Política de cookies</a></li>
-        <li><a href="#" onclick="document.getElementById('modalTerminos').classList.add('open');return false">Términos de servicio</a></li>
+        <li><a href="#" data-modal-open="modalLegal">Aviso legal</a></li>
+        <li><a href="#" data-modal-open="modalPrivacidad">Política de privacidad</a></li>
+        <li><a href="#" data-modal-open="modalCookies">Política de cookies</a></li>
+        <li><a href="#" data-modal-open="modalTerminos">Términos de servicio</a></li>
       </ul>
     </div>
   </div>
@@ -1066,9 +1065,9 @@ c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
   <div class="footer-bottom">
     <span>&copy; 2026 Negoziax. Todos los derechos reservados.</span>
     <div style="display:flex;gap:1rem;flex-wrap:wrap">
-      <a href="#" onclick="document.getElementById('modalLegal').classList.add('open');return false">Aviso legal</a>
-      <a href="#" onclick="document.getElementById('modalPrivacidad').classList.add('open');return false">Privacidad</a>
-      <a href="#" onclick="document.getElementById('modalCookies').classList.add('open');return false">Cookies</a>
+      <a href="#" data-modal-open="modalLegal">Aviso legal</a>
+      <a href="#" data-modal-open="modalPrivacidad">Privacidad</a>
+      <a href="#" data-modal-open="modalCookies">Cookies</a>
     </div>
   </div>
 </footer>
@@ -1250,7 +1249,7 @@ backToTopBtn.addEventListener('click', () => {
 <!-- MODAL LEGAL -->
 <div class="modal-overlay" id="modalLegal">
   <div class="modal-box">
-    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <button type="button" class="modal-close">&times;</button>
     <h2>Aviso Legal</h2>
     <p>Titular: Mario Díez. Correo electrónico: contacto@negoziax.com. Este sitio web es un espacio informativo y comercial sobre servicios de automatización de procesos empresariales con inteligencia artificial. Todos los derechos reservados.</p>
   </div>
@@ -1259,7 +1258,7 @@ backToTopBtn.addEventListener('click', () => {
 <!-- MODAL TERMINOS -->
 <div class="modal-overlay" id="modalTerminos">
   <div class="modal-box">
-    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <button type="button" class="modal-close">&times;</button>
     <h2>Términos de Servicio</h2>
     <h3>Objeto</h3>
     <p>Los presentes términos regulan la contratación de servicios de automatización con inteligencia artificial prestados por Negoziax.</p>
@@ -1279,7 +1278,7 @@ backToTopBtn.addEventListener('click', () => {
 <!-- MODAL PRIVACIDAD -->
 <div class="modal-overlay" id="modalPrivacidad">
   <div class="modal-box">
-    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <button type="button" class="modal-close">&times;</button>
     <h2>Política de Privacidad</h2>
     <p>Responsable: Mario Díez. Finalidad: responder consultas y gestionar servicios contratados. Base legal: consentimiento del interesado y ejecución de contrato. Destinatarios: no se ceden datos a terceros salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición y portabilidad dirigiéndose a contacto@negoziax.com. Los datos se conservan mientras dure la relación comercial o hasta que se solicite su supresión. Asimismo, utilizamos Google Analytics (Google LLC, EEUU) como encargado de tratamiento para análisis estadístico del tráfico web, con las garantías adecuadas conforme al RGPD.</p>
   </div>
@@ -1288,11 +1287,12 @@ backToTopBtn.addEventListener('click', () => {
 <!-- MODAL COOKIES -->
 <div class="modal-overlay" id="modalCookies">
   <div class="modal-box">
-    <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+    <button type="button" class="modal-close">&times;</button>
     <h2>Política de Cookies</h2>
     <p>Este sitio utiliza cookies propias y de terceros (Google Analytics) con fines analíticos. Puedes aceptar, rechazar o configurar las cookies desde tu navegador. Si continúas navegando, entendemos que aceptas su uso. Para más información, contacta en contacto@negoziax.com. Las cookies analíticas de Google Analytics solo se activan si aceptas el uso de cookies. Si las rechazas, no se recopila ningún dato de navegación.</p>
   </div>
 </div>
 
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
