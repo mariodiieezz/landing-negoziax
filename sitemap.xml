@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://negoziax.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://negoziax.com/servicios.html</loc><priority>0.8</priority></url>
-  <url><loc>https://negoziax.com/casos.html</loc><priority>0.8</priority></url>
-  <url><loc>https://negoziax.com/caso-clinica.html</loc><priority>0.6</priority></url>
-  <url><loc>https://negoziax.com/caso-taller.html</loc><priority>0.6</priority></url>
-  <url><loc>https://negoziax.com/caso-academia.html</loc><priority>0.6</priority></url>
-</urlset>

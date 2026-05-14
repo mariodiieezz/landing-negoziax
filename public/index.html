@@ -978,18 +978,25 @@ nav.scrolled{
     gap:0;
     row-gap:0;
     column-gap:0;
-    border-top:none!important;
-    border-bottom:none!important;
+    border-top:1px solid rgba(59,130,246,.15)!important;
+    border-bottom:1px solid rgba(59,130,246,.15)!important;
     box-shadow:none;
     background:linear-gradient(135deg,#0f172a,#1e293b);
   }
   .metric-item{
-    border:none!important;
-    border-right:none!important;
-    border-bottom:none!important;
     background:transparent;
     outline:none;
     box-shadow:none;
+    border-top:none;
+    border-left:none;
+    border-right:1px solid rgba(59,130,246,.15);
+    border-bottom:1px solid rgba(59,130,246,.15);
+  }
+  .metric-item:nth-child(2n){
+    border-right:none;
+  }
+  .metric-item:nth-child(n+3){
+    border-bottom:none;
   }
 }
 
